@@ -369,74 +369,87 @@ public:
         glDisableVertexAttribArray(2);
     }
 
-    void render() {
-        double seconds = glfwGetTime();
-        p1->update(seconds);
-        p2->update(seconds);
-        glfwSetTime(0);
+	void render() {
+		double seconds = glfwGetTime();
+		p1->update(seconds);
+		p2->update(seconds);
+		glfwSetTime(0);
 
-        auto P = make_shared<MatrixStack>();
-        auto M = make_shared<MatrixStack>();
-        auto V = make_shared<MatrixStack>();
-        V->loadIdentity();
+		auto P = make_shared<MatrixStack>();
+		auto O = make_shared<MatrixStack>();
+		auto M = make_shared<MatrixStack>();
+		auto V = make_shared<MatrixStack>();
+		V->loadIdentity();
 
-        int width, height;
-        glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
-        glViewport(0, 0, width, height);
-        float aspect = width / (float) height;
-        P->pushMatrix();
-        P->perspective(45.0f, aspect, 0.01f, 100.0f);
+		int width, height;
+		glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
+		glViewport(0, 0, width, height);
+		float aspect = width / (float)(height / 2.0f);
+		P->pushMatrix();
+		P->perspective(45.0f, aspect, 0.01f, 100.0f);
 
-        int numPlayers = 2;
-        if (numPlayers == 1) {
-            V->pushMatrix();
-            V->multMatrix(p1->getViewMatrix());
-            render_scene(0, M, V, P);
-            V->popMatrix();
-        } else {
-            V->pushMatrix();
-                V->multMatrix(p1->getViewMatrix());
-                render_scene(frameBuf[0], M, V, P);
-            V->popMatrix();
+		O->pushMatrix();
+		aspect *= 2;
+		if (width > height)
+		{
+			O->ortho(-1 * aspect, 1 * aspect, -1, 1, -2, 100.0f);
+		}
+		else
+		{
+			O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
+		}
 
-            M->pushMatrix();
-            V->pushMatrix();
-                M->loadIdentity();
-                M->translate(vec3(-.55,0,-1));
-                V->loadIdentity();
-                V->lookAt(vec3(0,0,0),vec3(0,0,-1),vec3(0,1,0));
-                M->scale(vec3(.5, .5, 1));
-                glBindFramebuffer(GL_FRAMEBUFFER, 0);
-                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		int numPlayers = 2;
+		if (numPlayers == 1) {
+			V->pushMatrix();
+			V->multMatrix(p1->getViewMatrix());
+			render_scene(0, M, V, P);
+			V->popMatrix();
+		}
+		else {
+			V->pushMatrix();
+			V->multMatrix(p1->getViewMatrix());
+			render_scene(frameBuf[0], M, V, P);
+			V->popMatrix();
 
-            drawTV(frameBuf[0], M, V, P);
-            V->popMatrix();
-            M->popMatrix();
+			M->pushMatrix();
+			V->pushMatrix();
+				M->loadIdentity();
+				V->loadIdentity();
+				V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
+				M->scale(vec3(7.5, .48, 1));
+				M->translate(vec3(0, 1, 0));
+				glBindFramebuffer(GL_FRAMEBUFFER, 0);
+				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+				drawTV(frameBuf[0], M, V, O);
+				V->popMatrix();
+			M->popMatrix();
 
-            V->pushMatrix();
-                V->multMatrix(p2->getViewMatrix());
-                render_scene(frameBuf[0], M, V, P);
-            V->popMatrix();
-
-
-            M->pushMatrix();
-            V->pushMatrix();
-            M->loadIdentity();
-            M->translate(vec3(+.55,0,-1));
-            V->loadIdentity();
-            V->lookAt(vec3(0,0,0),vec3(0,0,-1),vec3(0,1,0));
-            M->scale(vec3(.5, .5, 1));
-            glBindFramebuffer(GL_FRAMEBUFFER, 0);
-            //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-            drawTV(frameBuf[0], M, V, P);
-            V->popMatrix();
-            M->popMatrix();
-        }
+			V->pushMatrix();
+				V->multMatrix(p2->getViewMatrix());
+				render_scene(frameBuf[0], M, V, P);
+			V->popMatrix();
 
 
-        P->popMatrix();
-    }
+			M->pushMatrix();
+			V->pushMatrix();
+				M->loadIdentity();
+				M->loadIdentity();
+
+				V->loadIdentity();
+				V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
+				M->scale(vec3(7.5, .48, 1));
+				M->translate(vec3(0, -1, 0));
+				glBindFramebuffer(GL_FRAMEBUFFER, 0);
+				//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+				drawTV(frameBuf[0], M, V, O);
+			V->popMatrix();
+			M->popMatrix();
+		}
+
+
+		P->popMatrix();
+	}
 
     void render_scene(GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
         glBindFramebuffer(GL_FRAMEBUFFER, buffer);
@@ -469,7 +482,7 @@ int main(int argc, char **argv) {
     // and GL context, etc.
 
     WindowManager *windowManager = new WindowManager();
-    windowManager->init(2048, 1024);
+    windowManager->init(1920, 1024);
     windowManager->setEventCallbacks(application);
     application->windowManager = windowManager;
 
