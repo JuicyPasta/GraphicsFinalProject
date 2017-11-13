@@ -39,7 +39,7 @@ public:
     shared_ptr<Player> p1, p2;
 
     // Shape to be used (from obj file)
-    shared_ptr<Shape> cube;
+    shared_ptr<Shape> cube, ship;
 
     // Contains vertex information for OpenGL
     GLuint VertexArrayID;
@@ -215,6 +215,12 @@ public:
         cube->resize();
         cube->init();
 
+
+		ship = make_shared<Shape>();
+		ship->loadMesh(resourceDirectory + "/ship.obj");
+		ship->resize();
+		ship->init();
+
         //Initialize the geometry to render a quad to the screen
         initQuad();
         initFloor();
@@ -389,7 +395,7 @@ public:
 		P->perspective(45.0f, aspect, 0.01f, 100.0f);
 
 		O->pushMatrix();
-		aspect *= 2;
+		aspect /= 2;
 		if (width > height)
 		{
 			O->ortho(-1 * aspect, 1 * aspect, -1, 1, -2, 100.0f);
@@ -417,7 +423,7 @@ public:
 				M->loadIdentity();
 				V->loadIdentity();
 				V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-				M->scale(vec3(7.5, .48, 1));
+				M->scale(vec3(2, .48, 1));
 				M->translate(vec3(0, 1, 0));
 				glBindFramebuffer(GL_FRAMEBUFFER, 0);
 				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -438,7 +444,7 @@ public:
 
 				V->loadIdentity();
 				V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-				M->scale(vec3(7.5, .48, 1));
+				M->scale(vec3(2, .48, 1));
 				M->translate(vec3(0, -1, 0));
 				glBindFramebuffer(GL_FRAMEBUFFER, 0);
 				//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -463,8 +469,26 @@ public:
         glUniformMatrix4fv(prog->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
         setMaterial(4);
         renderGround();
-        prog->unbind();
         M->popMatrix();
+		M->pushMatrix();
+		M->loadIdentity();
+		M->translate(p1->getPosition());
+		M->scale(.3);
+		M->rotate(p1->getAngle(), vec3(0, 1, 0));
+		M->rotate(radians(90.f), vec3(1, 0, 0));
+		glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+		ship->draw(prog);
+		M->popMatrix();
+		M->pushMatrix();
+		M->loadIdentity();
+		M->translate(p2->getPosition());
+		M->scale(.3);
+		M->rotate(p2->getAngle(), vec3(0, 1, 0));
+		M->rotate(radians(90.f), vec3(1, 0, 0));
+		glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+		ship->draw(prog);
+		M->popMatrix();
+		prog->unbind();
     }
 };
 

@@ -2,20 +2,20 @@
 // Created by Darrow, Jackson on 11/12/17.
 //
 
-#include "PxPhysicsAPI.h"
-#include "extensions/PxExtensionsAPI.h"
-#include "extensions/PxDefaultErrorCallback.h"
-#include "extensions/PxDefaultAllocator.h"
-#include "extensions/PxDefaultSimulationFilterShader.h"
-#include "extensions/PxDefaultCpuDispatcher.h"
-#include "extensions/PxShapeExt.h"
-#include "foundation/PxMat33.h"
-#include "extensions/PxSimpleFactory.h"
+//#include "PxPhysicsAPI.h"
+//#include "extensions/PxExtensionsAPI.h"
+//#include "extensions/PxDefaultErrorCallback.h"
+//#include "extensions/PxDefaultAllocator.h"
+//#include "extensions/PxDefaultSimulationFilterShader.h"
+//#include "extensions/PxDefaultCpuDispatcher.h"
+//#include "extensions/PxShapeExt.h"
+//#include "foundation/PxMat33.h"
+//#include "extensions/PxSimpleFactory.h"
 
 using namespace std;
 #include <iostream>
 
-using namespace physx;
+//using namespace physx;
 using namespace std;
 
 //const int WINDOW_WIDTH=1024,

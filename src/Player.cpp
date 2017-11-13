@@ -50,10 +50,15 @@ void Player::getControllerInput() {
     float deadzone = .2;
 
     strafeInput.x = abs(axes[0]) > deadzone ? axes[0] : 0;
+#ifdef _WIN32
+	strafeInput.y = abs(axes[1]) > deadzone ? axes[1] : 0;
+#else
     strafeInput.y = abs(axes[1]) > deadzone ? -axes[1] : 0;
+#endif
 
     orientationInput.x -= abs(axes[2]) > deadzone ? axes[2]/10 : 0;
     orientationInput.y -= abs(axes[3]) > deadzone ? axes[3]/10 : 0;
+
     // axes[4] = left trigger
     // axes[5] = right trigger
 //    const unsigned char *buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &count);
@@ -70,11 +75,15 @@ void Player::update(float deltaTime) {
 
     float strafeSpeed = .5;
 
-    vec3 direction = vec3(0, 0, 0);
-    direction += strafeSpeed * strafeInput.y * (lookAtPoint - position);
-    direction += strafeSpeed * -strafeInput.x * glm::cross(upVector, lookAtPoint - position);
+    vec3 delta = vec3(0, 0, 0);
+	direction.x = sin(theta);
+	direction.y = cos(theta);
+    delta -= strafeSpeed * strafeInput.y * direction;
+	theta += strafeSpeed * -strafeInput.x * .1f;
+
+    //delta += strafeSpeed * -strafeInput.x * glm::cross(upVector, direction);
     float posy = position.y;
-    position += direction;
+    position += delta;
     position.y = posy;
 //    lookAtPoint = position + direction;
 
@@ -83,9 +92,9 @@ void Player::update(float deltaTime) {
     if (orientationInput.y < -.9)
         orientationInput.y = -.9;
 
-    lookAtPoint = position + glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
+    lookAtPoint = position + glm::vec3(cos(orientationInput.x + theta) * cos(orientationInput.y),
                                        sin(orientationInput.y),
-                                       -cos(orientationInput.y) * sin(orientationInput.x));
+                                       -cos(orientationInput.y) * sin(orientationInput.x + theta));
 
 //      vec3 viewVec = lookAtPoint - position;
 
@@ -104,5 +113,6 @@ void Player::update(float deltaTime) {
 }
 
 mat4 Player::getViewMatrix() {
-    return glm::lookAt(position, lookAtPoint, upVector);
+	return glm::lookAt(lookAtPoint, position, upVector);
+    //return glm::lookAt(position, lookAtPoint, upVector);
 }

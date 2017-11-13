@@ -7,10 +7,10 @@
 
 #include <ctype.h>
 
-#include <common/PxTypeInfo.h>
+//#include <common/PxTypeInfo.h>
 
 
-using namespace physx;
+//using namespace physx;
 
 class Physics {
 public:
