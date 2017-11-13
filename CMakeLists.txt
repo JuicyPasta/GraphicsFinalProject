@@ -14,10 +14,25 @@ file(GLOB_RECURSE GLSL "resources/*.glsl")
 include_directories("ext/glad/include")
 
 # Set the executable.
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL} src/Player.cpp src/Player.h src/Physics.cpp src/Physics.h)
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL})
+
+#
+#message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
+#
+#IF(CMAKE_BUILD_TYPE MATCHES Debug)
+#  message("Debug build.")
+#ELSEIF(CMAKE_BUILD_TYPE MATCHES Release)
+#  message("Release build.")
+#ELSE()
+#  message("Some other build type.")
+#ENDIF()
+SET(CMAKE_BUILD_TYPE Release)
 
 # Add PhysX
-
+if (OSX64)
+  target_link_libraries(${CMAKE_PROJECT_NAME} "ext/PhysX-3.4/Lib/osx64")
+endif()
+include_directories("ext/PhysX-3.4/Include")
 
 # Add GLFW
 # Get the GLFW environment variable.

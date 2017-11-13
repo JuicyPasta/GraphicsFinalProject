@@ -5,8 +5,13 @@
 #ifndef INC_3DBILLIARDS_PHYSICS_H
 #define INC_3DBILLIARDS_PHYSICS_H
 
+#include <ctype.h>
+#include "PxPhysicsAPI.h"
+//
+using namespace physx;
 
 class Physics {
+public:
 
 };
 

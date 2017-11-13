@@ -5,13 +5,236 @@
       <config projectName="3dbilliards" targetName="3dbilliards" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="" />
+    <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevel.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelAABB.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelCloth.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelDynamics.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelParticles.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPhysX3.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPhysX3Common.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxFoundation.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxPvdSDK.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxTask.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libSceneQuery.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libSimulationController.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactBuffer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactPoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxActor.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxAggregate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulation.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationLink.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQuery.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQueryDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBroadPhase.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxClient.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraintDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContact.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContactModifyCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxDeletionListener.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxFiltering.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxForceMode.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxImmediateMode.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxLockedData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxMaterial.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysXConfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysics.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsAPI.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsSerialization.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsVersion.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPruningStructure.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryFiltering.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryReport.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidActor.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidBody.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidDynamic.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidStatic.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxScene.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneLock.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxShape.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationEventCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationStatistics.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSpatialIndex.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVisualizationParameter.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVolumeCache.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxBoxController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCapsuleController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCharacter.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerBehavior.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerObstacles.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxExtended.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxCloth.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothCollisionData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothFabric.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothParticleData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/collision/PxCollisionDefs.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxBase.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCollection.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCoreUtilityTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaDataFlags.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysXCommonConfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysicsInsertionCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxRenderBuffer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerialFramework.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerializer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxStringTable.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTolerancesScale.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTypeInfo.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/windows/PxWindowsDelayLoadHook.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH33MidphaseDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH34MidphaseDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxConvexMeshDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxCooking.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxMidphaseDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxTriangleMeshDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/Pxc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaContextManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaMemoryManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDescQueue.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBinaryConverter.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBroadPhaseExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothFabricCooker.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshQuadifier.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothTetherCooker.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxCollectionExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConstraintExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConvexMeshExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxD6Joint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultAllocator.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultCpuDispatcher.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultErrorCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultSimulationFilterShader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultStreams.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDistanceJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxExtensionsAPI.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxFixedJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJointLimit.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxMassProperties.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxParticleExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxPrismaticJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRaycastCCD.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSerializer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSimpleType.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRevoluteJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidActorExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidBodyExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSceneQueryExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSerialization.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxShapeExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSimpleFactory.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSmoothNormals.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSphericalJoint.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxStringTableExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxTriangleMeshExt.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/filebuf/PxFileBuf.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/Px.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAllocatorCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAssert.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBitAndData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBounds3.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrorCallback.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrors.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFlags.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundation.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundationVersion.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIO.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIntrinsics.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat33.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat44.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMath.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMathUtils.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMemory.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPlane.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPreprocessor.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxProfiler.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxQuat.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxSimpleTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxStrideIterator.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxTransform.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxUnionCast.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec2.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec3.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec4.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/unix/PxUnixIntrinsics.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsFoundationDelayLoadHook.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsIntrinsics.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxBoxGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxCapsuleGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMesh.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMeshGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryHelpers.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryQuery.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightField.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldDesc.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldFlag.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldSample.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshQuery.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshScale.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxPlaneGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSimpleTriangleMesh.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSphereGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangle.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMesh.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMeshGeometry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxGpu.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxParticleGpu.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBase.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBaseFlag.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleCreationData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFlag.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluid.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluidReadData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleReadData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleSystem.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvd.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdSceneClient.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdTransport.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/windows/PxWindowsPvdDelayLoadHook.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/solver/PxSolverDefs.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxCpuDispatcher.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuDispatcher.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuTask.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTask.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskDefine.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleComponents.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive4W.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveNW.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveTank.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleNoDrive.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleSDK.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleShaders.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleTireFriction.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUpdate.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtil.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilControl.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilSetup.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilTelemetry.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleWheels.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.cpp" afterPath="$PROJECT_DIR$/src/Physics.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.h" afterPath="$PROJECT_DIR$/src/Physics.h" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +251,7 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-986">
+            <state relative-caret-position="33">
               <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#264#283#0" expanded="true" />
@@ -52,10 +275,20 @@
       <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="142" column="1" lean-forward="false" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Physics.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#3854#3894#0" expanded="true" />
+                <element signature="e#119#137#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,14 +297,34 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="321">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PxGpu.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxGpu.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PxGpuCopyDesc.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDesc.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -81,77 +334,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Physics.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WindowManager.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WindowManager.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WindowManager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WindowManager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-              <folding>
-                <element signature="e#50#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="e#117#140#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shape.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Shape.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>viewVec</find>
+      <find>DEBUG</find>
+      <find>win32</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,9 +361,10 @@
         <option value="$PROJECT_DIR$/src/Player.h" />
         <option value="$PROJECT_DIR$/src/Player.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Physics.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Physics.cpp" />
+        <option value="$PROJECT_DIR$/src/Physics.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -215,22 +405,36 @@
             <path>
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
               <item name="ext" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
+              <item name="Include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
+              <item name="Include" type="462c0819:PsiDirectoryNode" />
+              <item name="gpu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
+              <item name="Include" type="462c0819:PsiDirectoryNode" />
+              <item name="pvd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -246,12 +450,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ext/PhysX-3.4" />
+      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Include" />
+      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/resources/lol" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib" />
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -506,21 +714,20 @@
       <workItem from="1510471730736" duration="9653000" />
       <workItem from="1510521350140" duration="3569000" />
       <workItem from="1510525078171" duration="1144000" />
-      <workItem from="1510526237688" duration="2059000" />
+      <workItem from="1510526237688" duration="4950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68639000" />
+    <option name="totallyTimeSpent" value="71530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11269615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -558,100 +765,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#264#283#0" expanded="true" />
-            <element signature="e#1471#1548#0" expanded="false" />
-            <element signature="e#1554#1938#0" expanded="false" />
-            <element signature="e#1944#2391#0" expanded="false" />
-            <element signature="e#2397#2512#0" expanded="false" />
-            <element signature="e#2518#2629#0" expanded="false" />
-            <element signature="e#2635#4445#0" expanded="false" />
-            <element signature="e#4451#5039#0" expanded="false" />
-            <element signature="e#7062#7368#0" expanded="false" />
-            <element signature="e#7374#8096#0" expanded="false" />
-            <element signature="e#8102#9843#0" expanded="false" />
-            <element signature="e#9849#10955#0" expanded="false" />
-            <element signature="e#12218#12979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#264#283#0" expanded="true" />
-            <element signature="e#1471#1548#0" expanded="false" />
-            <element signature="e#1554#1938#0" expanded="false" />
-            <element signature="e#1944#2391#0" expanded="false" />
-            <element signature="e#2397#2512#0" expanded="false" />
-            <element signature="e#2518#2629#0" expanded="false" />
-            <element signature="e#2635#4445#0" expanded="false" />
-            <element signature="e#4451#5039#0" expanded="false" />
-            <element signature="e#7062#7368#0" expanded="false" />
-            <element signature="e#7374#8096#0" expanded="false" />
-            <element signature="e#8102#9843#0" expanded="false" />
-            <element signature="e#9849#10955#0" expanded="false" />
-            <element signature="e#12218#12979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixStack.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MatrixStack.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -859,7 +972,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -872,17 +985,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.h">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxSimpleTypes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/Px.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsAPI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPreprocessor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5675">
+          <caret line="446" column="18" lean-forward="false" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-986">
+        <state relative-caret-position="33">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#264#283#0" expanded="true" />
@@ -902,28 +1047,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDesc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5242">
+          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="142" column="1" lean-forward="false" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Physics.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#3854#3894#0" expanded="true" />
+            <element signature="e#119#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="321">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxGpu.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
