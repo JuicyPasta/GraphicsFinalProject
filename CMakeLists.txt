@@ -16,24 +16,36 @@ include_directories("ext/glad/include")
 # Set the executable.
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL})
 
-#
-#message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
-#
-#IF(CMAKE_BUILD_TYPE MATCHES Debug)
-#  message("Debug build.")
-#ELSEIF(CMAKE_BUILD_TYPE MATCHES Release)
-#  message("Release build.")
-#ELSE()
-#  message("Some other build type.")
-#ENDIF()
 SET(CMAKE_BUILD_TYPE Release)
-#SET(CMAKE_BUILD_TYPE Debug)
 
 # Add PhysX
-if (OSX64)
-  target_link_libraries(${CMAKE_PROJECT_NAME} physx "ext/PhysX-3.4/Lib/osx64/*")
+if (APPLE)
+    set(PHYSX_LIBRARIES_DIR /usr/local/PhysX-3.4/PhysX_3.4/Lib/osx64)
+    set(PHYSX_SHARED_LIBRARIES_DIR /usr/local/PhysX-3.4/PxShared/lib/osx64)
+
+    include_directories("/usr/local/PhysX-3.4/PhysX_3.4/Include")
+    include_directories("/usr/local/PhysX-3.4/PxShared/include")
 endif()
-include_directories("ext/PhysX-3.4/Include")
+
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPsFastXmlDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxFoundationDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxPvdSDKDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxTaskDEBUG.a)
+
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3DEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelAABBDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelClothDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDynamicsDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelParticlesDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CharacterKinematicDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CommonDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CookingDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3VehicleDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSceneQueryDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSimulationControllerDEBUG.a)
+
 
 # Add GLFW
 # Get the GLFW environment variable.
