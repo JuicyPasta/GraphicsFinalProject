@@ -12,19 +12,215 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelAABBDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelClothDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelDynamicsDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libLowLevelParticlesDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPhysX3CommonDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPhysX3DEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPhysX3Extensions.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxFoundationDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxPvdSDKDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libPxTaskDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libSceneQueryDEBUG.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64/libSimulationControllerDEBUG.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactBuffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactPoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxActor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxAggregate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationLink.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQuery.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQueryDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBroadPhase.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxClient.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraintDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContact.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContactModifyCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxDeletionListener.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxFiltering.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxForceMode.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxImmediateMode.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxLockedData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxMaterial.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysXConfig.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsAPI.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsSerialization.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsVersion.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPruningStructure.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryFiltering.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryReport.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidActor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidBody.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidDynamic.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidStatic.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxScene.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneLock.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxShape.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationEventCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationStatistics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSpatialIndex.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVisualizationParameter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVolumeCache.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxBoxController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCapsuleController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCharacter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerBehavior.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerObstacles.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxExtended.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxCloth.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothCollisionData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothFabric.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothParticleData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothTypes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/collision/PxCollisionDefs.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxBase.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCollection.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCoreUtilityTypes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaDataFlags.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysXCommonConfig.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysicsInsertionCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxRenderBuffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerialFramework.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerializer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxStringTable.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTolerancesScale.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTypeInfo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/windows/PxWindowsDelayLoadHook.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH33MidphaseDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH34MidphaseDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxConvexMeshDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxCooking.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxMidphaseDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxTriangleMeshDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/Pxc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaContextManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaMemoryManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDescQueue.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBinaryConverter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBroadPhaseExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothFabricCooker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshQuadifier.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothTetherCooker.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxCollectionExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConstraintExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConvexMeshExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxD6Joint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultAllocator.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultCpuDispatcher.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultErrorCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultSimulationFilterShader.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultStreams.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDistanceJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxExtensionsAPI.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxFixedJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJointLimit.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxMassProperties.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxParticleExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxPrismaticJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRaycastCCD.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSerializer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSimpleType.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRevoluteJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidActorExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidBodyExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSceneQueryExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSerialization.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxShapeExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSimpleFactory.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSmoothNormals.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSphericalJoint.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxStringTableExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxTriangleMeshExt.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/filebuf/PxFileBuf.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/Px.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAllocatorCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAssert.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBitAndData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBounds3.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrorCallback.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrors.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFlags.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundationVersion.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIO.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIntrinsics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat33.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat44.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMath.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMathUtils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMemory.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPlane.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPreprocessor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxProfiler.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxQuat.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxSimpleTypes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxStrideIterator.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxTransform.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxUnionCast.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec2.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec3.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/unix/PxUnixIntrinsics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsFoundationDelayLoadHook.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsIntrinsics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxBoxGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxCapsuleGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMesh.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMeshGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryHelpers.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryQuery.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightField.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldDesc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldFlag.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldSample.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshQuery.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshScale.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxPlaneGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSimpleTriangleMesh.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSphereGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangle.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMesh.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMeshGeometry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxGpu.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxParticleGpu.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBase.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBaseFlag.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleCreationData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFlag.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluid.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluidReadData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleReadData.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleSystem.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvd.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdSceneClient.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdTransport.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/windows/PxWindowsPvdDelayLoadHook.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/solver/PxSolverDefs.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxCpuDispatcher.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuDispatcher.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuTask.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTask.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskDefine.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleComponents.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive4W.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveNW.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveTank.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleNoDrive.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleSDK.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleShaders.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleTireFriction.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUpdate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtil.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilControl.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilSetup.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilTelemetry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleWheels.h" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.cpp" afterPath="$PROJECT_DIR$/src/Physics.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,23 +269,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#50#75#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="-6">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -123,9 +317,9 @@
         <option value="$PROJECT_DIR$/src/Player.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Physics.h" />
         <option value="$PROJECT_DIR$/src/Physics.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -162,24 +356,6 @@
             <path>
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="PhysX-3.4" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -459,12 +635,12 @@
       <workItem from="1510471730736" duration="9653000" />
       <workItem from="1510521350140" duration="3569000" />
       <workItem from="1510525078171" duration="1144000" />
-      <workItem from="1510526237688" duration="9963000" />
+      <workItem from="1510526237688" duration="12112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76543000" />
+    <option name="totallyTimeSpent" value="78692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -799,10 +975,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
-          <folding>
-            <element signature="e#2051#2077#0" expanded="false" />
-            <element signature="e#4358#4378#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -844,21 +1017,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#75#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-6">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

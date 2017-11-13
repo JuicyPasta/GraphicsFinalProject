@@ -1,35 +1,25 @@
 //
 // Created by Darrow, Jackson on 11/12/17.
 //
-
-//#include "PxPhysicsAPI.h"
-//#include "extensions/PxExtensionsAPI.h"
-//#include "extensions/PxDefaultErrorCallback.h"
-//#include "extensions/PxDefaultAllocator.h"
-//#include "extensions/PxDefaultSimulationFilterShader.h"
-//#include "extensions/PxDefaultCpuDispatcher.h"
-//#include "extensions/PxShapeExt.h"
-//#include "foundation/PxMat33.h"
-//#include "extensions/PxSimpleFactory.h"
-
+#include "PxPhysicsAPI.h"
 using namespace std;
 #include <iostream>
 
-//using namespace physx;
+using namespace physx;
 using namespace std;
 
-//const int WINDOW_WIDTH=1024,
-//WINDOW_HEIGHT=768;
-//
-//static PxPhysics* gPhysicsSDK = NULL;
-//static PxDefaultErrorCallback gDefaultErrorCallback;
-//static PxDefaultAllocator gDefaultAllocatorCallback;
-//static PxSimulationFilterShader gDefaultFilterShader=PxDefaultSimulationFilterShader;
-//
-//PxScene* gScene = NULL;
-//PxReal myTimestep = 1.0f/60.0f;
-//PxRigidActor *box;
+PxDefaultAllocator		gAllocator;
+PxDefaultErrorCallback	gErrorCallback;
 
+PxFoundation*			gFoundation = NULL;
+PxPhysics*				gPhysics = NULL;
+
+PxDefaultCpuDispatcher*	gDispatcher = NULL;
+PxScene*				gScene = NULL;
+
+PxMaterial*				gMaterial = NULL;
+
+PxPvd*                  gPvd = NULL;
 //void createPhysics () {
 //    gPhysicsSDK = PxCreatePhysics(PX_PHYSICS_VERSION, gDefaultAllocatorCallback, gDefaultErrorCallback, PxTolerancesScale() );
 //    if(gPhysicsSDK == NULL) {
@@ -138,4 +128,3 @@ using namespace std;
 //
 //	return 0;
 //}
-
