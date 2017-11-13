@@ -27,10 +27,11 @@ add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL})
 #  message("Some other build type.")
 #ENDIF()
 SET(CMAKE_BUILD_TYPE Release)
+#SET(CMAKE_BUILD_TYPE Debug)
 
 # Add PhysX
 if (OSX64)
-  target_link_libraries(${CMAKE_PROJECT_NAME} "ext/PhysX-3.4/Lib/osx64")
+  target_link_libraries(${CMAKE_PROJECT_NAME} physx "ext/PhysX-3.4/Lib/osx64/*")
 endif()
 include_directories("ext/PhysX-3.4/Include")
 

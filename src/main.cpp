@@ -17,6 +17,7 @@ Winter 2017 - ZJW (Piddington texture write)
 #include "WindowManager.h"
 #include "GLTextureWriter.h"
 #include "Player.h"
+#include "Physics.h"
 
 // value_ptr for glm
 #include <glm/gtc/type_ptr.hpp>
