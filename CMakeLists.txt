@@ -14,7 +14,7 @@ file(GLOB_RECURSE GLSL "resources/*.glsl")
 include_directories("ext/glad/include")
 
 # Set the executable.
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL})
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${HEADERS} ${GLSL} src/MemoryAllocator.h)
 
 SET(CMAKE_BUILD_TYPE Release)
 
@@ -32,8 +32,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxF
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxPvdSDKDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxTaskDEBUG.a)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3DEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
+#target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLeasdfvelAABBDEBUG.a)
+
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelAABBDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelClothDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDEBUG.a)
@@ -42,6 +42,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelPa
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CharacterKinematicDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CommonDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CookingDEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3DEBUG.a)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3VehicleDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSceneQueryDEBUG.a)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSimulationControllerDEBUG.a)
