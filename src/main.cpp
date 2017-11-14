@@ -505,7 +505,7 @@ int main(int argc, char **argv) {
     // and GL context, etc.
 
     WindowManager *windowManager = new WindowManager();
-    windowManager->init(1920, 1024);
+    windowManager->init(1024, 512);
     windowManager->setEventCallbacks(application);
     application->windowManager = windowManager;
 
@@ -525,7 +525,6 @@ int main(int argc, char **argv) {
         physics->advance(seconds);
         glfwSetTime(0);
         physics->fetchResults();
-
 
 
         // Render scene.

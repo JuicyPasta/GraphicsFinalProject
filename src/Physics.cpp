@@ -91,8 +91,20 @@ bool Physics::advance(PxReal dt) {
 
 bool Physics::fetchResults() {
     // true means block until finished
-    return mScene->fetchResults(true);
+    mScene->fetchResults(true);
     // automatically calls simulation event callbacks
+
+    PxActor *actors[10];
+    int numActors = mScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC, actors, 10);
+
+    cout <<"actors " << numActors << "\n";
+
+    PxVec3 mass = actors[0]->is<PxRigidDynamic>()->getLinearVelocity();
+    cout << mass.x << " ";
+    cout << mass.y << " ";
+    cout << mass.z << "\n";
+
+
 }
 
 
