@@ -206,7 +206,7 @@ public:
         texProg->addUniform("height");
 
         p1 = make_shared<Player>(0);
-        p2 = make_shared<Player>(1);
+        p2 = make_shared<Player>(0);
     }
 
     void initGeom(const std::string &resourceDirectory) {
@@ -217,7 +217,7 @@ public:
 
 
 		ship = make_shared<Shape>();
-		ship->loadMesh(resourceDirectory + "/ship.obj");
+		ship->loadMesh(resourceDirectory + "/resSphere.obj");
 		ship->resize();
 		ship->init();
 
@@ -376,10 +376,9 @@ public:
     }
 
 	void render() {
-		double seconds = glfwGetTime();
+        int seconds = 0;
 		p1->update(seconds);
 		p2->update(seconds);
-		glfwSetTime(0);
 
 		auto P = make_shared<MatrixStack>();
 		auto O = make_shared<MatrixStack>();
@@ -405,7 +404,7 @@ public:
 			O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
 		}
 
-		int numPlayers = 2;
+		int numPlayers = 1;
 		if (numPlayers == 1) {
 			V->pushMatrix();
 			V->multMatrix(p1->getViewMatrix());
@@ -506,7 +505,7 @@ int main(int argc, char **argv) {
     // and GL context, etc.
 
     WindowManager *windowManager = new WindowManager();
-    windowManager->init(1920, 1024);
+    windowManager->init(1024, 512);
     windowManager->setEventCallbacks(application);
     application->windowManager = windowManager;
 
@@ -516,8 +515,18 @@ int main(int argc, char **argv) {
     application->init(resourceDir);
     application->initGeom(resourceDir);
 
+    Physics *physics = new Physics();
+    physics->addSphere();
+
     // Loop until the user closes the window.
     while (!glfwWindowShouldClose(windowManager->getHandle())) {
+
+        double seconds = glfwGetTime();
+        physics->advance(seconds);
+        glfwSetTime(0);
+        physics->fetchResults();
+
+
         // Render scene.
         application->render();
 

@@ -12,215 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactBuffer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/GeomUtils/GuContactPoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxActor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxAggregate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxArticulationLink.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQuery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBatchQueryDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxBroadPhase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxClient.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxConstraintDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContact.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxContactModifyCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxDeletionListener.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxFiltering.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxForceMode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxImmediateMode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxLockedData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxMaterial.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysXConfig.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsAPI.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPhysicsVersion.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxPruningStructure.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryFiltering.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxQueryReport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidActor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidBody.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidDynamic.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxRigidStatic.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxScene.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSceneLock.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxShape.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationEventCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSimulationStatistics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxSpatialIndex.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVisualizationParameter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/PxVolumeCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxBoxController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCapsuleController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxCharacter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerBehavior.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxControllerObstacles.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/characterkinematic/PxExtended.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxCloth.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothCollisionData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothFabric.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothParticleData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cloth/PxClothTypes.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/collision/PxCollisionDefs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxBase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCollection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxCoreUtilityTypes.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxMetaDataFlags.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysXCommonConfig.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxPhysicsInsertionCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxRenderBuffer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerialFramework.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxSerializer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxStringTable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTolerancesScale.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/PxTypeInfo.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/common/windows/PxWindowsDelayLoadHook.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH33MidphaseDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxBVH34MidphaseDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxConvexMeshDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxCooking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxMidphaseDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/PxTriangleMeshDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cooking/Pxc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaContextManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxCudaMemoryManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/cudamanager/PxGpuCopyDescQueue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBinaryConverter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxBroadPhaseExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothFabricCooker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothMeshQuadifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxClothTetherCooker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxCollectionExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConstraintExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxConvexMeshExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxD6Joint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultAllocator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultCpuDispatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultErrorCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultSimulationFilterShader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDefaultStreams.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxDistanceJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxExtensionsAPI.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxFixedJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxJointLimit.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxMassProperties.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxParticleExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxPrismaticJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRaycastCCD.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSerializer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRepXSimpleType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRevoluteJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidActorExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxRigidBodyExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSceneQueryExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxShapeExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSimpleFactory.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSmoothNormals.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxSphericalJoint.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxStringTableExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/extensions/PxTriangleMeshExt.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/filebuf/PxFileBuf.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/Px.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAllocatorCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxAssert.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBitAndData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxBounds3.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrorCallback.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxErrors.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFlags.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxFoundationVersion.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIO.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxIntrinsics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat33.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMat44.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMath.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMathUtils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxMemory.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPlane.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxPreprocessor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxProfiler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxQuat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxSimpleTypes.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxStrideIterator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxTransform.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxUnionCast.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec2.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec3.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/PxVec4.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/unix/PxUnixIntrinsics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsFoundationDelayLoadHook.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/foundation/windows/PxWindowsIntrinsics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxBoxGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxCapsuleGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMesh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxConvexMeshGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryHelpers.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxGeometryQuery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightField.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldDesc.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldFlag.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxHeightFieldSample.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshQuery.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxMeshScale.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxPlaneGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSimpleTriangleMesh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxSphereGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangle.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMesh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/geometry/PxTriangleMeshGeometry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxGpu.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/gpu/PxParticleGpu.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleBaseFlag.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleCreationData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFlag.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluid.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleFluidReadData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleReadData.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/particles/PxParticleSystem.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdSceneClient.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/PxPvdTransport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/pvd/windows/PxWindowsPvdDelayLoadHook.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/solver/PxSolverDefs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxCpuDispatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuDispatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxGpuTask.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTask.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskDefine.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/task/PxTaskManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleComponents.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDrive4W.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveNW.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleDriveTank.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleNoDrive.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleSDK.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleShaders.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleTireFriction.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUpdate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtil.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilControl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilSetup.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleUtilTelemetry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ext/PhysX-3.4/Include/vehicle/PxVehicleWheels.h" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.cpp" afterPath="$PROJECT_DIR$/src/Physics.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -235,25 +28,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-736">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="195">
+              <caret line="507" column="27" lean-forward="false" selection-start-line="507" selection-start-column="27" selection-end-line="507" selection-end-column="27" />
               <folding>
                 <element signature="e#264#283#0" expanded="true" />
-                <element signature="e#1492#1569#0" expanded="false" />
-                <element signature="e#1575#1959#0" expanded="false" />
-                <element signature="e#1965#2412#0" expanded="false" />
-                <element signature="e#2418#2533#0" expanded="false" />
-                <element signature="e#2539#2650#0" expanded="false" />
-                <element signature="e#2656#4466#0" expanded="false" />
-                <element signature="e#4472#5060#0" expanded="false" />
-                <element signature="e#7083#7389#0" expanded="false" />
-                <element signature="e#7395#8117#0" expanded="false" />
-                <element signature="e#8123#9864#0" expanded="false" />
-                <element signature="e#9870#10976#0" expanded="false" />
-                <element signature="e#12239#13000#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -262,9 +43,11 @@
       <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Physics.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="219">
+              <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+              <folding>
+                <element signature="e#119#137#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -272,18 +55,52 @@
       <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PxScene.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/PxScene.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="118" column="9" lean-forward="false" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="378">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemoryAllocator.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MemoryAllocator.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+              <folding>
+                <element signature="e#136#179#0" expanded="true" />
+                <element signature="e#313#591#0" expanded="true" />
+                <element signature="e#627#787#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PxPreprocessor.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/PhysX-3.4/PxShared/include/foundation/PxPreprocessor.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="347" column="8" lean-forward="false" selection-start-line="347" selection-start-column="8" selection-end-line="347" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -313,13 +130,16 @@
         <option value="$PROJECT_DIR$/src/Shape.h" />
         <option value="$PROJECT_DIR$/src/WindowManager.h" />
         <option value="$PROJECT_DIR$/src/WindowManager.cpp" />
-        <option value="$PROJECT_DIR$/src/Player.h" />
         <option value="$PROJECT_DIR$/src/Player.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Physics.h" />
-        <option value="$PROJECT_DIR$/src/Physics.cpp" />
+        <option value="$PROJECT_DIR$/src/Player.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/memoryAllocator.h" />
+        <option value="$PROJECT_DIR$/src/MemoryAllocator.h" />
+        <option value="$PROJECT_DIR$/src/Physics.h" />
+        <option value="$PROJECT_DIR$/src/ErrorCallback.h" />
+        <option value="$PROJECT_DIR$/src/Physics.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
@@ -357,6 +177,16 @@
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -369,6 +199,7 @@
     <property name="SearchEverywhereHistoryKey" value="lastpos&#9;null&#9;null&#10;oldpos&#9;null&#9;null" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -635,25 +466,27 @@
       <workItem from="1510471730736" duration="9653000" />
       <workItem from="1510521350140" duration="3569000" />
       <workItem from="1510525078171" duration="1144000" />
-      <workItem from="1510526237688" duration="12112000" />
+      <workItem from="1510526237688" duration="21134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78692000" />
+    <option name="totallyTimeSpent" value="87714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3366619" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.467903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -670,7 +503,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,38 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/pass_vert.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/simple_frag.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/simple_vert.glsl" />
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#264#283#0" expanded="true" />
-            <element signature="e#1492#1569#0" expanded="false" />
-            <element signature="e#1575#1959#0" expanded="false" />
-            <element signature="e#1965#2412#0" expanded="false" />
-            <element signature="e#2418#2533#0" expanded="false" />
-            <element signature="e#2539#2650#0" expanded="false" />
-            <element signature="e#2656#4466#0" expanded="false" />
-            <element signature="e#4472#5060#0" expanded="false" />
-            <element signature="e#7083#7389#0" expanded="false" />
-            <element signature="e#7395#8117#0" expanded="false" />
-            <element signature="e#8123#9864#0" expanded="false" />
-            <element signature="e#9870#10976#0" expanded="false" />
-            <element signature="e#12239#13000#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixStack.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -736,52 +536,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/pass_vert.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/simple_frag.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/simple_vert.glsl" />
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#264#283#0" expanded="true" />
-            <element signature="e#1492#1569#0" expanded="false" />
-            <element signature="e#1575#1959#0" expanded="false" />
-            <element signature="e#1965#2412#0" expanded="false" />
-            <element signature="e#2418#2533#0" expanded="false" />
-            <element signature="e#2539#2650#0" expanded="false" />
-            <element signature="e#2656#4466#0" expanded="false" />
-            <element signature="e#4472#5060#0" expanded="false" />
-            <element signature="e#7083#7389#0" expanded="false" />
-            <element signature="e#7395#8117#0" expanded="false" />
-            <element signature="e#8123#9864#0" expanded="false" />
-            <element signature="e#9870#10976#0" expanded="false" />
-            <element signature="e#12239#13000#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixStack.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -792,6 +547,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -842,26 +598,6 @@
         <state relative-caret-position="1395">
           <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="e#117#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-          <folding>
-            <element signature="e#50#72#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,49 +723,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Program.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-736">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#264#283#0" expanded="true" />
-            <element signature="e#1492#1569#0" expanded="false" />
-            <element signature="e#1575#1959#0" expanded="false" />
-            <element signature="e#1965#2412#0" expanded="false" />
-            <element signature="e#2418#2533#0" expanded="false" />
-            <element signature="e#2539#2650#0" expanded="false" />
-            <element signature="e#2656#4466#0" expanded="false" />
-            <element signature="e#4472#5060#0" expanded="false" />
-            <element signature="e#7083#7389#0" expanded="false" />
-            <element signature="e#7395#8117#0" expanded="false" />
-            <element signature="e#8123#9864#0" expanded="false" />
-            <element signature="e#9870#10976#0" expanded="false" />
-            <element signature="e#12239#13000#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Player.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="78" column="27" lean-forward="false" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding>
+            <element signature="e#50#72#0" expanded="false" />
+            <element signature="e#1592#1646#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+          <folding>
+            <element signature="e#117#140#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/cooking/PxCooking.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-574">
+          <caret line="213" column="7" lean-forward="false" selection-start-line="213" selection-start-column="7" selection-end-line="213" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/common/PxTolerancesScale.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/PxMaterial.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2775">
+          <caret line="312" column="32" lean-forward="false" selection-start-line="312" selection-start-column="32" selection-end-line="312" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/geometry/PxSphereGeometry.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        <state relative-caret-position="378">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/extensions/PxDefaultAllocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#2029#2048#0" expanded="true" />
+            <element signature="e#2114#2392#0" expanded="true" />
+            <element signature="e#2428#2588#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PxShared/include/foundation/PxPreprocessor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="347" column="8" lean-forward="false" selection-start-line="347" selection-start-column="8" selection-end-line="347" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PxShared/include/foundation/PxErrorCallback.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MemoryAllocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+          <folding>
+            <element signature="e#136#179#0" expanded="true" />
+            <element signature="e#313#591#0" expanded="true" />
+            <element signature="e#627#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/extensions/PxDefaultErrorCallback.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ErrorCallback.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#131#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Physics.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding>
+            <element signature="e#119#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/PxScene.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="118" column="9" lean-forward="false" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="507" column="27" lean-forward="false" selection-start-line="507" selection-start-column="27" selection-end-line="507" selection-end-column="27" />
+          <folding>
+            <element signature="e#264#283#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
