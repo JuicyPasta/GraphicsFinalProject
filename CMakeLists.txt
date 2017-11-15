@@ -25,6 +25,12 @@ if (APPLE)
 
     include_directories("/usr/local/PhysX-3.4/PhysX_3.4/Include")
     include_directories("/usr/local/PhysX-3.4/PxShared/include")
+elseif(UNIX)
+  set(PHYSX_LIBRARIES_DIR ./ext/physx/linux64)
+  set(PHYSX_SHARED_LIBRARIES_DIR ./ext/physx/linux64)
+
+  include_directories("./ext/physx/linux64")
+  include_directories("./ext/physx/linux64")
 endif()
 
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPsFastXmlDEBUG.a)
