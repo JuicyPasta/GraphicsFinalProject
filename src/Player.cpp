@@ -20,27 +20,33 @@ Player::Player(int input) {
 
 void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
-        strafeInput.y = 1;
+        strafeInput.y = -1;
     } else if (key == GLFW_KEY_W && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_S && action == GLFW_PRESS) {
-        strafeInput.y = -1;
+        strafeInput.y = 1;
     } else if (key == GLFW_KEY_S && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_A && action == GLFW_PRESS) {
-        strafeInput.x = -1;
+        strafeInput.x = 1;
     } else if (key == GLFW_KEY_A && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     } else if (key == GLFW_KEY_D && action == GLFW_PRESS) {
-        strafeInput.x = 1;
+        strafeInput.x = -1;
     } else if (key == GLFW_KEY_D && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     }
 }
 
 void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
-    orientationInput.x = -x / 1000;
-    orientationInput.y = -y / 1000;
+    double dx = lastMouseX - x;
+    double dy = lastMouseY - y;
+
+    orientationInput.x += dx / 1000;
+    orientationInput.y -= dy / 1000;
+
+    lastMouseX = x;
+    lastMouseY = y;
 }
 
 void Player::getControllerInput() {
@@ -75,15 +81,11 @@ void Player::update(float deltaTime) {
 
     float strafeSpeed = .5;
 
-    vec3 delta = vec3(0, 0, 0);
-	direction.x = sin(theta);
-	direction.y = cos(theta);
-    delta -= strafeSpeed * strafeInput.y * direction;
-	theta += strafeSpeed * -strafeInput.x * .1f;
-
-    //delta += strafeSpeed * -strafeInput.x * glm::cross(upVector, direction);
+    vec3 direction = vec3(0, 0, 0);
+    direction += strafeSpeed * strafeInput.y * (lookAtPoint - position);
+    direction += strafeSpeed * -strafeInput.x * glm::cross(upVector, lookAtPoint - position);
     float posy = position.y;
-    position += delta;
+    position += direction;
     position.y = posy;
 //    lookAtPoint = position + direction;
 
@@ -92,9 +94,9 @@ void Player::update(float deltaTime) {
     if (orientationInput.y < -.9)
         orientationInput.y = -.9;
 
-    lookAtPoint = position + glm::vec3(cos(orientationInput.x + theta) * cos(orientationInput.y),
+    lookAtPoint = position + glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
                                        sin(orientationInput.y),
-                                       -cos(orientationInput.y) * sin(orientationInput.x + theta));
+                                       -cos(orientationInput.y) * sin(orientationInput.x));
 
 //      vec3 viewVec = lookAtPoint - position;
 

@@ -27,9 +27,12 @@ public:
     Physics();
     ~Physics();
 
-    void addSphere();
+    void addSphere(PxVec3 position);
+    void addGround();
     bool advance(PxReal dt);
     bool fetchResults();
+    int getActors(PxActor** actors);
+
 
 private:
     ErrorCallback errorCallback;

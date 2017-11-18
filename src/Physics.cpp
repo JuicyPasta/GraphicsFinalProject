@@ -1,6 +1,8 @@
 //
 // Created by Darrow, Jackson on 11/12/17.
 //
+#include <glm/detail/type_mat.hpp>
+#include <glm/detail/type_mat4x4.hpp>
 #include "Physics.h"
 
 
@@ -56,16 +58,17 @@ Physics::~Physics() {
 }
 
 
-void Physics::addSphere() {
-    PxVec3 position = PxVec3(0, 1, -1);
+void Physics::addSphere(PxVec3 position) {
     PxMaterial *material = mPhysics->createMaterial(.5, .5, .5);
 
     PxRigidDynamic *aSphereActor = mPhysics->createRigidDynamic(PxTransform(position));
     PxTransform relativePose(PxQuat(PxHalfPi, PxVec3(0, 0, 1)));
-    PxShape *aCapsuleShape = PxRigidActorExt::createExclusiveShape(*aSphereActor, PxSphereGeometry(3), *material);
+    PxShape *aCapsuleShape = PxRigidActorExt::createExclusiveShape(*aSphereActor, PxSphereGeometry(1), *material);
 
     aCapsuleShape->setLocalPose(relativePose);
-    PxRigidBodyExt::updateMassAndInertia(*aSphereActor, 5);
+//    PxRigidBodyExt::updateMassAndInertia(*aSphereActor, .1);
+    aSphereActor->setAngularVelocity(PxVec3(1, 1, 1), true);
+
 
     // pass this in, connects to game
     int *data;
@@ -74,10 +77,22 @@ void Physics::addSphere() {
     mScene->addActor(*aSphereActor);
 }
 
+void Physics::addGround() {
+    PxVec3 position = PxVec3(0, -1, 0);
+    PxMaterial *material = mPhysics->createMaterial(.5, .5, .5);
 
+    PxRigidStatic *ground = mPhysics->createRigidStatic(PxTransform(position));
+    ground->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, true);
+    PxTransform relativePose(PxQuat(PxHalfPi, PxVec3(0, 0, 1)));
+
+    PxShape *aCapsuleShape = PxRigidActorExt::createExclusiveShape(*ground, PxPlaneGeometry(), *material);
+
+    aCapsuleShape->setLocalPose(PxTransform(relativePose));
+
+    mScene->addActor(*ground);
+}
 
 // rigid body docs http://docs.nvidia.com/gameworks/content/gameworkslibrary/physx/guide/Manual/RigidBodyOverview.html
-
 bool Physics::advance(PxReal dt) {
     mAccumulator += dt;
     if (mAccumulator < mStepSize)
@@ -90,21 +105,11 @@ bool Physics::advance(PxReal dt) {
 }
 
 bool Physics::fetchResults() {
-    // true means block until finished
-    mScene->fetchResults(true);
-    // automatically calls simulation event callbacks
+    return mScene->fetchResults(true);
+}
 
-    PxActor *actors[10];
-    int numActors = mScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC, actors, 10);
-
-    cout <<"actors " << numActors << "\n";
-
-    PxVec3 mass = actors[0]->is<PxRigidDynamic>()->getLinearVelocity();
-    cout << mass.x << " ";
-    cout << mass.y << " ";
-    cout << mass.z << "\n";
-
-
+int Physics::getActors(PxActor **actors) {
+    return mScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC, actors, 400);
 }
 
 
