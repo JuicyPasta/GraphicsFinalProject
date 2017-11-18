@@ -12,22 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/Ball1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/Pool Ball Skins/Ball1.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/frag_phong.glsl" afterPath="$PROJECT_DIR$/resources/frag_phong.glsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/tex_frag.glsl" afterPath="$PROJECT_DIR$/resources/tex_frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/tex_vert.glsl" afterPath="$PROJECT_DIR$/resources/tex_vert.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/vert_phong.glsl" afterPath="$PROJECT_DIR$/resources/vert_phong.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.cpp" afterPath="$PROJECT_DIR$/src/Physics.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Physics.h" afterPath="$PROJECT_DIR$/src/Physics.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.cpp" afterPath="$PROJECT_DIR$/src/Player.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.h" afterPath="$PROJECT_DIR$/src/Player.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,6 +41,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Application.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="822">
+              <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="tex_vert.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,33 +61,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tex_frag.glsl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tex_frag.glsl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vert_phong.glsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              <folding />
-            </state>
+      <file leaf-file-name="Ball14.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball14.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frag_phong.glsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding />
-            </state>
+      <file leaf-file-name="Ball12.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball12.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ball7.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball7.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -109,8 +107,8 @@
       <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="410" column="20" lean-forward="false" selection-start-line="410" selection-start-column="20" selection-end-line="410" selection-end-column="20" />
+            <state relative-caret-position="1154">
+              <caret line="181" column="30" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
               <folding>
                 <element signature="e#76#163#0" expanded="false" />
                 <element signature="e#165#522#0" expanded="false" />
@@ -118,47 +116,12 @@
                 <element signature="e#954#1074#0" expanded="false" />
                 <element signature="e#1076#1192#0" expanded="false" />
                 <element signature="e#1194#2885#0" expanded="false" />
-                <element signature="e#5722#6001#0" expanded="false" />
-                <element signature="e#6003#6634#0" expanded="false" />
-                <element signature="e#6636#8172#0" expanded="false" />
-                <element signature="e#8174#9119#0" expanded="false" />
-                <element signature="e#9121#10301#0" expanded="false" />
-                <element signature="e#10303#11013#0" expanded="false" />
+                <element signature="e#6316#6947#0" expanded="false" />
+                <element signature="e#6949#8485#0" expanded="false" />
+                <element signature="e#8487#9432#0" expanded="false" />
+                <element signature="e#9434#10614#0" expanded="false" />
+                <element signature="e#10616#11326#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Physics.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-              <folding>
-                <element signature="e#119#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding>
-                <element signature="e#49#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -188,18 +151,18 @@
         <option value="$PROJECT_DIR$/src/MemoryAllocator.h" />
         <option value="$PROJECT_DIR$/src/ErrorCallback.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/Application.h" />
         <option value="$PROJECT_DIR$/src/Player.h" />
         <option value="$PROJECT_DIR$/src/Player.cpp" />
         <option value="$PROJECT_DIR$/resources/frag_phong.glsl" />
         <option value="$PROJECT_DIR$/resources/tex_vert.glsl" />
         <option value="$PROJECT_DIR$/resources/vert_phong.glsl" />
-        <option value="$PROJECT_DIR$/resources/tex_frag.glsl" />
-        <option value="$PROJECT_DIR$/src/Application.cpp" />
         <option value="$PROJECT_DIR$/src/Physics.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/Physics.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Application.h" />
+        <option value="$PROJECT_DIR$/src/Application.cpp" />
+        <option value="$PROJECT_DIR$/resources/tex_frag.glsl" />
       </list>
     </option>
   </component>
@@ -240,6 +203,12 @@
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3dbilliards" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Pool Ball Skins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -528,12 +497,12 @@
       <workItem from="1510526237688" duration="21648000" />
       <workItem from="1510688349609" duration="29000" />
       <workItem from="1510941476644" duration="5823000" />
-      <workItem from="1510950262608" duration="12325000" />
+      <workItem from="1510950262608" duration="13553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106405000" />
+    <option name="totallyTimeSpent" value="107633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -580,16 +549,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MatrixStack.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/snowman_vert.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/snowman_frag.glsl" />
-    <entry file="file://$PROJECT_DIR$/resources/simple_frag.glsl" />
     <entry file="file://$PROJECT_DIR$/resources/simple_vert.glsl" />
     <entry file="file://$PROJECT_DIR$/resources/pass_vert.glsl" />
     <entry file="file://$PROJECT_DIR$/src/Shape.h">
@@ -771,17 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="74" column="55" lean-forward="false" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
-          <folding>
-            <element signature="e#128#147#0" expanded="false" />
-            <element signature="e#374#405#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/PhysX-3.4/PhysX_3.4/Include/PxActor.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -814,22 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -848,47 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-367">
-          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding>
-            <element signature="e#1700#1754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="410" column="20" lean-forward="false" selection-start-line="410" selection-start-column="20" selection-end-line="410" selection-end-column="20" />
-          <folding>
-            <element signature="e#76#163#0" expanded="false" />
-            <element signature="e#165#522#0" expanded="false" />
-            <element signature="e#524#952#0" expanded="false" />
-            <element signature="e#954#1074#0" expanded="false" />
-            <element signature="e#1076#1192#0" expanded="false" />
-            <element signature="e#1194#2885#0" expanded="false" />
-            <element signature="e#5722#6001#0" expanded="false" />
-            <element signature="e#6003#6634#0" expanded="false" />
-            <element signature="e#6636#8172#0" expanded="false" />
-            <element signature="e#8174#9119#0" expanded="false" />
-            <element signature="e#9121#10301#0" expanded="false" />
-            <element signature="e#10303#11013#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
@@ -903,6 +794,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-367">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding>
+            <element signature="e#1700#1754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1154">
+          <caret line="181" column="30" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+          <folding>
+            <element signature="e#76#163#0" expanded="false" />
+            <element signature="e#165#522#0" expanded="false" />
+            <element signature="e#524#952#0" expanded="false" />
+            <element signature="e#954#1074#0" expanded="false" />
+            <element signature="e#1076#1192#0" expanded="false" />
+            <element signature="e#1194#2885#0" expanded="false" />
+            <element signature="e#6316#6947#0" expanded="false" />
+            <element signature="e#6949#8485#0" expanded="false" />
+            <element signature="e#8487#9432#0" expanded="false" />
+            <element signature="e#9434#10614#0" expanded="false" />
+            <element signature="e#10616#11326#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball14.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball12.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Pool Ball Skins/Ball 15.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding />
         </state>
       </provider>

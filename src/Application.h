@@ -33,6 +33,7 @@ public:
     std::shared_ptr<Program> texProg;
 
     shared_ptr<Texture> texture0;
+    shared_ptr<Texture> specularTexture;
 
     shared_ptr<Player> p1, p2;
 

@@ -1,5 +1,6 @@
 #version 330 core
-uniform sampler2D Texture0;
+uniform sampler2D diffuseTexture;
+uniform sampler2D specularTexture;
 
 out vec4 Outcolor;
 
@@ -9,9 +10,10 @@ in vec3 E;
 in vec3 N;
 
 void main() {
-  vec4 texColor0 = texture(Texture0, vTexCoord);
+  vec4 texColor0 = texture(diffuseTexture, vTexCoord);
+  vec4 specularTextureColor = texture(specularTexture, vTexCoord);
 
-  float shiny = 200;
+  float shiny = 10;
   float ambient = .3;
 
   vec3 L_norm = normalize(L);
@@ -22,7 +24,7 @@ void main() {
   vec3 diffL = texColor0.xyz * max(dot(N_norm, L_norm), 0.0);
   diffL = clamp(diffL, 0.0, 1.0);
 
-  vec3 specL = vec3(.8, .8, .8) * pow(max(dot(R_norm, E_norm), 0.0), shiny);
+  vec3 specL = specularTextureColor.xyz * pow(max(dot(R_norm, E_norm), 0.0), shiny);
   specL = clamp(specL, 0.0, 1.0);
 
   Outcolor = vec4(diffL + specL + ambient*texColor0.xyz, 1);

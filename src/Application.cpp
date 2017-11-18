@@ -140,7 +140,8 @@ void Application::init(const std::string &resourceDirectory) {
         exit(1);
     }
     addVars(texProg);
-    texProg->addUniform("Texture0");
+    texProg->addUniform("specularTexture");
+    texProg->addUniform("diffuseTexture");
     texProg->addAttribute("vertTex");
     texProg->addAttribute("L");
     texProg->addAttribute("E");
@@ -174,6 +175,12 @@ void Application::initTex(const std::string &resourceDirectory) {
     texture0->init();
     texture0->setUnit(0);
     texture0->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+
+    specularTexture = make_shared<Texture>();
+    specularTexture->setFilename(resourceDirectory + "/shiny_metal_specular.jpg");
+    specularTexture->init();
+    specularTexture->setUnit(1);
+    specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
 
 void Application::initQuad() {
@@ -461,7 +468,8 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
                 glUniformMatrix4fv(texProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
                 glUniformMatrix4fv(texProg->getUniform("M"), 1, GL_FALSE, shapePose.front());
 
-                texture0->bind(texProg->getUniform("Texture0"));
+                texture0->bind(texProg->getUniform("diffuseTexture"));
+                specularTexture->bind(texProg->getUniform("specularTexture"));
 
                 cube->draw(texProg);
             } texProg->unbind();
