@@ -191,7 +191,7 @@ void Application::initGeom(const std::string &resourceDirectory) {
 
     box = make_shared<Shape>();
     box->loadMesh(resourceDirectory + "/cube.obj");
-    box->resize(60);
+    box->resize(10);
     box->init();
 
     ship = make_shared<Shape>();
@@ -317,12 +317,12 @@ bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const c
 
 void Application::initTex(const std::string &resourceDirectory) {
     create_cube_map(
-            resourceDirectory + "/skybox2/negX.jpg",
-            resourceDirectory + "/skybox2/negX.jpg",
-            resourceDirectory + "/skybox2/negX.jpg",
-            resourceDirectory + "/skybox2/negX.jpg",
-            resourceDirectory + "/skybox2/negX.jpg",
-            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negz.jpg",
+            resourceDirectory + "/skybox2/posz.jpg",
+            resourceDirectory + "/skybox2/posy.jpg",
+            resourceDirectory + "/skybox2/negy.jpg",
+            resourceDirectory + "/skybox2/negx.jpg",
+            resourceDirectory + "/skybox2/posx.jpg",
             &texSkybox
     );
 
@@ -576,13 +576,19 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
     skyProg->bind();
     {
         glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
+        V->pushMatrix();
+        V->loadIdentity();
+        V->multMatrix(p1->getSkyBoxViewMatrix());
         glUniformMatrix4fv(skyProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
+        V->popMatrix();
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_CUBE_MAP, texSkybox);
         glUniform1i(skyProg->getUniform("skyTexture"), 0);
+        glDepthMask(GL_FALSE);
 
         box->draw(skyProg);
+        glDepthMask(GL_TRUE);
     }
     skyProg->unbind();
 
@@ -598,25 +604,25 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         renderGround();
         M->popMatrix();
 
-//        M->pushMatrix();
-//        M->loadIdentity();
-//        M->translate(p1->getPosition());
-//        M->scale(.3);
-//        M->rotate(p1->getTheta(), vec3(0, 1, 0));
-//        M->rotate(radians(90.f), vec3(1, 0, 0));
-//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-//        ship->draw(prog);
-//        M->popMatrix();
-
-//        M->pushMatrix();
-//        M->loadIdentity();
-//        M->translate(p2->getPosition());
-//        M->scale(.3);
-//        M->rotate(p2->getTheta(), vec3(0, 1, 0));
-//        M->rotate(radians(90.f), vec3(1, 0, 0));
-//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-//        ship->draw(prog);
+        M->pushMatrix();
+        M->loadIdentity();
+        M->translate(p1->getPosition());
+        M->scale(.3);
+        M->rotate(p1->getTheta(), vec3(0, 1, 0));
+        M->rotate(radians(90.f), vec3(1, 0, 0));
+        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+        ship->draw(prog);
         M->popMatrix();
+//
+        M->pushMatrix();
+        M->loadIdentity();
+        M->translate(p2->getPosition());
+        M->scale(.3);
+        M->rotate(p2->getTheta(), vec3(0, 1, 0));
+        M->rotate(radians(90.f), vec3(1, 0, 0));
+        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+        ship->draw(prog);
+       M->popMatrix();
     }
     prog->unbind();
 

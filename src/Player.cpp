@@ -118,3 +118,8 @@ mat4 Player::getViewMatrix() {
 	return glm::lookAt(lookAtPoint, position, upVector);
     //return glm::lookAt(position, lookAtPoint, upVector);
 }
+
+mat4 Player::getSkyBoxViewMatrix() {
+    return glm::lookAt(lookAtPoint-position, vec3(0, 0, 0), upVector);
+    //return glm::lookAt(position, lookAtPoint, upVector);
+}

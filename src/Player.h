@@ -24,6 +24,7 @@ public:
 
     void update(float deltaTime);
     mat4 getViewMatrix();
+    mat4 getSkyBoxViewMatrix();
     vec3 getPosition() {
         return position;
     }
