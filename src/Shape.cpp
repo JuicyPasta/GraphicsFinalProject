@@ -33,7 +33,7 @@ void Shape::loadMesh(const string &meshName)
 	}
 }
 
-void Shape::resize()
+void Shape::resize(int scale)
 {
 	float minX, minY, minZ;
 	float maxX, maxY, maxZ;
@@ -74,11 +74,11 @@ void Shape::resize()
 	{
 		maxExtent = zExtent;
 	}
-	scaleX = 2.0f / maxExtent;
+	scaleX = 2.0f / maxExtent * scale;
 	shiftX = minX + (xExtent / 2.0f);
-	scaleY = 2.0f / maxExtent;
+	scaleY = 2.0f / maxExtent * scale;
 	shiftY = minY + (yExtent / 2.0f);
-	scaleZ = 2.0f / maxExtent;
+	scaleZ = 2.0f / maxExtent * scale;
 	shiftZ = minZ + (zExtent / 2.0f);
 
 	// Go through all verticies shift and scale them

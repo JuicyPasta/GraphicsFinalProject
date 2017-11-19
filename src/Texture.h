@@ -5,8 +5,7 @@
 #include <glad/glad.h>
 #include <string>
 
-class Texture
-{
+class Texture {
 public:
 	Texture();
 	virtual ~Texture();
@@ -18,6 +17,7 @@ public:
 	void unbind();
 	void setWrapModes(GLint wrapS, GLint wrapT); // Must be called after init()
 	GLint getID() const { return tid;}
+
 private:
 	std::string filename;
 	int width;

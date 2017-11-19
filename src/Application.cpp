@@ -3,6 +3,7 @@
 //
 
 #include "Application.h"
+#include "stb_image.h"
 
 void Application::scrollCallback(GLFWwindow *window, double deltaX, double deltaY) {
 
@@ -143,9 +144,40 @@ void Application::init(const std::string &resourceDirectory) {
     texProg->addUniform("specularTexture");
     texProg->addUniform("diffuseTexture");
     texProg->addAttribute("vertTex");
+    texProg->addAttribute("vTexCoord");
     texProg->addAttribute("L");
     texProg->addAttribute("E");
     texProg->addAttribute("N");
+
+
+    skyProg = make_shared<Program>();
+    skyProg->setVerbose(true);
+    skyProg->setShaderNames(
+            resourceDirectory + "/sky_vert.glsl",
+            resourceDirectory + "/sky_frag.glsl");
+    if (!skyProg->init()) {
+        std::cerr << "One or more shaders failed to compile... exiting!" << std::endl;
+        exit(1);
+    }
+    addVars(skyProg);
+    skyProg->addUniform("skyTexture");
+    skyProg->addAttribute("vTexCubeCoord");
+//    skyProg->addAttribute("Outcolor");
+
+
+//    windowProg = make_shared<Program>();
+//    windowProg->setVerbose(true);
+//    windowProg->setShaderNames(
+//            resourceDirectory + "/sky_vert.glsl",
+//            resourceDirectory + "/sky_frag.glsl");
+//    if (!windowProg->init()) {
+//        std::cerr << "One or more shaders failed to compile... exiting!" << std::endl;
+//        exit(1);
+//    }
+//    addVars(windowProg);
+//    windowProg->addUniform("skyTexture");
+//    windowProg->addAttribute("vTexCubeCoord");
+
 
     p1 = make_shared<Player>(0);
     p2 = make_shared<Player>(0);
@@ -154,32 +186,157 @@ void Application::init(const std::string &resourceDirectory) {
 void Application::initGeom(const std::string &resourceDirectory) {
     cube = make_shared<Shape>();
     cube->loadMesh(resourceDirectory + "/sphere.obj");
-    cube->resize();
+    cube->resize(1);
     cube->init();
 
+    box = make_shared<Shape>();
+    box->loadMesh(resourceDirectory + "/cube.obj");
+    box->resize(60);
+    box->init();
 
     ship = make_shared<Shape>();
     ship->loadMesh(resourceDirectory + "/ship.obj");
-    ship->resize();
+    ship->resize(1);
     ship->init();
 
     //Initialize the geometry to render a quad to the screen
     initQuad();
     initFloor();
+    initSkybox();
+}
+
+void Application::initSkybox() {
+    float points[] = {
+            -10.0f, 10.0f, -10.0f,
+            -10.0f, -10.0f, -10.0f,
+            10.0f, -10.0f, -10.0f,
+            10.0f, -10.0f, -10.0f,
+            10.0f, 10.0f, -10.0f,
+            -10.0f, 10.0f, -10.0f,
+
+            -10.0f, -10.0f, 10.0f,
+            -10.0f, -10.0f, -10.0f,
+            -10.0f, 10.0f, -10.0f,
+            -10.0f, 10.0f, -10.0f,
+            -10.0f, 10.0f, 10.0f,
+            -10.0f, -10.0f, 10.0f,
+
+            10.0f, -10.0f, -10.0f,
+            10.0f, -10.0f, 10.0f,
+            10.0f, 10.0f, 10.0f,
+            10.0f, 10.0f, 10.0f,
+            10.0f, 10.0f, -10.0f,
+            10.0f, -10.0f, -10.0f,
+
+            -10.0f, -10.0f, 10.0f,
+            -10.0f, 10.0f, 10.0f,
+            10.0f, 10.0f, 10.0f,
+            10.0f, 10.0f, 10.0f,
+            10.0f, -10.0f, 10.0f,
+            -10.0f, -10.0f, 10.0f,
+
+            -10.0f, 10.0f, -10.0f,
+            10.0f, 10.0f, -10.0f,
+            10.0f, 10.0f, 10.0f,
+            10.0f, 10.0f, 10.0f,
+            -10.0f, 10.0f, 10.0f,
+            -10.0f, 10.0f, -10.0f,
+
+            -10.0f, -10.0f, -10.0f,
+            -10.0f, -10.0f, 10.0f,
+            10.0f, -10.0f, -10.0f,
+            10.0f, -10.0f, -10.0f,
+            -10.0f, -10.0f, 10.0f,
+            10.0f, -10.0f, 10.0f
+    };
+
+    glGenBuffers(1, &sky_vertexbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, sky_vertexbuffer);
+    glBufferData(GL_ARRAY_BUFFER, 3 * 36 * sizeof(float), &points, GL_STATIC_DRAW);
+
+    glGenVertexArrays(1, &sky_VertexArrayId);
+    glBindVertexArray(sky_VertexArrayId);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, sky_VertexArrayId);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+}
+
+void Application::create_cube_map(
+  string front,
+  string back,
+  string top,
+  string bottom,
+  string left,
+  string right,
+  GLuint* tex_cube) {
+  // generate a cube-map texture to hold all the sides
+  glActiveTexture(GL_TEXTURE0);
+  glGenTextures(1, tex_cube);
+
+  // load each image and copy into a side of the cube-map texture
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, front.data());
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, back.data());
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, top.data());
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, bottom.data());
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, left.data());
+  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_X, right.data());
+  // format cube map texture
+  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+}
+
+bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name) {
+    glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
+
+    int x, y, n;
+    int force_channels = 4;
+    unsigned char*  image_data = stbi_load(
+            file_name, &x, &y, &n, force_channels);
+    if (!image_data) {
+        fprintf(stderr, "ERROR: could not load %s\n", file_name);
+        return false;
+    }
+    // non-power-of-2 dimensions check
+    if ((x & (x - 1)) != 0 || (y & (y - 1)) != 0) {
+        fprintf(stderr,
+                "WARNING: image %s is not power-of-2 dimensions\n",
+                file_name);
+    }
+
+    // copy image data into 'target' side of cube map
+    glTexImage2D( side_target, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+    free(image_data);
+    return true;
 }
 
 
+
 void Application::initTex(const std::string &resourceDirectory) {
+    create_cube_map(
+            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negX.jpg",
+            resourceDirectory + "/skybox2/negX.jpg",
+            &texSkybox
+    );
+
+
     texture0 = make_shared<Texture>();
     texture0->setFilename(resourceDirectory + "/Ball1.jpg");
     texture0->init();
-    texture0->setUnit(0);
+    texture0->setUnit(1);
     texture0->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
     specularTexture = make_shared<Texture>();
-    specularTexture->setFilename(resourceDirectory + "/shiny_metal_specular.jpg");
+    specularTexture->setFilename(resourceDirectory + "/glossy_specular.png");
     specularTexture->init();
-    specularTexture->setUnit(1);
+    specularTexture->setUnit(2);
     specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
 
@@ -279,7 +436,8 @@ void Application::createFBO(GLuint &fb, GLuint &tex) {
     }
 }
 
-void Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
+void
+Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
     //glBindFramebuffer(GL_FRAMEBUFFER, 0);
     //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -326,6 +484,12 @@ void Application::renderGround() {
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(2);
+}
+
+void Application::renderSkyBox() {
+    glBindVertexArray(sky_VertexArrayId);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+
 }
 
 void Application::render(PxActor **actors, int numActors) {
@@ -409,6 +573,19 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    skyProg->bind();
+    {
+        glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
+        glUniformMatrix4fv(skyProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, texSkybox);
+        glUniform1i(skyProg->getUniform("skyTexture"), 0);
+
+        box->draw(skyProg);
+    }
+    skyProg->unbind();
+
     prog->bind();
     {
         glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
@@ -440,7 +617,8 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
 //        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
 //        ship->draw(prog);
         M->popMatrix();
-    } prog->unbind();
+    }
+    prog->unbind();
 
     renderActors(actors, numActors, V, P);
 }
@@ -472,7 +650,8 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
                 specularTexture->bind(texProg->getUniform("specularTexture"));
 
                 cube->draw(texProg);
-            } texProg->unbind();
+            }
+            texProg->unbind();
 
         }
     }
