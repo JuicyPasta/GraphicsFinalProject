@@ -96,8 +96,7 @@ void Shape::resize(int scale)
 	}
 }
 
-void Shape::init()
-{
+void Shape::init() {
 	// Initialize the vertex array object
 	glGenVertexArrays(1, &vaoID);
 	glBindVertexArray(vaoID);
@@ -141,6 +140,47 @@ void Shape::init()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	assert(glGetError() == GL_NO_ERROR);
+}
+
+void Shape::loadFloorGeom() {
+	float g_groundSize = 20;
+	float g_groundY = -1.5;
+
+	// A x-z plane at y = g_groundY of dim[-g_groundSize, g_groundSize]^2
+	posBuf = {
+			-g_groundSize, g_groundY, -g_groundSize,
+			-g_groundSize, g_groundY, g_groundSize,
+			g_groundSize, g_groundY, g_groundSize,
+			g_groundSize, g_groundY, -g_groundSize
+	};
+
+	norBuf = {
+			0, 1, 0,
+			0, 1, 0,
+			0, 1, 0,
+			0, 1, 0,
+			0, 1, 0,
+			0, 1, 0
+	};
+
+	texBuf = {
+			0, 0, // back
+			0, 1,
+			1, 1,
+			1, 0
+	};
+
+	eleBuf = {0, 1, 2, 0, 2, 3};
+}
+void Shape::loadQuadGeom() {
+	posBuf = {
+			-1.0f, -1.0f, 0.0f,
+			1.0f, -1.0f, 0.0f,
+			-1.0f, 1.0f, 0.0f,
+			-1.0f, 1.0f, 0.0f,
+			1.0f, -1.0f, 0.0f,
+			1.0f, 1.0f, 0.0f,
+	};
 }
 
 void Shape::draw(const shared_ptr<Program> prog) const

@@ -28,33 +28,41 @@ using namespace glm;
 class Application : public EventCallbacks {
 public:
     WindowManager *windowManager = nullptr;
+    shared_ptr<Player> p1;
+    shared_ptr<Player> p2;
 
-    std::shared_ptr<Program> prog;
-    std::shared_ptr<Program> texProg;
-    std::shared_ptr<Program> skyProg;
+    shared_ptr<Program> prog;
+    shared_ptr<Program> texProg;
+    shared_ptr<Program> skyProg;
+    shared_ptr<Program> depthProg;
+    shared_ptr<Program> shadowProg;
 
-    shared_ptr<Texture> texture0;
+    shared_ptr<Texture> texture0; // TODO: move to ballTexture
+    shared_ptr<Texture> ballTexture[16];
     shared_ptr<Texture> specularTexture;
 
-    shared_ptr<Player> p1, p2;
-
-    shared_ptr<Shape> cube, ship, box;
+    shared_ptr<Shape> cube; // TODO: rename this to sphere
+    shared_ptr<Shape> ship;
+    shared_ptr<Shape> box;
+    shared_ptr<Shape> floor;
+    shared_ptr<Shape> quad;
 
     // Contains vertex information for OpenGL
-    GLuint VertexArrayID;
+//    GLuint VertexArrayID;
     // Data necessary to give our triangle to OpenGL
-    GLuint VertexBufferID;
-
+//    GLuint VertexBufferID;
+//
     //geometry for texture render
-    GLuint quad_VertexArrayID;
-    GLuint quad_vertexbuffer;
+//    GLuint quad_VertexArrayID;
+//    GLuint quad_vertexbuffer;
 
-    GLuint sky_VertexArrayId;
-    GLuint sky_vertexbuffer;
+//    GLuint sky_VertexArrayId;
+//    GLuint sky_vertexbuffer;
 
     //ground plane info
-    GLuint GrndBuffObj, GrndNorBuffObj, GrndTexBuffObj, GIndxBuffObj;
-    int gGiboLen;
+//    GLuint GrndBuffObj, GrndNorBuffObj, GrndTexBuffObj, GIndxBuffObj;
+//    int gGiboLen;
+
 
     //reference to texture FBO
     GLuint frameBuf[3];
@@ -62,11 +70,10 @@ public:
     GLuint texSkybox;
     GLuint depthBuf;
 
-    bool FirstTime = true;
-    bool Moving = false;
-    int gMat = 0;
-
-    bool mouseDown = false;
+//    bool FirstTime = true;
+//    bool Moving = false;
+//    int gMat = 0;
+//    bool mouseDown = false;
 
     void scrollCallback(GLFWwindow *window, double deltaX, double deltaY);
     void mouseCallback(GLFWwindow *window, int button, int action, int mods);
@@ -76,24 +83,19 @@ public:
     void setMaterial(int i);
     void addVars(std::shared_ptr<Program> prog);
 
-
     void create_cube_map(string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube);
     bool load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name);
 
-    void init(const std::string &resourceDirectory);
-    void initGeom(const std::string &resourceDirectory);
-    void initTex(const std::string &resourceDirectory);
-    void initQuad();
-    void initFloor();
-    void initSkybox();
+    void init();
+    void initShaders(const std::string &resourceDirectory);
+    void initGeomatry(const std::string &resourceDirectory);
+    void initTextures(const std::string &resourceDirectory);
     void createFBO(GLuint &fb, GLuint &tex);
 
     void render(PxActor** actors, int numActors);
     void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
     void renderActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
     void drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
-    void renderSkyBox();
-    void renderGround();
 };
 
 

@@ -8,9 +8,7 @@ uniform mat4 M;
 
 out vec3 vTexCubeCoord;
 
-
 void main() {
-
   gl_Position = P * V * vec4(vertPos.xyz, 1.0);
   vTexCubeCoord = vertPos.xyz;
 }

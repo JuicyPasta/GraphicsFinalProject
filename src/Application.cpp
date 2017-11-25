@@ -8,20 +8,14 @@
 void Application::scrollCallback(GLFWwindow *window, double deltaX, double deltaY) {
 
 }
-
 void Application::mouseCallback(GLFWwindow *window, int button, int action, int mods) {
     if (action == GLFW_PRESS) {
         glfwSetInputMode(windowManager->getHandle(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-        mouseDown = true;
-        Moving = true;
     }
 
     if (action == GLFW_RELEASE) {
-        Moving = false;
-        mouseDown = false;
     }
 }
-
 void Application::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_DELETE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
@@ -33,11 +27,9 @@ void Application::keyCallback(GLFWwindow *window, int key, int scancode, int act
 
     p1->keyboardInputCB(window, key, scancode, action, mods);
 }
-
 void Application::cursorPositionCallback(GLFWwindow *window, double x, double y) {
     p1->mouseInputCB(window, x, y);
 }
-
 void Application::resizeCallback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
 }
@@ -77,42 +69,15 @@ void Application::setMaterial(int i) {
     }
 }
 
-void Application::addVars(std::shared_ptr<Program> prog) {
-    prog->addUniform("P");
-    prog->addUniform("V");
-    prog->addUniform("M");
-    prog->addUniform("diffuse");
-    prog->addUniform("specular");
-    prog->addUniform("shiny");
-    prog->addUniform("ambient");
-    prog->addUniform("source");
-    prog->addUniform("sourceColor");
-
-    prog->addAttribute("vertPos");
-    prog->addAttribute("vertNor");
-    prog->addAttribute("eye");
-}
-
-void Application::init(const std::string &resourceDirectory) {
+void Application::init() {
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     GLSL::checkVersion();
-
 
     // Set background color.
     glClearColor(.1f, .1f, .1f, 1.0f);
     // Enable z-buffer test.
     glEnable(GL_DEPTH_TEST);
-
-    // PHONG
-    prog = make_shared<Program>();
-    prog->setVerbose(true);
-    prog->setShaderNames(resourceDirectory + "/vert_phong.glsl", resourceDirectory + "/frag_phong.glsl");
-    prog->init();
-    prog->addAttribute("L");
-    prog->addAttribute("E");
-    prog->addAttribute("N");
-    addVars(prog);
 
     //create two frame buffer objects to toggle between
     glGenFramebuffers(2, frameBuf);
@@ -129,61 +94,75 @@ void Application::init(const std::string &resourceDirectory) {
     GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
     glDrawBuffers(1, DrawBuffers);
 
-    //set up the shaders to blur the FBO just a placeholder pass thru now
-    //next lab modify and possibly add other shaders to complete blur
+    p1 = make_shared<Player>(0);
+    p2 = make_shared<Player>(0);
+}
+
+void Application::initShaders(const std::string &resourceDirectory) {
+    prog = make_shared<Program>();
+    prog->setVerbose(true);
+    prog->setShaderNames(resourceDirectory + "/vert_phong.glsl", resourceDirectory + "/frag_phong.glsl");
+    prog->init();
+    prog->addUniform("P");
+    prog->addUniform("V");
+    prog->addUniform("M");
+    prog->addUniform("diffuse");
+    prog->addUniform("specular");
+    prog->addUniform("shiny");
+    prog->addUniform("ambient");
+    prog->addUniform("source");
+    prog->addAttribute("L");
+    prog->addAttribute("E");
+    prog->addAttribute("N");
+    prog->addAttribute("vertPos");
+    prog->addAttribute("vertNor");
+    prog->addAttribute("vertTex");
+
     texProg = make_shared<Program>();
     texProg->setVerbose(true);
-    texProg->setShaderNames(
-            resourceDirectory + "/tex_vert.glsl",
-            resourceDirectory + "/tex_frag.glsl");
-    if (!texProg->init()) {
-        std::cerr << "One or more shaders failed to compile... exiting!" << std::endl;
-        exit(1);
-    }
-    addVars(texProg);
+    texProg->setShaderNames( resourceDirectory + "/tex_vert.glsl", resourceDirectory + "/tex_frag.glsl");
+    texProg->init();
+    texProg->addUniform("P");
+    texProg->addUniform("V");
+    texProg->addUniform("M");
     texProg->addUniform("specularTexture");
     texProg->addUniform("diffuseTexture");
+    texProg->addAttribute("vertPos");
+    texProg->addAttribute("vertNor");
     texProg->addAttribute("vertTex");
     texProg->addAttribute("vTexCoord");
     texProg->addAttribute("L");
     texProg->addAttribute("E");
     texProg->addAttribute("N");
 
-
     skyProg = make_shared<Program>();
     skyProg->setVerbose(true);
-    skyProg->setShaderNames(
-            resourceDirectory + "/sky_vert.glsl",
-            resourceDirectory + "/sky_frag.glsl");
-    if (!skyProg->init()) {
-        std::cerr << "One or more shaders failed to compile... exiting!" << std::endl;
-        exit(1);
-    }
-    addVars(skyProg);
+    skyProg->setShaderNames( resourceDirectory + "/sky_vert.glsl", resourceDirectory + "/sky_frag.glsl");
+    skyProg->init();
+    skyProg->addUniform("P");
+    skyProg->addUniform("V");
+    skyProg->addUniform("M");
     skyProg->addUniform("skyTexture");
+    skyProg->addAttribute("vertPos");
+    skyProg->addAttribute("vertNor");
+    skyProg->addAttribute("vertTex");
     skyProg->addAttribute("vTexCubeCoord");
-//    skyProg->addAttribute("Outcolor");
 
-
-//    windowProg = make_shared<Program>();
-//    windowProg->setVerbose(true);
-//    windowProg->setShaderNames(
-//            resourceDirectory + "/sky_vert.glsl",
-//            resourceDirectory + "/sky_frag.glsl");
-//    if (!windowProg->init()) {
-//        std::cerr << "One or more shaders failed to compile... exiting!" << std::endl;
-//        exit(1);
-//    }
-//    addVars(windowProg);
-//    windowProg->addUniform("skyTexture");
-//    windowProg->addAttribute("vTexCubeCoord");
-
-
-    p1 = make_shared<Player>(0);
-    p2 = make_shared<Player>(0);
+    depthProg = make_shared<Program>();
+    depthProg->setVerbose(true);
+    depthProg->setShaderNames( resourceDirectory + "/shadowmap_vert.glsl", resourceDirectory + "/shadowmap_frag.glsl");
+    depthProg->init();
+    depthProg->addUniform("depthMVP");
+    depthProg->addUniform("P");
+    depthProg->addUniform("V");
+    depthProg->addUniform("M");
+    depthProg->addAttribute("vertPos");
+    depthProg->addAttribute("vertNor");
+    depthProg->addAttribute("vertTex");
+    depthProg->addAttribute("vertexPosition_modelspace");
 }
 
-void Application::initGeom(const std::string &resourceDirectory) {
+void Application::initGeomatry(const std::string &resourceDirectory) {
     cube = make_shared<Shape>();
     cube->loadMesh(resourceDirectory + "/sphere.obj");
     cube->resize(1);
@@ -199,96 +178,67 @@ void Application::initGeom(const std::string &resourceDirectory) {
     ship->resize(1);
     ship->init();
 
-    //Initialize the geometry to render a quad to the screen
-    initQuad();
-    initFloor();
-    initSkybox();
+    floor = make_shared<Shape>();
+    floor->loadFloorGeom();
+    floor->init();
+
+    quad = make_shared<Shape>();
+    quad->loadQuadGeom();
+    quad->init();
 }
 
-void Application::initSkybox() {
-    float points[] = {
-            -10.0f, 10.0f, -10.0f,
-            -10.0f, -10.0f, -10.0f,
-            10.0f, -10.0f, -10.0f,
-            10.0f, -10.0f, -10.0f,
-            10.0f, 10.0f, -10.0f,
-            -10.0f, 10.0f, -10.0f,
+void Application::initTextures(const std::string &resourceDirectory) {
+    create_cube_map(
+            resourceDirectory + "/skybox/Box_Back.jpg",
+            resourceDirectory + "/skybox/Box_Front.jpg",
+            resourceDirectory + "/skybox/Box_Top.jpg",
+            resourceDirectory + "/skybox/Box_Bottom.jpg",
+            resourceDirectory + "/skybox/Box_Left.jpg",
+            resourceDirectory + "/skybox/Box_Right.jpg",
+            &texSkybox);
 
-            -10.0f, -10.0f, 10.0f,
-            -10.0f, -10.0f, -10.0f,
-            -10.0f, 10.0f, -10.0f,
-            -10.0f, 10.0f, -10.0f,
-            -10.0f, 10.0f, 10.0f,
-            -10.0f, -10.0f, 10.0f,
+    texture0 = make_shared<Texture>();
+    texture0->setFilename(resourceDirectory + "/Ball1.jpg");
+    texture0->init();
+    texture0->setUnit(1);
+    texture0->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
-            10.0f, -10.0f, -10.0f,
-            10.0f, -10.0f, 10.0f,
-            10.0f, 10.0f, 10.0f,
-            10.0f, 10.0f, 10.0f,
-            10.0f, 10.0f, -10.0f,
-            10.0f, -10.0f, -10.0f,
+    for (int i = 0; i <= 15; i++) {
+        ballTexture[i] = make_shared<Texture>();
+//        string filename = i == 0 ? resourceDirectory + "/balls/BallCue.jpg" :resourceDirectory + "/balls/Ball"+i+".jpg";
+        string filename = resourceDirectory + "/balls/BallCue.jpg";
+//        cout << filename << "\n";
+        ballTexture[i]->setFilename(filename);
+        ballTexture[i]->init();
+        ballTexture[i]->setUnit(1);
+        ballTexture[i]->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+    }
 
-            -10.0f, -10.0f, 10.0f,
-            -10.0f, 10.0f, 10.0f,
-            10.0f, 10.0f, 10.0f,
-            10.0f, 10.0f, 10.0f,
-            10.0f, -10.0f, 10.0f,
-            -10.0f, -10.0f, 10.0f,
-
-            -10.0f, 10.0f, -10.0f,
-            10.0f, 10.0f, -10.0f,
-            10.0f, 10.0f, 10.0f,
-            10.0f, 10.0f, 10.0f,
-            -10.0f, 10.0f, 10.0f,
-            -10.0f, 10.0f, -10.0f,
-
-            -10.0f, -10.0f, -10.0f,
-            -10.0f, -10.0f, 10.0f,
-            10.0f, -10.0f, -10.0f,
-            10.0f, -10.0f, -10.0f,
-            -10.0f, -10.0f, 10.0f,
-            10.0f, -10.0f, 10.0f
-    };
-
-    glGenBuffers(1, &sky_vertexbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, sky_vertexbuffer);
-    glBufferData(GL_ARRAY_BUFFER, 3 * 36 * sizeof(float), &points, GL_STATIC_DRAW);
-
-    glGenVertexArrays(1, &sky_VertexArrayId);
-    glBindVertexArray(sky_VertexArrayId);
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, sky_VertexArrayId);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
-
+    specularTexture = make_shared<Texture>();
+    specularTexture->setFilename(resourceDirectory + "/glossy_specular.png");
+    specularTexture->init();
+    specularTexture->setUnit(2);
+    specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
+void Application::create_cube_map( string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube) {
+    // generate a cube-map texture to hold all the sides
+    glActiveTexture(GL_TEXTURE0);
+    glGenTextures(1, tex_cube);
 
-void Application::create_cube_map(
-  string front,
-  string back,
-  string top,
-  string bottom,
-  string left,
-  string right,
-  GLuint* tex_cube) {
-  // generate a cube-map texture to hold all the sides
-  glActiveTexture(GL_TEXTURE0);
-  glGenTextures(1, tex_cube);
-
-  // load each image and copy into a side of the cube-map texture
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, front.data());
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, back.data());
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, top.data());
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, bottom.data());
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, left.data());
-  load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_X, right.data());
-  // format cube map texture
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    // load each image and copy into a side of the cube-map texture
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, front.data());
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, back.data());
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, top.data());
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, bottom.data());
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, left.data());
+    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_X, right.data());
+    // format cube map texture
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 }
-
 bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name) {
     glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 
@@ -314,104 +264,6 @@ bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const c
 }
 
 
-
-void Application::initTex(const std::string &resourceDirectory) {
-    create_cube_map(
-            resourceDirectory + "/skybox2/negz.jpg",
-            resourceDirectory + "/skybox2/posz.jpg",
-            resourceDirectory + "/skybox2/posy.jpg",
-            resourceDirectory + "/skybox2/negy.jpg",
-            resourceDirectory + "/skybox2/negx.jpg",
-            resourceDirectory + "/skybox2/posx.jpg",
-            &texSkybox
-    );
-
-
-    texture0 = make_shared<Texture>();
-    texture0->setFilename(resourceDirectory + "/Ball1.jpg");
-    texture0->init();
-    texture0->setUnit(1);
-    texture0->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
-
-    specularTexture = make_shared<Texture>();
-    specularTexture->setFilename(resourceDirectory + "/glossy_specular.png");
-    specularTexture->init();
-    specularTexture->setUnit(2);
-    specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
-}
-
-void Application::initQuad() {
-    //now set up a simple quad for rendering FBO
-    glGenVertexArrays(1, &quad_VertexArrayID);
-    glBindVertexArray(quad_VertexArrayID);
-
-    static const GLfloat g_quad_vertex_buffer_data[] = {
-            -1.0f, -1.0f, 0.0f,
-            1.0f, -1.0f, 0.0f,
-            -1.0f, 1.0f, 0.0f,
-            -1.0f, 1.0f, 0.0f,
-            1.0f, -1.0f, 0.0f,
-            1.0f, 1.0f, 0.0f,
-    };
-
-    glGenBuffers(1, &quad_vertexbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
-}
-
-void Application::initFloor() {
-    float g_groundSize = 20;
-    float g_groundY = -1.5;
-
-    // A x-z plane at y = g_groundY of dim[-g_groundSize, g_groundSize]^2
-    float GrndPos[] = {
-            -g_groundSize, g_groundY, -g_groundSize,
-            -g_groundSize, g_groundY, g_groundSize,
-            g_groundSize, g_groundY, g_groundSize,
-            g_groundSize, g_groundY, -g_groundSize
-    };
-
-    float GrndNorm[] = {
-            0, 1, 0,
-            0, 1, 0,
-            0, 1, 0,
-            0, 1, 0,
-            0, 1, 0,
-            0, 1, 0
-    };
-
-    float GrndTex[] = {
-            0, 0, // back
-            0, 1,
-            1, 1,
-            1, 0
-    };
-
-    unsigned short idx[] = {0, 1, 2, 0, 2, 3};
-
-    GLuint VertexArrayID;
-    //generate the VAO
-    glGenVertexArrays(1, &VertexArrayID);
-    glBindVertexArray(VertexArrayID);
-
-    gGiboLen = 6;
-    glGenBuffers(1, &GrndBuffObj);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndBuffObj);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GrndPos), GrndPos, GL_STATIC_DRAW);
-
-    glGenBuffers(1, &GrndNorBuffObj);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndNorBuffObj);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GrndNorm), GrndNorm, GL_STATIC_DRAW);
-
-    glGenBuffers(1, &GrndTexBuffObj);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndTexBuffObj);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GrndTex), GrndTex, GL_STATIC_DRAW);
-
-    glGenBuffers(1, &GIndxBuffObj);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, GIndxBuffObj);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(idx), idx, GL_STATIC_DRAW);
-}
-
 void Application::createFBO(GLuint &fb, GLuint &tex) {
     //initialize FBO
     int width, height;
@@ -436,11 +288,8 @@ void Application::createFBO(GLuint &fb, GLuint &tex) {
     }
 }
 
-void
-Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
-    //glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+// draw2dBuff
+void Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, frameBuf[0]);
 
@@ -456,40 +305,14 @@ Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixSt
     glUniform1i(texProg->getUniform("width"), width);
     glUniform1i(texProg->getUniform("height"), height);
 
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-    glDisableVertexAttribArray(0);
+//    glEnableVertexAttribArray(0);
+//    glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
+//    glDrawArrays(GL_TRIANGLES, 0, 6);
+//    glDisableVertexAttribArray(0);
+    quad->draw(texProg);
+
     texProg->unbind();
-}
-
-void Application::renderGround() {
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndBuffObj);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
-    glEnableVertexAttribArray(1);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndNorBuffObj);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
-    glEnableVertexAttribArray(2);
-    glBindBuffer(GL_ARRAY_BUFFER, GrndTexBuffObj);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
-    // draw!
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, GIndxBuffObj);
-    glDrawElements(GL_TRIANGLES, gGiboLen, GL_UNSIGNED_SHORT, 0);
-
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    glDisableVertexAttribArray(2);
-}
-
-void Application::renderSkyBox() {
-    glBindVertexArray(sky_VertexArrayId);
-    glDrawArrays(GL_TRIANGLES, 0, 36);
-
 }
 
 void Application::render(PxActor **actors, int numActors) {
@@ -601,28 +424,28 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         M->scale(vec3(4, 1, 4));
         glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
         setMaterial(4);
-        renderGround();
+        floor->draw(prog);
         M->popMatrix();
 
-        M->pushMatrix();
-        M->loadIdentity();
-        M->translate(p1->getPosition());
-        M->scale(.3);
-        M->rotate(p1->getTheta(), vec3(0, 1, 0));
-        M->rotate(radians(90.f), vec3(1, 0, 0));
-        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-        ship->draw(prog);
-        M->popMatrix();
-//
-        M->pushMatrix();
-        M->loadIdentity();
-        M->translate(p2->getPosition());
-        M->scale(.3);
-        M->rotate(p2->getTheta(), vec3(0, 1, 0));
-        M->rotate(radians(90.f), vec3(1, 0, 0));
-        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-        ship->draw(prog);
-       M->popMatrix();
+//        M->pushMatrix();
+//        M->loadIdentity();
+//        M->translate(p1->getPosition());
+//        M->scale(.3);
+//        M->rotate(p1->getTheta() - M_PI_2, vec3(0, 1, 0));
+//        M->rotate(radians(90.f), vec3(1, 0, 0));
+//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+//        ship->draw(prog);
+//        M->popMatrix();
+////
+//        M->pushMatrix();
+//        M->loadIdentity();
+//        M->translate(p2->getPosition());
+//        M->scale(.3);
+//        M->rotate(p2->getTheta() - M_PI_2, vec3(0, 1, 0));
+//        M->rotate(radians(90.f), vec3(1, 0, 0));
+//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+//        ship->draw(prog);
+//       M->popMatrix();
     }
     prog->unbind();
 
@@ -642,9 +465,6 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
 
         for (int j = 0; j < nbShapes; j++) {
             const PxMat44 shapePose(PxShapeExt::getGlobalPose(*shapes[j], *actor));
-            PxGeometryHolder h = shapes[j]->getGeometry();
-
-//            glm::mat4 *M = new mat4(shapePose.front());
 
             texProg->bind();
             {

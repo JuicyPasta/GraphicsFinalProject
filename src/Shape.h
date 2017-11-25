@@ -11,8 +11,9 @@
 class Program;
 
 class Shape {
-
 public:
+    void loadFloorGeom();
+	void loadQuadGeom();
 
 	void loadMesh(const std::string &meshName);
 	void init();

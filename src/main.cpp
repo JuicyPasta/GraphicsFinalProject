@@ -18,9 +18,10 @@ int main(int argc, char **argv) {
     windowManager->setEventCallbacks(application);
     application->windowManager = windowManager;
 
-    application->init(resourceDir);
-    application->initGeom(resourceDir);
-    application->initTex(resourceDir);
+    application->init();
+    application->initShaders(resourceDir);
+    application->initTextures(resourceDir);
+    application->initGeomatry(resourceDir);
 
     Physics *physics = new Physics();
     physics->addSphere(PxVec3(0, 3, 0));
