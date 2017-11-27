@@ -10,6 +10,7 @@ public:
 	Texture();
 	virtual ~Texture();
 	void setFilename(const std::string &f) { filename = f; }
+    void setDimensions(int w, int h) { width = w; height = h; }
 	void init();
 	void setUnit(GLint u) { unit = u; }
 	GLint getUnit() const { return unit; }
@@ -24,7 +25,6 @@ private:
 	int height;
 	GLuint tid;
 	GLint unit;
-	
 };
 
 #endif

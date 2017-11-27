@@ -341,13 +341,41 @@ void Application::render(PxActor **actors, int numActors) {
         O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
     }
 
+    int downsampleScale = 2;
+
     int numPlayers = 1;
-    if (numPlayers == 1) {
+    if (true) {
+        Texture *largeRender = new Texture();
+        largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
+        largeRender->setUnit(20);
+        largeRender->init();
+        GLint largeBuffer = largeRender->getID();
+
+        // render to buffer
+        V->pushMatrix();
+        V->multMatrix(p1->getViewMatrix());
+//        renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
+        V->popMatrix();
+
+        // TODO: downscale
+
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P);
         V->popMatrix();
     } else {
+        Texture *leftSplit = new Texture();
+        leftSplit->setDimensions(width/2, height);
+        leftSplit->setUnit(20);
+        leftSplit->init();
+        GLint leftBuffer = leftSplit->getID();
+
+        Texture *rightSplit = new Texture();
+        rightSplit->setDimensions(width/2, height);
+        leftSplit->setUnit(21);
+        rightSplit->init();
+        GLint rightBuffer = rightSplit->getID();
+
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, frameBuf[0], M, V, P);
