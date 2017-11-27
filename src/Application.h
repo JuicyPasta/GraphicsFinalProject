@@ -31,37 +31,30 @@ public:
     shared_ptr<Player> p1;
     shared_ptr<Player> p2;
 
+    // shader programs
     shared_ptr<Program> prog;
     shared_ptr<Program> texProg;
     shared_ptr<Program> skyProg;
     shared_ptr<Program> depthProg;
     shared_ptr<Program> shadowProg;
 
+    // textures
     shared_ptr<Texture> texture0; // TODO: move to ballTexture
     shared_ptr<Texture> ballTexture[16];
     shared_ptr<Texture> specularTexture;
 
+    // texture FBOs
+    shared_ptr<Texture> largeRender;
+    shared_ptr<Texture> leftSplitScreen;
+    shared_ptr<Texture> rightSplitScreen;
+    shared_ptr<Texture> shadowMap;
+
+    // shapes
     shared_ptr<Shape> cube; // TODO: rename this to sphere
     shared_ptr<Shape> ship;
     shared_ptr<Shape> box;
     shared_ptr<Shape> floor;
     shared_ptr<Shape> quad;
-
-    // Contains vertex information for OpenGL
-//    GLuint VertexArrayID;
-    // Data necessary to give our triangle to OpenGL
-//    GLuint VertexBufferID;
-//
-    //geometry for texture render
-//    GLuint quad_VertexArrayID;
-//    GLuint quad_vertexbuffer;
-
-//    GLuint sky_VertexArrayId;
-//    GLuint sky_vertexbuffer;
-
-    //ground plane info
-//    GLuint GrndBuffObj, GrndNorBuffObj, GrndTexBuffObj, GIndxBuffObj;
-//    int gGiboLen;
 
 
     //reference to texture FBO

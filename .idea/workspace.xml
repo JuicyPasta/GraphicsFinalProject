@@ -12,12 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TextureCube.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TextureCube.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Texture.cpp" afterPath="$PROJECT_DIR$/src/Texture.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Texture.h" afterPath="$PROJECT_DIR$/src/Texture.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,21 +32,31 @@
       <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="356" column="81" lean-forward="false" selection-start-line="356" selection-start-column="81" selection-end-line="356" selection-end-column="81" />
+            <state relative-caret-position="216">
+              <caret line="247" column="10" lean-forward="false" selection-start-line="247" selection-start-column="10" selection-end-line="247" selection-end-column="10" />
               <folding>
                 <element signature="e#50#74#0" expanded="true" />
                 <element signature="e#99#186#0" expanded="false" />
+                <element signature="e#187#444#0" expanded="false" />
                 <element signature="e#445#873#0" expanded="false" />
                 <element signature="e#874#994#0" expanded="false" />
-                <element signature="e#995#1111#0" expanded="false" />
-                <element signature="e#2806#3757#0" expanded="false" />
-                <element signature="e#3759#6091#0" expanded="false" />
-                <element signature="e#6093#6701#0" expanded="false" />
-                <element signature="e#6703#8139#0" expanded="false" />
-                <element signature="e#8140#9372#0" expanded="false" />
-                <element signature="e#9373#10183#0" expanded="false" />
+                <element signature="e#1890#3581#0" expanded="false" />
+                <element signature="e#3583#4534#0" expanded="false" />
+                <element signature="e#4536#6868#0" expanded="false" />
+                <element signature="e#6870#7478#0" expanded="false" />
+                <element signature="e#9270#10502#0" expanded="false" />
+                <element signature="e#10503#11313#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,8 +64,8 @@
       <file leaf-file-name="Texture.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Texture.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,7 +74,7 @@
       <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="330">
               <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding />
             </state>
@@ -97,7 +104,7 @@
       <file leaf-file-name="Shape.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Shape.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
+            <state relative-caret-position="2520">
               <caret line="168" column="16" lean-forward="false" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
               <folding />
             </state>
@@ -114,31 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vert_phong.glsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tex_vert.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tex_frag.glsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -193,10 +180,10 @@
         <option value="$PROJECT_DIR$/src/Shape.cpp" />
         <option value="$PROJECT_DIR$/src/Shape.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Application.h" />
         <option value="$PROJECT_DIR$/src/TextureCube.h" />
         <option value="$PROJECT_DIR$/src/Texture.h" />
         <option value="$PROJECT_DIR$/src/Texture.cpp" />
+        <option value="$PROJECT_DIR$/src/Application.h" />
         <option value="$PROJECT_DIR$/src/Application.cpp" />
       </list>
     </option>
@@ -208,7 +195,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -527,15 +514,16 @@
       <workItem from="1510688349609" duration="29000" />
       <workItem from="1510941476644" duration="5823000" />
       <workItem from="1510950262608" duration="27203000" />
-      <workItem from="1511626548838" duration="9760000" />
+      <workItem from="1511626548838" duration="9871000" />
+      <workItem from="1511748386864" duration="1582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131043000" />
+    <option name="totallyTimeSpent" value="132736000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -543,8 +531,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32533333" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26666668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26666668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -688,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -703,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
           <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,9 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#83#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,39 +816,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/Graphics.h" />
     <entry file="file:///usr/local/PhysX-3.4/PxShared/src/foundation/src/unix/PsUnixSync.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,14 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -943,52 +886,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Texture.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Shape.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
+        <state relative-caret-position="2520">
           <caret line="168" column="16" lean-forward="false" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="330">
           <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="356" column="81" lean-forward="false" selection-start-line="356" selection-start-column="81" selection-end-line="356" selection-end-column="81" />
+        <state relative-caret-position="216">
+          <caret line="247" column="10" lean-forward="false" selection-start-line="247" selection-start-column="10" selection-end-line="247" selection-end-column="10" />
           <folding>
             <element signature="e#50#74#0" expanded="true" />
             <element signature="e#99#186#0" expanded="false" />
+            <element signature="e#187#444#0" expanded="false" />
             <element signature="e#445#873#0" expanded="false" />
             <element signature="e#874#994#0" expanded="false" />
-            <element signature="e#995#1111#0" expanded="false" />
-            <element signature="e#2806#3757#0" expanded="false" />
-            <element signature="e#3759#6091#0" expanded="false" />
-            <element signature="e#6093#6701#0" expanded="false" />
-            <element signature="e#6703#8139#0" expanded="false" />
-            <element signature="e#8140#9372#0" expanded="false" />
-            <element signature="e#9373#10183#0" expanded="false" />
+            <element signature="e#1890#3581#0" expanded="false" />
+            <element signature="e#3583#4534#0" expanded="false" />
+            <element signature="e#4536#6868#0" expanded="false" />
+            <element signature="e#6870#7478#0" expanded="false" />
+            <element signature="e#9270#10502#0" expanded="false" />
+            <element signature="e#10503#11313#0" expanded="false" />
           </folding>
         </state>
       </provider>

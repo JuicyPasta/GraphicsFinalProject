@@ -32,6 +32,27 @@ void Application::cursorPositionCallback(GLFWwindow *window, double x, double y)
 }
 void Application::resizeCallback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
+
+    int downsampleScale = 2;
+    largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
+    largeRender->init();
+    largeRender->setUnit(20);
+    largeRender->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+
+    leftSplitScreen->setDimensions(width/2, height);
+    leftSplitScreen->init();
+    leftSplitScreen->setUnit(21);
+    leftSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+
+    rightSplitScreen->setDimensions(width/2, height);
+    rightSplitScreen->init();
+    rightSplitScreen->setUnit(22);
+    rightSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+
+    shadowMap->setDimensions(width/4, height/4);
+    shadowMap->init();
+    shadowMap->setUnit(23);
+    shadowMap->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
 
 void Application::setMaterial(int i) {
@@ -188,6 +209,9 @@ void Application::initGeomatry(const std::string &resourceDirectory) {
 }
 
 void Application::initTextures(const std::string &resourceDirectory) {
+    int width, height;
+    glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
+
     create_cube_map(
             resourceDirectory + "/skybox/Box_Back.jpg",
             resourceDirectory + "/skybox/Box_Front.jpg",
@@ -219,6 +243,13 @@ void Application::initTextures(const std::string &resourceDirectory) {
     specularTexture->init();
     specularTexture->setUnit(2);
     specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
+
+    // init FBOs
+    largeRender = make_shared<Texture>();
+    leftSplitScreen = make_shared<Texture>();
+    rightSplitScreen = make_shared<Texture>();
+    shadowMap = make_shared<Texture>();
+    resizeCallback(windowManager->getHandle(), width, height);
 }
 void Application::create_cube_map( string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube) {
     // generate a cube-map texture to hold all the sides
@@ -263,7 +294,7 @@ bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const c
     return true;
 }
 
-
+// delte this
 void Application::createFBO(GLuint &fb, GLuint &tex) {
     //initialize FBO
     int width, height;
@@ -345,16 +376,12 @@ void Application::render(PxActor **actors, int numActors) {
 
     int numPlayers = 1;
     if (true) {
-        Texture *largeRender = new Texture();
-        largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
-        largeRender->setUnit(20);
-        largeRender->init();
         GLint largeBuffer = largeRender->getID();
 
         // render to buffer
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-//        renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
+        renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
         V->popMatrix();
 
         // TODO: downscale
