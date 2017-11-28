@@ -7,9 +7,24 @@
 #include <iostream>
 #include "Player.h"
 
+#ifdef GLM_PLATFORM_LINUX
+#define LEFT_STICK_X 0
+#define LEFT_STICK_Y 1
+#define RIGHT_STICK_X 3
+#define RIGHT_STICK_Y 4
+#elif GLM_PLATFORM_WINDOWS
+#define LEFT_STICK_X 0
+#define LEFT_STICK_Y 1
+#define RIGHT_STICK_X 2
+#define RIGHT_STICK_Y 3
+#endif
+
+
+
+
 Player::Player(int input) {
     this->input = input;
-
+    //std::cout << "hi\n";
     if (input > 0) {
         int present = glfwJoystickPresent(GLFW_JOYSTICK_1 + input - 1);
         if(!present) {
@@ -39,8 +54,11 @@ void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int acti
 }
 
 void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
-    orientationInput.x = -x / 1000;
-    orientationInput.y = -y / 1000;
+    static double _x = 0., _y = 0.;
+    orientationInput.x += -(x - _x) / 1000;
+    orientationInput.y += -(y - _y) / 1000;
+    _x = x;
+    _y = y;
 }
 
 void Player::getControllerInput() {
@@ -49,15 +67,22 @@ void Player::getControllerInput() {
     const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &count);
     float deadzone = .2;
 
-    strafeInput.x = abs(axes[0]) > deadzone ? axes[0] : 0;
+    strafeInput.x = abs(axes[LEFT_STICK_X]) > deadzone ? axes[LEFT_STICK_X] : 0;
 #ifdef _WIN32
-	strafeInput.y = abs(axes[1]) > deadzone ? axes[1] : 0;
+	strafeInput.y = abs(axes[1]) > deadzone ? axes[LEFT_STICK_X] : 0;
 #else
-    strafeInput.y = abs(axes[1]) > deadzone ? -axes[1] : 0;
+    strafeInput.y = abs(axes[LEFT_STICK_Y]) > deadzone ? -axes[LEFT_STICK_Y] : 0;
 #endif
 
-    orientationInput.x -= abs(axes[2]) > deadzone ? axes[2]/10 : 0;
-    orientationInput.y -= abs(axes[3]) > deadzone ? axes[3]/10 : 0;
+#ifdef GLM_PLATFORM_LINUX
+    orientationInput.x += abs(axes[RIGHT_STICK_X]) > deadzone ? axes[RIGHT_STICK_X]/10 : 0;
+    orientationInput.y -= abs(axes[RIGHT_STICK_Y]) > deadzone ? axes[RIGHT_STICK_Y]/10 : 0;
+    //printf("%f\n", axes[2]);
+
+#else
+    orientationInput.x -= abs(axes[2]) > deadzone ? axes[RIGHT_STICK_X]/10 : 0;
+    orientationInput.y -= abs(axes[3]) > deadzone ? axes[RIGHT_STICK_Y]/10 : 0;
+#endif
 
     // axes[4] = left trigger
     // axes[5] = right trigger
@@ -70,16 +95,28 @@ void Player::getControllerInput() {
 
 void Player::update(float deltaTime) {
     if (input > 0) {
+
         this->getControllerInput();
     }
 
     float strafeSpeed = .5;
 
+    if (orientationInput.x > 2*3.14159) orientationInput.x -= 3.14159*2;
+    if (orientationInput.x < -0.0) orientationInput.x -= 3.14159*2;
+
+    if(strafeInput.y > 0) {
+        orientationInput.x -= .00001;
+    }
+
+
     vec3 delta = vec3(0, 0, 0);
-	direction.x = sin(theta);
+    theta += strafeSpeed * -strafeInput.x * .1f;
+    if (theta > 2*3.14159) theta -= 3.14159*2;
+    if (theta < 0) theta -= 3.14159*2;
+    direction.x = sin(theta);
 	direction.y = cos(theta);
     delta -= strafeSpeed * strafeInput.y * direction;
-	theta += strafeSpeed * -strafeInput.x * .1f;
+
 
     //delta += strafeSpeed * -strafeInput.x * glm::cross(upVector, direction);
     float posy = position.y;
@@ -88,9 +125,9 @@ void Player::update(float deltaTime) {
 //    lookAtPoint = position + direction;
 
     if (orientationInput.y > .9)
-        orientationInput.y = .9;
+        orientationInput.y = .9f;
     if (orientationInput.y < -.9)
-        orientationInput.y = -.9;
+        orientationInput.y = -.9f;
 
     lookAtPoint = position + glm::vec3(cos(orientationInput.x + theta) * cos(orientationInput.y),
                                        sin(orientationInput.y),
