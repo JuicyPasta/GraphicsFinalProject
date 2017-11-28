@@ -24,19 +24,18 @@ public:
 
     void update(float deltaTime);
     mat4 getViewMatrix();
+    mat4 getSkyBoxViewMatrix();
     vec3 getPosition() {
         return position;
     }
-	float getAngle() {
-		return theta;
-	}
+    float getTheta() {
+        return orientationInput.x;
+    }
 
 private:
     int input;
 
     vec3 position = vec3(0, 0, 0);
-    vec3 direction = vec3(0, 0, -1);
-	float theta = 3.14f;
     vec3 lookAtPoint = vec3(0, 0, 1);
     vec3 upVector = vec3(0, 1, 0);
 
@@ -44,6 +43,9 @@ private:
     vec3 strafeInput = vec3(0, 0, 0);
     // theta, phi, omega
     vec3 orientationInput = vec3(0, 0, 0);
+
+    double lastMouseX = 0;
+    double lastMouseY = 0;
 };
 
 

@@ -11,12 +11,13 @@
 class Program;
 
 class Shape {
-
 public:
+    void loadFloorGeom();
+	void loadQuadGeom();
 
 	void loadMesh(const std::string &meshName);
 	void init();
-	void resize();
+	void resize(int scale);
 	void draw(const std::shared_ptr<Program> prog) const;
 
 private:

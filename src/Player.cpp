@@ -35,30 +35,34 @@ Player::Player(int input) {
 
 void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
-        strafeInput.y = 1;
+        strafeInput.y = -1;
     } else if (key == GLFW_KEY_W && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_S && action == GLFW_PRESS) {
-        strafeInput.y = -1;
+        strafeInput.y = 1;
     } else if (key == GLFW_KEY_S && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_A && action == GLFW_PRESS) {
-        strafeInput.x = -1;
+        strafeInput.x = 1;
     } else if (key == GLFW_KEY_A && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     } else if (key == GLFW_KEY_D && action == GLFW_PRESS) {
-        strafeInput.x = 1;
+        strafeInput.x = -1;
     } else if (key == GLFW_KEY_D && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     }
 }
 
 void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
-    static double _x = 0., _y = 0.;
-    orientationInput.x += -(x - _x) / 1000;
-    orientationInput.y += -(y - _y) / 1000;
-    _x = x;
-    _y = y;
+
+    double dx = lastMouseX - x;
+    double dy = lastMouseY - y;
+
+    orientationInput.x += dx / 1000;
+    orientationInput.y -= dy / 1000;
+
+    lastMouseX = x;
+    lastMouseY = y;
 }
 
 void Player::getControllerInput() {
@@ -103,7 +107,7 @@ void Player::update(float deltaTime) {
 
     if (orientationInput.x > 2*3.14159) orientationInput.x -= 3.14159*2;
     if (orientationInput.x < -0.0) orientationInput.x -= 3.14159*2;
-
+/**
     if(strafeInput.y > 0) {
         orientationInput.x -= .00001;
     }
@@ -117,10 +121,14 @@ void Player::update(float deltaTime) {
 	direction.y = cos(theta);
     delta -= strafeSpeed * strafeInput.y * direction;
 
-
+**/
     //delta += strafeSpeed * -strafeInput.x * glm::cross(upVector, direction);
+    vec3 direction = vec3(0, 0, 0);
+    direction += strafeSpeed * strafeInput.y * (lookAtPoint - position);
+    direction += strafeSpeed * -strafeInput.x * glm::cross(upVector, lookAtPoint - position);
+
     float posy = position.y;
-    position += delta;
+    position += direction;
     position.y = posy;
 //    lookAtPoint = position + direction;
 
@@ -129,9 +137,9 @@ void Player::update(float deltaTime) {
     if (orientationInput.y < -.9)
         orientationInput.y = -.9f;
 
-    lookAtPoint = position + glm::vec3(cos(orientationInput.x + theta) * cos(orientationInput.y),
+    lookAtPoint = position + glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
                                        sin(orientationInput.y),
-                                       -cos(orientationInput.y) * sin(orientationInput.x + theta));
+                                       -cos(orientationInput.y) * sin(orientationInput.x));
 
 //      vec3 viewVec = lookAtPoint - position;
 
@@ -151,5 +159,10 @@ void Player::update(float deltaTime) {
 
 mat4 Player::getViewMatrix() {
 	return glm::lookAt(lookAtPoint, position, upVector);
+    //return glm::lookAt(position, lookAtPoint, upVector);
+}
+
+mat4 Player::getSkyBoxViewMatrix() {
+    return glm::lookAt(lookAtPoint-position, vec3(0, 0, 0), upVector);
     //return glm::lookAt(position, lookAtPoint, upVector);
 }
