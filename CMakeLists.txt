@@ -25,34 +25,69 @@ if (APPLE)
 
     include_directories("/usr/local/PhysX-3.4/PhysX_3.4/Include")
     include_directories("/usr/local/PhysX-3.4/PxShared/include")
-elseif(UNIX)
-  set(PHYSX_LIBRARIES_DIR ./ext/physx/linux64)
-  set(PHYSX_SHARED_LIBRARIES_DIR ./ext/physx/linux64)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPsFastXmlDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxFoundationDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxPvdSDKDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxTaskDEBUG.a)
 
-  include_directories("./ext/physx/linux64")
-  include_directories("./ext/physx/linux64")
+    #target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLeasdfvelAABBDEBUG.a)
+
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelAABBDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelClothDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDynamicsDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelParticlesDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CharacterKinematicDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CommonDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CookingDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3DEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3VehicleDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSceneQueryDEBUG.a)
+    target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSimulationControllerDEBUG.a)
+
+elseif(UNIX)
+  set(PHYSX_LIBRARIES_DIR ./ext/phyx34/Lib/linux64)
+  set(PHYSX_BIN_DIR ./ext/phyx34/Bin/linux64)
+  set(PHYSX_SHARED_LIBRARIES_DIR ./ext/PxShared/lib/linux64)
+  set(PHYSX_SHARED_BIN_DIR ./ext/PxShared/bin/linux64)
+
+  link_directories("./ext/phyx34/Lib/linux64" "./ext/phyx34/Bin/linux64"
+          "./ext/PxShared/lib/linux64"
+          "./ext/PxShared/bin/linux64")
+
+  SET(PHSYX_DIRS ${PHYSX_LIBRARIES_DIR} ${PHYSX_BIN_DIR} ${PHYSX_SHARED_LIBRARIES_DIR} ${PHYSX_SHARED_BIN_DIR})
+  #  link_directories( )
+  #  link_directories( )
+
+  include_directories("./ext/PxShared/include")
+  include_directories("./ext/phyx34/Include")
+
+
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_SHARED_LIBRARIES_DIR}/libPsFastXmlDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_SHARED_BIN_DIR}/libPxFoundationDEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_SHARED_BIN_DIR}/libPxPvdSDKDEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_SHARED_LIBRARIES_DIR}/libPxTaskDEBUG.a)
+  #
+  ##target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLeasdfvelAABBDEBUG.a)
+  #
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libLowLevelAABBDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libLowLevelClothDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libLowLevelDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libLowLevelDynamicsDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libLowLevelParticlesDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_BIN_DIR}/libPhysX3CharacterKinematicDEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_BIN_DIR}/libPhysX3CommonDEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_BIN_DIR}/libPhysX3CookingDEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_BIN_DIR}/libPhysX3DEBUG_x64.so)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libPhysX3VehicleDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libSceneQueryDEBUG.a)
+  target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_HOME_DIRECTORY}/${PHYSX_LIBRARIES_DIR}/libSimulationControllerDEBUG.a)
+
+
 endif()
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPsFastXmlDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxFoundationDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxPvdSDKDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_SHARED_LIBRARIES_DIR}/libPxTaskDEBUG.a)
-
-#target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLeasdfvelAABBDEBUG.a)
-
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelAABBDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelClothDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelDynamicsDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libLowLevelParticlesDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CharacterKinematicDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CommonDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3CookingDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3DEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3ExtensionsDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libPhysX3VehicleDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSceneQueryDEBUG.a)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${PHYSX_LIBRARIES_DIR}/libSimulationControllerDEBUG.a)
 
 
 # Add GLFW
