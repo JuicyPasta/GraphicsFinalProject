@@ -63,6 +63,9 @@ public:
     GLuint texSkybox;
     GLuint depthBuf;
 
+    GLuint quad_VertexArrayID;
+    GLuint quad_vertexbuffer,quad_normalbuffer;
+
 //    bool FirstTime = true;
 //    bool Moving = false;
 //    int gMat = 0;
@@ -80,10 +83,24 @@ public:
     bool load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name);
 
     void init();
+    void initQuad();
     void initShaders(const std::string &resourceDirectory);
     void initGeomatry(const std::string &resourceDirectory);
     void initTextures(const std::string &resourceDirectory);
     void createFBO(GLuint &fb, GLuint &tex);
+
+    void renderSquare(shared_ptr<Program> prog,
+                      shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V,
+                      float x, float z, int side);
+    void renderBuilding(shared_ptr<Program> prog,
+                        shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V,
+                        float x, float z);
+    void renderBuildingScene(shared_ptr<Program> prog,
+                     shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V);
+
+    float getY(float x, float z);
+
+    void SetMaterial(shared_ptr<Program> prog,int mode);
 
     void render(PxActor** actors, int numActors);
     void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);

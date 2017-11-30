@@ -87,6 +87,7 @@ void Application::setMaterial(int i) {
             glUniform3f(prog->getUniform("specular"), 0.95, 0.95, 0.95);
             glUniform1f(prog->getUniform("shiny"), 200);
             break;
+            
     }
 }
 
@@ -206,6 +207,8 @@ void Application::initGeomatry(const std::string &resourceDirectory) {
     quad = make_shared<Shape>();
     quad->loadQuadGeom();
     quad->init();
+
+    initQuad();
 }
 
 void Application::initTextures(const std::string &resourceDirectory) {
@@ -362,7 +365,7 @@ void Application::render(PxActor **actors, int numActors) {
     glViewport(0, 0, width, height);
     float aspect = width / (float) (height / 2.0f);
     P->pushMatrix();
-    P->perspective(45.0f, aspect, 0.01f, 100.0f);
+    P->perspective(45.0f, aspect, 0.01f, 300.0f);
 
     O->pushMatrix();
     aspect /= 2;
@@ -381,7 +384,7 @@ void Application::render(PxActor **actors, int numActors) {
         // render to buffer
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-        renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
+        //renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
         V->popMatrix();
 
         // TODO: downscale
@@ -389,6 +392,7 @@ void Application::render(PxActor **actors, int numActors) {
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P);
+
         V->popMatrix();
     } else {
         Texture *leftSplit = new Texture();
@@ -445,6 +449,87 @@ void Application::render(PxActor **actors, int numActors) {
     P->popMatrix();
 }
 
+
+float Application::getY(float x, float z) {
+    return 4.f*sin(1.3f*x+2.2f*z) + 6.f;
+}
+
+void Application::renderBuildingScene(shared_ptr<Program> prog,shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V) {
+    for (int i = -6; i <=6; i+=2) {
+        for (int j = -8; j <=9; j+=3) {
+            if (abs(j) + abs(i) > 4)
+                renderBuilding(prog,P,V,i,j);
+        }
+    }
+}
+
+void Application::renderBuilding(shared_ptr<Program> prog,
+                    shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V,
+                    float x, float z) {
+    prog->bind();
+    glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
+    glUniformMatrix4fv(prog->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
+    renderSquare(prog,P,V,x,z,0);
+    renderSquare(prog,P,V,x,z,1);
+    renderSquare(prog,P,V,x,z,2);
+    renderSquare(prog,P,V,x,z,3);
+    renderSquare(prog,P,V,x,z,4);
+    renderSquare(prog,P,V,x,z,5);
+}
+
+void Application::renderSquare(shared_ptr<Program> prog,
+                  shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V,
+                  float x, float z, int side) {
+    auto M = make_shared<MatrixStack>();
+    M->pushMatrix();
+    M->loadIdentity();
+    M->translate(vec3(0,-1,0));
+    x*=2;
+    z*=2;
+    M->scale(8);
+    switch (side) {
+        case 0://top
+            M->translate(vec3(x,2*getY(x,z),z));
+            M->scale(.7);
+            break;
+        case 1://left
+            M->translate(vec3(x - .7,getY(x,z),z));
+            M->scale(vec3(.7,getY(x,z),.7));
+            M->rotate(radians(90.f),vec3(0,0,1));
+            break;
+        case 2://right
+            M->translate(vec3(x + .7,getY(x,z),z));
+            M->scale(vec3(.7,getY(x,z),.7));
+            M->rotate(radians(-90.f),vec3(0,0,1));
+            break;
+        case 3://farside
+            M->translate(vec3(x,getY(x,z),z + .7));
+            M->scale(vec3(.7,getY(x,z),.7));
+            M->rotate(radians(90.f),vec3(1,0,0));
+            break;
+        case 4://closeside
+            M->translate(vec3(x,getY(x,z),z - .7));
+            M->scale(vec3(.7,getY(x,z),.7));
+            M->rotate(radians(-90.f),vec3(1,0,0));
+            break;
+        case 5://bottom
+            M->translate(vec3(x,.02,z));
+            M->scale(.8);
+            break;
+    }
+    M->rotate(radians(-90.f),vec3(1,0,0));
+
+    SetMaterial(prog,7);
+    //glUniform3f(prog->getUniform("eye"), eye.x,eye.y,eye.z);
+    glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+
+//    glUniform3f(prog->getUniform("lightPos"), 0,20,0);
+    glBindVertexArray(quad_VertexArrayID);
+    glDrawArrays(GL_TRIANGLES,0,6);
+//        prog->unbind();
+}
+
+
 void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P) {
@@ -476,6 +561,7 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         glUniformMatrix4fv(prog->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
 
         M->pushMatrix();
+        renderBuildingScene(prog,P,V);
         M->scale(vec3(4, 1, 4));
         glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
         setMaterial(4);
@@ -539,3 +625,107 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
 
 }
 
+void Application::SetMaterial(shared_ptr<Program> active, int i)
+{
+    switch (i) {
+        case 1: //shiny blue plastic
+            glUniform3f(active->getUniform("ambient"), 0.02, 0.04, 0.2);
+            glUniform3f(active->getUniform("diffuse"), 0.0, 0.16, 0.9);
+            glUniform3f(active->getUniform("specular"), 0.14, 0.2, 0.8);
+            glUniform1f(active->getUniform("shiny"), 120.0);
+//            glUniform1f(active->getUniform("texWeight"), 0);
+            break;
+        case 2: // bunny
+            glUniform3f(active->getUniform("ambient"), 0.33, 0.23, 0.14);
+            glUniform3f(active->getUniform("diffuse"), 0.2, 0.2, 0.2);
+            glUniform3f(active->getUniform("specular"), 0.3, 0.3, 0.3);
+            glUniform1f(active->getUniform("shiny"), 4.0);
+//            glUniform1f(active->getUniform("texWeight"), 0);
+            break;
+        case 3: //brass
+            glUniform3f(active->getUniform("ambient"), 0.3294, 0.2235, 0.02745);
+            glUniform3f(active->getUniform("diffuse"), 0.7804, 0.5686, 0.11373);
+            glUniform3f(active->getUniform("specular"), 0.9922, 0.941176, 0.80784);
+            glUniform1f(active->getUniform("shiny"), 27.9);
+//            glUniform1f(active->getUniform("texWeight"), 0);
+            break;
+        case 4: //wood
+            glUniform3f(active->getUniform("ambient"), 0.2, 0.1, 0.0);
+            glUniform3f(active->getUniform("diffuse"), 0.54, 0.34, 0.02);
+            glUniform3f(active->getUniform("specular"), 0.1, 0.1, 0.1);
+            glUniform1f(active->getUniform("shiny"), 27.9);
+//            glUniform1f(active->getUniform("texWeight"), .05);
+//            glUniform1f(active->getUniform("texSize"), 120);
+            break;
+        case 5: //leaves
+            glUniform3f(active->getUniform("ambient"), 0.1, 0.4, 0.1);
+            glUniform3f(active->getUniform("diffuse"), 0.11, 0.79, 0.12);
+            glUniform3f(active->getUniform("specular"), 0.1, 0.2, 0.1);
+            glUniform1f(active->getUniform("shiny"), 27.9);
+//            glUniform1f(active->getUniform("texWeight"), .02);
+//            glUniform1f(active->getUniform("texSize"), 12);
+            break;
+        case 6: //plant
+            glUniform3f(active->getUniform("ambient"), 0.0, 0.3, 0.1);
+            glUniform3f(active->getUniform("diffuse"), 0.02, 0.59, 0.12);
+            glUniform3f(active->getUniform("specular"), 0.1, 0.2, 0.1);
+            glUniform1f(active->getUniform("shiny"), 27.9);
+//            glUniform1f(active->getUniform("texWeight"), .01);
+            break;
+        case 7: //building
+            glUniform3f(active->getUniform("ambient"), 0.1, 0.1, 0.1);
+            glUniform3f(active->getUniform("diffuse"), 0.2, 0.2, 0.2);
+            glUniform3f(active->getUniform("specular"), 0.7, 0.7, 0.7);
+            glUniform1f(active->getUniform("shiny"), 16.9);
+//            glUniform1f(active->getUniform("texWeight"), .01);
+            break;
+        case 0: //plain
+            glUniform3f(active->getUniform("ambient"), 0.8, 0.1, 0.1);
+            glUniform3f(active->getUniform("diffuse"), 0.7, 0.1, 0.1);
+            glUniform3f(active->getUniform("specular"), 1.0, 1.0, 1.0);
+            glUniform1f(active->getUniform("shiny"), 80);
+//            glUniform1f(active->getUniform("texWeight"), 0);
+
+            break;
+    }
+}
+
+void Application::initQuad()
+{
+    //now set up a simple quad for rendering FBO
+    glGenVertexArrays(1, &quad_VertexArrayID);
+    glBindVertexArray(quad_VertexArrayID);
+
+    static const GLfloat g_quad_vertex_buffer_data[] =
+            {
+                    -1.0f, -1.0f, 0.0f,
+                    1.0f, -1.0f, 0.0f,
+                    -1.0f,  1.0f, 0.0f,
+                    -1.0f,  1.0f, 0.0f,
+                    1.0f, -1.0f, 0.0f,
+                    1.0f,  1.0f, 0.0f,
+            };
+
+    static const GLfloat g_quad_vertex_buffer_normals[] =
+            {
+                    0.0f, 0.0f, 1.0f,
+                    0.0f, 0.0f, 1.0f,
+                    0.0f, 0.0f, 1.0f,
+                    0.0f, 0.0f, 1.0f,
+                    0.0f, 0.0f, 1.0f,
+                    0.0f, 0.0f, 1.0f
+            };
+
+    glGenBuffers(1, &quad_vertexbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    glGenBuffers(1, &quad_normalbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, quad_normalbuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_normals), g_quad_vertex_buffer_normals, GL_STATIC_DRAW);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+}

@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 
     Physics *physics = new Physics();
     physics->addSphere(PxVec3(0, 3, 0));
-    for (int i = 3; i < 400; i++) {
+    for (int i = 3; i < 50; i++) {
         physics->addSphere(PxVec3(0, 2 * i, 0));
 
     }

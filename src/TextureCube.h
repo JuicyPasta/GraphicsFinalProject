@@ -6,9 +6,9 @@
 #define INC_3DBILLIARDS_TEXTURECUBE_H
 
 
-class TextureCube: public Texture {
-
-};
+//class TextureCube: public Texture {
+//
+//};
 
 
 #endif //INC_3DBILLIARDS_TEXTURECUBE_H
