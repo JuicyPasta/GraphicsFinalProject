@@ -12,8 +12,10 @@ public:
 	void setFilename(const std::string &f) { filename = f; }
     void setDimensions(int w, int h) { width = w; height = h; }
 	void init();
+    void initFBO();
 	void setUnit(GLint u) { unit = u; }
 	GLint getUnit() const { return unit; }
+    GLuint getFBO() const { return fbo; }
 	void bind(GLint handle);
 	void unbind();
 	void setWrapModes(GLint wrapS, GLint wrapT); // Must be called after init()
@@ -24,6 +26,7 @@ private:
 	int width;
 	int height;
 	GLuint tid;
+    GLuint fbo;
 	GLint unit;
 };
 

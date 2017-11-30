@@ -77,7 +77,6 @@ public:
     void cursorPositionCallback(GLFWwindow *window, double x, double y);
     void resizeCallback(GLFWwindow *window, int width, int height);
     void setMaterial(int i);
-    void addVars(std::shared_ptr<Program> prog);
 
     void create_cube_map(string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube);
     bool load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name);
@@ -85,7 +84,7 @@ public:
     void init();
     void initQuad();
     void initShaders(const std::string &resourceDirectory);
-    void initGeomatry(const std::string &resourceDirectory);
+    void initGeometry(const std::string &resourceDirectory);
     void initTextures(const std::string &resourceDirectory);
     void createFBO(GLuint &fb, GLuint &tex);
 

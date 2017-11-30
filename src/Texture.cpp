@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <GLFW/glfw3.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 
@@ -10,12 +11,50 @@
 
 using namespace std;
 
-Texture::Texture() :
-        filename(""),
-        tid(0) {}
+Texture::Texture() : filename(""), tid(0), fbo(0) {
+}
 
 Texture::~Texture() {
+}
 
+void Texture::initFBO() {
+    glGenFramebuffers(1, &fbo);
+    glGenTextures(1, &tid);
+
+    //set up framebuffer
+    glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+    //set up texture
+    glBindTexture(GL_TEXTURE_2D, tid);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tid, 0);
+
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+        cout << "Error setting up frame buffer - exiting" << endl;
+        exit(0);
+    }
+
+
+
+//    glGenFramebuffers(1, &fbo);
+//    glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+//
+//    init();
+//
+//    glBindTexture(GL_TEXTURE_2D, tid);
+//    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tid, 0);
+//
+//    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+//        cout << "Error setting up frame buffer - exiting" << endl;
+//        exit(0);
+//    }
+//
+//    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void Texture::init() {
@@ -63,6 +102,7 @@ void Texture::init() {
     if (data)
         stbi_image_free(data);
 }
+
 
 void Texture::setWrapModes(GLint wrapS, GLint wrapT) {
     // Must be called after init()

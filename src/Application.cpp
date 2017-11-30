@@ -35,22 +35,22 @@ void Application::resizeCallback(GLFWwindow *window, int width, int height) {
 
     int downsampleScale = 2;
     largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
-    largeRender->init();
+    largeRender->initFBO();
     largeRender->setUnit(20);
     largeRender->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
     leftSplitScreen->setDimensions(width/2, height);
-    leftSplitScreen->init();
-    leftSplitScreen->setUnit(21);
+    leftSplitScreen->initFBO();
+    leftSplitScreen->setUnit(0);
     leftSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
     rightSplitScreen->setDimensions(width/2, height);
-    rightSplitScreen->init();
-    rightSplitScreen->setUnit(22);
+    rightSplitScreen->initFBO();
+    rightSplitScreen->setUnit(1);
     rightSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
     shadowMap->setDimensions(width/4, height/4);
-    shadowMap->init();
+    shadowMap->initFBO();
     shadowMap->setUnit(23);
     shadowMap->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
@@ -149,6 +149,9 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addUniform("M");
     texProg->addUniform("specularTexture");
     texProg->addUniform("diffuseTexture");
+    texProg->addUniform("width");
+    texProg->addUniform("height");
+    texProg->addUniform("texBuf");
     texProg->addAttribute("vertPos");
     texProg->addAttribute("vertNor");
     texProg->addAttribute("vertTex");
@@ -184,7 +187,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     depthProg->addAttribute("vertexPosition_modelspace");
 }
 
-void Application::initGeomatry(const std::string &resourceDirectory) {
+void Application::initGeometry(const std::string &resourceDirectory) {
     cube = make_shared<Shape>();
     cube->loadMesh(resourceDirectory + "/sphere.obj");
     cube->resize(1);
@@ -297,7 +300,7 @@ bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const c
     return true;
 }
 
-// delte this
+// delete this
 void Application::createFBO(GLuint &fb, GLuint &tex) {
     //initialize FBO
     int width, height;
@@ -323,9 +326,9 @@ void Application::createFBO(GLuint &fb, GLuint &tex) {
 }
 
 // draw2dBuff
-void Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
+void Application::drawTV(GLuint inBuf, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, frameBuf[0]);
+    glBindTexture(GL_TEXTURE_2D, inBuf);
 
     // example applying of 'drawing' the FBO texture - change shaders
     texProg->bind();
@@ -339,11 +342,6 @@ void Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<Mat
     glUniform1i(texProg->getUniform("width"), width);
     glUniform1i(texProg->getUniform("height"), height);
 
-//    glEnableVertexAttribArray(0);
-//    glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *) 0);
-//    glDrawArrays(GL_TRIANGLES, 0, 6);
-//    glDisableVertexAttribArray(0);
     quad->draw(texProg);
 
     texProg->unbind();
@@ -378,7 +376,7 @@ void Application::render(PxActor **actors, int numActors) {
     int downsampleScale = 2;
 
     int numPlayers = 1;
-    if (true) {
+    if (false) {
         GLint largeBuffer = largeRender->getID();
 
         // render to buffer
@@ -395,21 +393,12 @@ void Application::render(PxActor **actors, int numActors) {
 
         V->popMatrix();
     } else {
-        Texture *leftSplit = new Texture();
-        leftSplit->setDimensions(width/2, height);
-        leftSplit->setUnit(20);
-        leftSplit->init();
-        GLint leftBuffer = leftSplit->getID();
-
-        Texture *rightSplit = new Texture();
-        rightSplit->setDimensions(width/2, height);
-        leftSplit->setUnit(21);
-        rightSplit->init();
-        GLint rightBuffer = rightSplit->getID();
+        GLuint leftBuffer = leftSplitScreen->getFBO();
+        GLuint rightBuffer = rightSplitScreen->getFBO();
 
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-        renderScene(actors, numActors, frameBuf[0], M, V, P);
+        renderScene(actors, numActors, leftBuffer, M, V, P);
         V->popMatrix();
 
         M->pushMatrix();
@@ -421,13 +410,13 @@ void Application::render(PxActor **actors, int numActors) {
         M->translate(vec3(0, 1, 0));
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(frameBuf[0], M, V, O);
+        drawTV(leftBuffer, M, V, O);
         V->popMatrix();
         M->popMatrix();
 
         V->pushMatrix();
         V->multMatrix(p2->getViewMatrix());
-        renderScene(actors, numActors, frameBuf[0], M, V, P);
+        renderScene(actors, numActors, rightBuffer, M, V, P);
         V->popMatrix();
 
         M->pushMatrix();
@@ -441,7 +430,7 @@ void Application::render(PxActor **actors, int numActors) {
         M->translate(vec3(0, -1, 0));
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(frameBuf[0], M, V, O);
+        drawTV(rightBuffer, M, V, O);
         V->popMatrix();
         M->popMatrix();
     }
@@ -619,10 +608,8 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
                 cube->draw(texProg);
             }
             texProg->unbind();
-
         }
     }
-
 }
 
 void Application::SetMaterial(shared_ptr<Program> active, int i)
