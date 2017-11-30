@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     application->init();
     application->initShaders(resourceDir);
     application->initTextures(resourceDir);
-    application->initGeomatry(resourceDir);
+    application->initGeometry(resourceDir);
 
     Physics *physics = new Physics();
     physics->addSphere(PxVec3(0, 3, 0));
