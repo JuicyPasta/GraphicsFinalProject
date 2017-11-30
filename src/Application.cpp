@@ -31,7 +31,7 @@ void Application::cursorPositionCallback(GLFWwindow *window, double x, double y)
     p1->mouseInputCB(window, x, y);
 }
 void Application::resizeCallback(GLFWwindow *window, int width, int height) {
-    glViewport(0, 0, width, height);
+    glViewport(0, 0, width, height/2);
 
     int downsampleScale = 2;
     largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
@@ -117,7 +117,7 @@ void Application::init() {
     glDrawBuffers(1, DrawBuffers);
 
     p1 = make_shared<Player>(0);
-    p2 = make_shared<Player>(0);
+    p2 = make_shared<Player>(1);
 }
 
 void Application::initShaders(const std::string &resourceDirectory) {
@@ -350,6 +350,7 @@ void Application::drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<Mat
 }
 
 void Application::render(PxActor **actors, int numActors) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int seconds = 0;
     p1->update(seconds);
     p2->update(seconds);
@@ -377,8 +378,8 @@ void Application::render(PxActor **actors, int numActors) {
 
     int downsampleScale = 2;
 
-    int numPlayers = 1;
-    if (true) {
+    int numPlayers = 2;
+    if (numPlayers == 1) {
         GLint largeBuffer = largeRender->getID();
 
         // render to buffer
@@ -407,43 +408,47 @@ void Application::render(PxActor **actors, int numActors) {
         rightSplit->init();
         GLint rightBuffer = rightSplit->getID();
 
+        glViewport(0, height/2, width, height/2);
+
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-        renderScene(actors, numActors, frameBuf[0], M, V, P);
+        renderScene(actors, numActors, 0, M, V, P);
         V->popMatrix();
 
-        M->pushMatrix();
-        V->pushMatrix();
-        M->loadIdentity();
-        V->loadIdentity();
-        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-        M->scale(vec3(2, .48, 1));
-        M->translate(vec3(0, 1, 0));
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(frameBuf[0], M, V, O);
-        V->popMatrix();
-        M->popMatrix();
+//        M->pushMatrix();
+//        V->pushMatrix();
+//        M->loadIdentity();
+//        V->loadIdentity();
+//        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
+//        M->scale(vec3(2, .48, 1));
+//        M->translate(vec3(0, 1, 0));
+//        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//        drawTV(frameBuf[0], M, V, O);
+//        V->popMatrix();
+//        M->popMatrix();
+
+        glViewport(0, 0, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p2->getViewMatrix());
-        renderScene(actors, numActors, frameBuf[0], M, V, P);
+        renderScene(actors, numActors, 0, M, V, P);
         V->popMatrix();
 
-        M->pushMatrix();
-        V->pushMatrix();
-        M->loadIdentity();
-        M->loadIdentity();
-
-        V->loadIdentity();
-        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-        M->scale(vec3(2, .48, 1));
-        M->translate(vec3(0, -1, 0));
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(frameBuf[0], M, V, O);
-        V->popMatrix();
-        M->popMatrix();
+//        M->pushMatrix();
+//        V->pushMatrix();
+//        M->loadIdentity();
+//        M->loadIdentity();
+//
+//        V->loadIdentity();
+//        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
+//        M->scale(vec3(2, .48, 1));
+//        M->translate(vec3(0, -1, 0));
+//        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+//        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//        drawTV(frameBuf[0], M, V, O);
+//        V->popMatrix();
+//        M->popMatrix();
     }
 
     P->popMatrix();
@@ -534,7 +539,7 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P) {
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     skyProg->bind();
     {
