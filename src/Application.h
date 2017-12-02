@@ -17,6 +17,7 @@
 #include "GLTextureWriter.h"
 #include "Player.h"
 #include "Physics.h"
+#include "TextureCube.h"
 
 // value_ptr for glm
 #include <glm/gtc/type_ptr.hpp>
@@ -37,11 +38,13 @@ public:
     shared_ptr<Program> skyProg;
     shared_ptr<Program> depthProg;
     shared_ptr<Program> shadowProg;
+    shared_ptr<Program> fboTexProg;
 
     // textures
     shared_ptr<Texture> texture0; // TODO: move to ballTexture
     shared_ptr<Texture> ballTexture[16];
     shared_ptr<Texture> specularTexture;
+    shared_ptr<TextureCube> skyboxTex;
 
     // texture FBOs
     shared_ptr<Texture> largeRender;
@@ -104,7 +107,7 @@ public:
     void render(PxActor** actors, int numActors);
     void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
     void renderActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
-    void drawTV(GLuint inTex, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
+    void drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
 };
 
 

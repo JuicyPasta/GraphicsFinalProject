@@ -24,11 +24,16 @@ int main(int argc, char **argv) {
     application->initGeometry(resourceDir);
 
     Physics *physics = new Physics();
-    physics->addSphere(PxVec3(0, 3, 0));
-    for (int i = 3; i < 50; i++) {
-        physics->addSphere(PxVec3(0, 2 * i, 0));
+    int numSpheres = 16;
+    UserData spheres[numSpheres+1];
+    spheres[0].ballNum = 0;
+    physics->addSphere(PxVec3(0, 3, 0), &spheres[0]);
 
+    for (int i = 1; i < numSpheres; i++) {
+        spheres[i].ballNum = i;
+        physics->addSphere(PxVec3(0, 2 * i, 0), &spheres[i]);
     }
+
     physics->addGround();
     PxActor *actors[400];
 

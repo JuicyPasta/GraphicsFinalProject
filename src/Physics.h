@@ -14,6 +14,7 @@
 
 #include "MemoryAllocator.h"
 #include "ErrorCallback.h"
+#include "UserData.h"
 
 
 using namespace physx;
@@ -27,7 +28,7 @@ public:
     Physics();
     ~Physics();
 
-    void addSphere(PxVec3 position);
+    void addSphere(PxVec3 position, UserData *userData);
     void addGround();
     bool advance(PxReal dt);
     bool fetchResults();

@@ -4,6 +4,7 @@
 #include <glm/detail/type_mat.hpp>
 #include <glm/detail/type_mat4x4.hpp>
 #include "Physics.h"
+#include "UserData.h"
 
 
 Physics::Physics() {
@@ -58,7 +59,7 @@ Physics::~Physics() {
 }
 
 
-void Physics::addSphere(PxVec3 position) {
+void Physics::addSphere(PxVec3 position, UserData *userData) {
     PxMaterial *material = mPhysics->createMaterial(.5, .5, .5);
 
     PxRigidDynamic *aSphereActor = mPhysics->createRigidDynamic(PxTransform(position));
@@ -69,27 +70,49 @@ void Physics::addSphere(PxVec3 position) {
 //    PxRigidBodyExt::updateMassAndInertia(*aSphereActor, .1);
     aSphereActor->setAngularVelocity(PxVec3(1, 1, 1), true);
 
-
-    // pass this in, connects to game
-    int *data;
-    aSphereActor->userData = data;
+    aSphereActor->userData = userData;
 
     mScene->addActor(*aSphereActor);
 }
 
 void Physics::addGround() {
-    PxVec3 position = PxVec3(0, -1, 0);
     PxMaterial *material = mPhysics->createMaterial(.5, .5, .5);
 
-    PxRigidStatic *ground = mPhysics->createRigidStatic(PxTransform(position));
-    ground->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, true);
+    PxVec3 position = PxVec3(0, -1, 0);
     PxTransform relativePose(PxQuat(PxHalfPi, PxVec3(0, 0, 1)));
-
+    PxRigidStatic *ground = mPhysics->createRigidStatic(PxTransform(position));
     PxShape *aCapsuleShape = PxRigidActorExt::createExclusiveShape(*ground, PxPlaneGeometry(), *material);
-
     aCapsuleShape->setLocalPose(PxTransform(relativePose));
-
     mScene->addActor(*ground);
+
+    int size = 60;
+
+    float corner = sqrt((size/2) * (size/2) * 2) + 5;
+
+    position = PxVec3(0, -1, size);
+    PxRigidStatic *left = mPhysics->createRigidStatic(PxTransform(position));
+    PxRigidActorExt::createExclusiveShape(*left, PxBoxGeometry(size, 10, 10), *material);
+    mScene->addActor(*left);
+
+    position = PxVec3(0, -1, -size);
+    PxRigidStatic *right = mPhysics->createRigidStatic(PxTransform(position));
+    PxRigidActorExt::createExclusiveShape(*right, PxBoxGeometry(size, 10, 10), *material);
+    mScene->addActor(*right);
+
+    position = PxVec3(size, -1, 0);
+    PxRigidStatic *front = mPhysics->createRigidStatic(PxTransform(position));
+    PxRigidActorExt::createExclusiveShape(*front, PxBoxGeometry(10, 10, size), *material);
+    mScene->addActor(*front);
+
+    position = PxVec3(-size, -1, 0);
+    PxRigidStatic *back = mPhysics->createRigidStatic(PxTransform(position));
+    PxRigidActorExt::createExclusiveShape(*back, PxBoxGeometry(10, 10, size), *material);
+    mScene->addActor(*back);
+
+    position = PxVec3(corner, -1, corner);
+    PxRigidStatic *goal1 = mPhysics->createRigidStatic(PxTransform(position));
+    PxRigidActorExt::createExclusiveShape(*goal1, PxSphereGeometry(5), *material);
+    mScene->addActor(*goal1);
 }
 
 // rigid body docs http://docs.nvidia.com/gameworks/content/gameworkslibrary/physx/guide/Manual/RigidBodyOverview.html

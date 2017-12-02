@@ -100,6 +100,8 @@ void Application::init() {
     glClearColor(.1f, .1f, .1f, 1.0f);
     // Enable z-buffer test.
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_POLYGON_SMOOTH);
+    glEnable(GL_BLEND);
 
     //create two frame buffer objects to toggle between
     glGenFramebuffers(2, frameBuf);
@@ -117,7 +119,7 @@ void Application::init() {
     glDrawBuffers(1, DrawBuffers);
 
     p1 = make_shared<Player>(0);
-    p2 = make_shared<Player>(1);
+    p2 = make_shared<Player>(0);
 }
 
 void Application::initShaders(const std::string &resourceDirectory) {
@@ -159,6 +161,21 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addAttribute("L");
     texProg->addAttribute("E");
     texProg->addAttribute("N");
+
+    fboTexProg = make_shared<Program>();
+    fboTexProg->setVerbose(true);
+    fboTexProg->setShaderNames( resourceDirectory + "/fbo_tex_vert.glsl", resourceDirectory + "/fbo_tex_frag.glsl");
+    fboTexProg->init();
+    fboTexProg->addUniform("P");
+    fboTexProg->addUniform("V");
+    fboTexProg->addUniform("M");
+    fboTexProg->addUniform("width");
+    fboTexProg->addUniform("height");
+    fboTexProg->addUniform("texBuf");
+    fboTexProg->addAttribute("vertTex");
+    fboTexProg->addAttribute("vertPos");
+    fboTexProg->addAttribute("vertNor");
+    fboTexProg->addAttribute("texCoord");
 
     skyProg = make_shared<Program>();
     skyProg->setVerbose(true);
@@ -218,14 +235,17 @@ void Application::initTextures(const std::string &resourceDirectory) {
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
 
-    create_cube_map(
+    skyboxTex = make_shared<TextureCube>();
+    skyboxTex->init(
             resourceDirectory + "/skybox/Box_Back.jpg",
             resourceDirectory + "/skybox/Box_Front.jpg",
             resourceDirectory + "/skybox/Box_Top.jpg",
             resourceDirectory + "/skybox/Box_Bottom.jpg",
             resourceDirectory + "/skybox/Box_Left.jpg",
-            resourceDirectory + "/skybox/Box_Right.jpg",
-            &texSkybox);
+            resourceDirectory + "/skybox/Box_Right.jpg"
+    );
+    skyboxTex->setUnit(0);
+    skyboxTex->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
     texture0 = make_shared<Texture>();
     texture0->setFilename(resourceDirectory + "/Ball1.jpg");
@@ -235,8 +255,9 @@ void Application::initTextures(const std::string &resourceDirectory) {
 
     for (int i = 0; i <= 15; i++) {
         ballTexture[i] = make_shared<Texture>();
-//        string filename = i == 0 ? resourceDirectory + "/balls/BallCue.jpg" :resourceDirectory + "/balls/Ball"+i+".jpg";
-        string filename = resourceDirectory + "/balls/BallCue.jpg";
+        string filename = i == 0 ? resourceDirectory + "/balls/BallCue.jpg" :
+                          resourceDirectory + "/balls/Ball"+std::to_string(i)+".jpg";
+//        string filename = resourceDirectory + "/balls/BallCue.jpg";
 //        cout << filename << "\n";
         ballTexture[i]->setFilename(filename);
         ballTexture[i]->init();
@@ -257,48 +278,29 @@ void Application::initTextures(const std::string &resourceDirectory) {
     shadowMap = make_shared<Texture>();
     resizeCallback(windowManager->getHandle(), width, height);
 }
-void Application::create_cube_map( string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube) {
-    // generate a cube-map texture to hold all the sides
-    glActiveTexture(GL_TEXTURE0);
-    glGenTextures(1, tex_cube);
-
-    // load each image and copy into a side of the cube-map texture
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, front.data());
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, back.data());
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, top.data());
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, bottom.data());
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, left.data());
-    load_cube_map_side(*tex_cube, GL_TEXTURE_CUBE_MAP_POSITIVE_X, right.data());
-    // format cube map texture
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-}
-bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name) {
-    glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
-
-    int x, y, n;
-    int force_channels = 4;
-    unsigned char*  image_data = stbi_load(
-            file_name, &x, &y, &n, force_channels);
-    if (!image_data) {
-        fprintf(stderr, "ERROR: could not load %s\n", file_name);
-        return false;
-    }
-    // non-power-of-2 dimensions check
-    if ((x & (x - 1)) != 0 || (y & (y - 1)) != 0) {
-        fprintf(stderr,
-                "WARNING: image %s is not power-of-2 dimensions\n",
-                file_name);
-    }
-
-    // copy image data into 'target' side of cube map
-    glTexImage2D( side_target, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
-    free(image_data);
-    return true;
-}
+//bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name) {
+//    glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
+//
+//    int x, y, n;
+//    int force_channels = 4;
+//    unsigned char*  image_data = stbi_load(
+//            file_name, &x, &y, &n, force_channels);
+//    if (!image_data) {
+//        fprintf(stderr, "ERROR: could not load %s\n", file_name);
+//        return false;
+//    }
+//    // non-power-of-2 dimensions check
+//    if ((x & (x - 1)) != 0 || (y & (y - 1)) != 0) {
+//        fprintf(stderr,
+//                "WARNING: image %s is not power-of-2 dimensions\n",
+//                file_name);
+//    }
+//
+//    // copy image data into 'target' side of cube map
+//    glTexImage2D(side_target, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+//    free(image_data);
+//    return true;
+//}
 
 // delete this
 void Application::createFBO(GLuint &fb, GLuint &tex) {
@@ -326,25 +328,25 @@ void Application::createFBO(GLuint &fb, GLuint &tex) {
 }
 
 // draw2dBuff
-void Application::drawTV(GLuint inBuf, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, inBuf);
+void Application::drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // example applying of 'drawing' the FBO texture - change shaders
-    texProg->bind();
-    glUniform1i(texProg->getUniform("texBuf"), 0);
-    glUniformMatrix4fv(texProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
-    glUniformMatrix4fv(texProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
-    glUniformMatrix4fv(texProg->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
+    fboTexProg->bind();
+
+    fboTex->bind(fboTexProg->getUniform("texBuf"));
+    glUniformMatrix4fv(fboTexProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
+    glUniformMatrix4fv(fboTexProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
+    glUniformMatrix4fv(fboTexProg->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
 
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
-    glUniform1i(texProg->getUniform("width"), width);
-    glUniform1i(texProg->getUniform("height"), height);
+    glUniform1i(fboTexProg->getUniform("width"), width);
+    glUniform1i(fboTexProg->getUniform("height"), height);
 
-    quad->draw(texProg);
+    geom->draw(fboTexProg);
 
-    texProg->unbind();
+    fboTexProg->unbind();
 }
 
 void Application::render(PxActor **actors, int numActors) {
@@ -377,46 +379,19 @@ void Application::render(PxActor **actors, int numActors) {
     int downsampleScale = 2;
     
     int numPlayers = 2;
-    if (numPlayers == 1) {
-        GLint largeBuffer = largeRender->getID();
-
-        // render to buffer
-        V->pushMatrix();
-        V->multMatrix(p1->getViewMatrix());
-        //renderScene(actors, numActors, largeBuffer, M, V, P); // COMMENTED FOR PERFORMANCE
-        V->popMatrix();
-
-        // TODO: downscale
-
+    if (true) {
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P);
-
         V->popMatrix();
-    } else {
-        GLuint leftBuffer = leftSplitScreen->getFBO();
-        GLuint rightBuffer = rightSplitScreen->getFBO();
 
+    } else {
         glViewport(0, height/2, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-<<<<<<< HEAD
         renderScene(actors, numActors, 0, M, V, P);
         V->popMatrix();
-
-//        M->pushMatrix();
-//        V->pushMatrix();
-//        M->loadIdentity();
-//        V->loadIdentity();
-//        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-//        M->scale(vec3(2, .48, 1));
-//        M->translate(vec3(0, 1, 0));
-//        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        drawTV(frameBuf[0], M, V, O);
-//        V->popMatrix();
-//        M->popMatrix();
 
         glViewport(0, 0, width, height/2);
 
@@ -424,58 +399,6 @@ void Application::render(PxActor **actors, int numActors) {
         V->multMatrix(p2->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P);
         V->popMatrix();
-
-//        M->pushMatrix();
-//        V->pushMatrix();
-//        M->loadIdentity();
-//        M->loadIdentity();
-//
-//        V->loadIdentity();
-//        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-//        M->scale(vec3(2, .48, 1));
-//        M->translate(vec3(0, -1, 0));
-//        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-//        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        drawTV(frameBuf[0], M, V, O);
-//        V->popMatrix();
-//        M->popMatrix();
-=======
-        renderScene(actors, numActors, leftBuffer, M, V, P);
-        V->popMatrix();
-
-        M->pushMatrix();
-        V->pushMatrix();
-        M->loadIdentity();
-        V->loadIdentity();
-        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-        M->scale(vec3(2, .48, 1));
-        M->translate(vec3(0, 1, 0));
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(leftBuffer, M, V, O);
-        V->popMatrix();
-        M->popMatrix();
-
-        V->pushMatrix();
-        V->multMatrix(p2->getViewMatrix());
-        renderScene(actors, numActors, rightBuffer, M, V, P);
-        V->popMatrix();
-
-        M->pushMatrix();
-        V->pushMatrix();
-        M->loadIdentity();
-        M->loadIdentity();
-
-        V->loadIdentity();
-        V->lookAt(vec3(0, 0, 0), vec3(0, 0, -1), vec3(0, 1, 0));
-        M->scale(vec3(2, .48, 1));
-        M->translate(vec3(0, -1, 0));
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        drawTV(rightBuffer, M, V, O);
-        V->popMatrix();
-        M->popMatrix();
->>>>>>> 1c6233188d43242c2f645c83034bc8364af183b8
     }
 
     P->popMatrix();
@@ -577,9 +500,8 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         glUniformMatrix4fv(skyProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
         V->popMatrix();
 
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, texSkybox);
-        glUniform1i(skyProg->getUniform("skyTexture"), 0);
+        skyboxTex->bind(skyProg->getUniform("skyTexture"));
+
         glDepthMask(GL_FALSE);
 
         box->draw(skyProg);
@@ -631,13 +553,15 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
     for (int i = 0; i < numActors; i++) {
         PxRigidActor *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
-        void *data = actor->userData;
+        UserData *data = (UserData*) actor->userData;
 
         actor->getShapes(shapes, nbShapes);
         bool sleeping = actors[i]->is<PxRigidDynamic>() ? actors[i]->is<PxRigidDynamic>()->isSleeping() : false;
 
         for (int j = 0; j < nbShapes; j++) {
             const PxMat44 shapePose(PxShapeExt::getGlobalPose(*shapes[j], *actor));
+//            cout << data->ballNum << "\n";
+            shared_ptr<Texture> texture = ballTexture[data->ballNum];
 
             texProg->bind();
             {
@@ -645,7 +569,7 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
                 glUniformMatrix4fv(texProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
                 glUniformMatrix4fv(texProg->getUniform("M"), 1, GL_FALSE, shapePose.front());
 
-                texture0->bind(texProg->getUniform("diffuseTexture"));
+                texture->bind(texProg->getUniform("diffuseTexture"));
                 specularTexture->bind(texProg->getUniform("specularTexture"));
 
                 cube->draw(texProg);

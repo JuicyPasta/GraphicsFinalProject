@@ -174,13 +174,20 @@ void Shape::loadFloorGeom() {
 }
 void Shape::loadQuadGeom() {
 	posBuf = {
-			-1.0f, -1.0f, 0.0f,
-			1.0f, -1.0f, 0.0f,
-			-1.0f, 1.0f, 0.0f,
-			-1.0f, 1.0f, 0.0f,
-			1.0f, -1.0f, 0.0f,
-			1.0f, 1.0f, 0.0f,
+			-1, 1, 0,
+			-1, -1, 0,
+			1, 1, 0,
+			1, -1, 0
 	};
+
+	texBuf = {
+			-.5, .5, // back
+			-.5, -.5,
+			.5, .5,
+			.5, -.5
+	};
+
+	eleBuf = {0, 1, 2, 1, 2, 3};
 }
 
 void Shape::draw(const shared_ptr<Program> prog) const
