@@ -67,8 +67,6 @@ void Physics::addSphere(PxVec3 position, UserData *userData) {
     PxShape *aCapsuleShape = PxRigidActorExt::createExclusiveShape(*aSphereActor, PxSphereGeometry(1), *material);
 
     aCapsuleShape->setLocalPose(relativePose);
-//    PxRigidBodyExt::updateMassAndInertia(*aSphereActor, .1);
-    aSphereActor->setAngularVelocity(PxVec3(1, 1, 1), true);
 
     aSphereActor->userData = userData;
 

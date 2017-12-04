@@ -35,19 +35,19 @@ Player::Player(int input) {
 
 void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
-        strafeInput.y = -1;
+        strafeInput.y = 1;
     } else if (key == GLFW_KEY_W && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_S && action == GLFW_PRESS) {
-        strafeInput.y = 1;
+        strafeInput.y = -1;
     } else if (key == GLFW_KEY_S && action == GLFW_RELEASE) {
         strafeInput.y = 0;
     } else if (key == GLFW_KEY_A && action == GLFW_PRESS) {
-        strafeInput.x = 1;
+        strafeInput.x = -1;
     } else if (key == GLFW_KEY_A && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     } else if (key == GLFW_KEY_D && action == GLFW_PRESS) {
-        strafeInput.x = -1;
+        strafeInput.x = 1;
     } else if (key == GLFW_KEY_D && action == GLFW_RELEASE) {
         strafeInput.x = 0;
     }
@@ -59,7 +59,7 @@ void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
     double dy = lastMouseY - y;
 
     orientationInput.x += dx / 1000;
-    orientationInput.y -= dy / 1000;
+    orientationInput.y += dy / 1000;
 
     lastMouseX = x;
     lastMouseY = y;
@@ -106,7 +106,7 @@ void Player::update(float deltaTime) {
     float strafeSpeed = .5;
 
     if (orientationInput.x > 2*3.14159) orientationInput.x -= 3.14159*2;
-    if (orientationInput.x < -0.0) orientationInput.x -= 3.14159*2;
+    if (orientationInput.x < -0.0) orientationInput.x += 3.14159*2;
 /**
     if(strafeInput.y > 0) {
         orientationInput.x -= .00001;
@@ -137,6 +137,8 @@ void Player::update(float deltaTime) {
     if (orientationInput.y < -.9)
         orientationInput.y = -.9f;
 
+    std::cout << orientationInput.x << std::endl;
+
     lookAtPoint = position + glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
                                        sin(orientationInput.y),
                                        -cos(orientationInput.y) * sin(orientationInput.x));
@@ -158,11 +160,11 @@ void Player::update(float deltaTime) {
 }
 
 mat4 Player::getViewMatrix() {
-	return glm::lookAt(lookAtPoint, position, upVector);
-    //return glm::lookAt(position, lookAtPoint, upVector);
+//	return glm::lookAt(lookAtPoint, position, upVector);
+    return glm::lookAt(position, lookAtPoint, upVector);
 }
 
 mat4 Player::getSkyBoxViewMatrix() {
-    return glm::lookAt(lookAtPoint-position, vec3(0, 0, 0), upVector);
-    //return glm::lookAt(position, lookAtPoint, upVector);
+//    return glm::lookAt(lookAtPoint-position, vec3(0, 0, 0), upVector);
+    return glm::lookAt(vec3(0, 0, 0), lookAtPoint - position, upVector);
 }

@@ -361,12 +361,13 @@ void Application::render(PxActor **actors, int numActors) {
     auto V = make_shared<MatrixStack>();
     V->loadIdentity();
 
+    int numPlayers = 2;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
     float aspect = width / (float) (height / 2.0f);
     P->pushMatrix();
-    P->perspective(45.0f, aspect, 0.01f, 300.0f);
+    P->perspective(45.0f, aspect/numPlayers, 0.01f, 300.0f);
 
     O->pushMatrix();
     aspect /= 2;
@@ -377,8 +378,7 @@ void Application::render(PxActor **actors, int numActors) {
     }
 
     int downsampleScale = 2;
-    
-    int numPlayers = 2;
+
     if (true) {
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
@@ -560,7 +560,6 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
 
         for (int j = 0; j < nbShapes; j++) {
             const PxMat44 shapePose(PxShapeExt::getGlobalPose(*shapes[j], *actor));
-//            cout << data->ballNum << "\n";
             shared_ptr<Texture> texture = ballTexture[data->ballNum];
 
             texProg->bind();
@@ -579,8 +578,7 @@ void Application::renderActors(PxActor **actors, int numActors, shared_ptr<Matri
     }
 }
 
-void Application::SetMaterial(shared_ptr<Program> active, int i)
-{
+void Application::SetMaterial(shared_ptr<Program> active, int i) {
     switch (i) {
         case 1: //shiny blue plastic
             glUniform3f(active->getUniform("ambient"), 0.02, 0.04, 0.2);
@@ -643,9 +641,7 @@ void Application::SetMaterial(shared_ptr<Program> active, int i)
             break;
     }
 }
-
-void Application::initQuad()
-{
+void Application::initQuad() {
     //now set up a simple quad for rendering FBO
     glGenVertexArrays(1, &quad_VertexArrayID);
     glBindVertexArray(quad_VertexArrayID);
