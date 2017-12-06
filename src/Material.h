@@ -5,6 +5,7 @@
 #ifndef INC_3DBILLIARDS_MATERIAL_H
 #define INC_3DBILLIARDS_MATERIAL_H
 
+#include <memory>
 #include "Program.h"
 #include "Texture.h"
 

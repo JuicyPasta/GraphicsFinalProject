@@ -5,7 +5,7 @@
 #ifndef INC_3DBILLIARDS_TEXTURECUBE_H
 #define INC_3DBILLIARDS_TEXTURECUBE_H
 
-#include <OpenGL/OpenGL.h>
+//#include <OpenGL/OpenGL.h>
 #include <string>
 #include "Texture.h"
 

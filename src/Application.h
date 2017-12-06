@@ -69,6 +69,8 @@ public:
     GLuint quad_VertexArrayID;
     GLuint quad_vertexbuffer,quad_normalbuffer;
 
+    float time = -2.0f;
+
 //    bool FirstTime = true;
 //    bool Moving = false;
 //    int gMat = 0;

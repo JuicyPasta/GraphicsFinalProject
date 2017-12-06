@@ -2,7 +2,7 @@
 // Created by Darrow, Jackson on 11/25/17.
 //
 
-#include <OpenGL/OpenGL.h>
+//#include <OpenGL/OpenGL.h>
 #include <glad/glad.h>
 #include <cstdlib>
 #include "TextureCube.h"

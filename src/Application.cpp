@@ -53,7 +53,6 @@ void Application::resizeCallback(GLFWwindow *window, int width, int height) {
     shadowMap->setUnit(23);
     shadowMap->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
-
 void Application::setMaterial(int i) {
     switch (i) {
         case 0: //shiny blue plastic
@@ -89,7 +88,6 @@ void Application::setMaterial(int i) {
             
     }
 }
-
 void Application::init() {
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
@@ -101,6 +99,7 @@ void Application::init() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_POLYGON_SMOOTH);
     glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     //create two frame buffer objects to toggle between
     glGenFramebuffers(2, frameBuf);
@@ -143,7 +142,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
 
     texProg = make_shared<Program>();
     texProg->setVerbose(true);
-    texProg->setShaderNames( resourceDirectory + "/tex_vert.glsl", resourceDirectory + "/tex_frag.glsl");
+    texProg->setShaderNames( resourceDirectory + "/shatter_vert.glsl", resourceDirectory + "/shatter_frag.glsl",
+                             resourceDirectory + "/shatter_geo.glsl");
     texProg->init();
     texProg->addUniform("P");
     texProg->addUniform("V");
@@ -154,6 +154,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addUniform("width");
     texProg->addUniform("height");
     texProg->addUniform("texBuf");
+    texProg->addUniform("time");
     texProg->addAttribute("vertPos");
     texProg->addAttribute("vertNor");
     texProg->addAttribute("vertTex");
@@ -161,6 +162,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addAttribute("L");
     texProg->addAttribute("E");
     texProg->addAttribute("N");
+    texProg->addAttribute("triNum");
+
 
     fboTexProg = make_shared<Program>();
     fboTexProg->setVerbose(true);
@@ -577,6 +580,7 @@ inline void Application::bindUniforms(shared_ptr<Program> program, const float *
     glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, M);
     glUniformMatrix4fv(program->getUniform("V"), 1, GL_FALSE, V);
     glUniformMatrix4fv(program->getUniform("P"), 1, GL_FALSE, P);
+
     if (diffTex != NULL)
         diffTex->bind(program->getUniform("diffuseTexture"));
     if (specTex != NULL)
@@ -596,6 +600,8 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
         int nbShapes = actor->getNbShapes();
         auto *userData = (UserData*) actor->userData;
 
+        if (i == 0) userData->time += .007;
+
         actor->getShapes(shapes, nbShapes);
         bool sleeping = actors[i]->is<PxRigidDynamic>() ? actors[i]->is<PxRigidDynamic>()->isSleeping() : false;
 
@@ -611,6 +617,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
 
             shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
             program->bind();
+            glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
             {
                 bindUniforms(program, shapePose.front(), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                              material->diffuseTex, material->specularTex, material->material, player);

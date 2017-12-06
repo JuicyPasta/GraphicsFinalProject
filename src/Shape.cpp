@@ -135,6 +135,8 @@ void Shape::init() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eleBufID);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, eleBuf.size()*sizeof(unsigned int), eleBuf.data(), GL_STATIC_DRAW);
 
+
+
 	// Unbind the arrays
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -192,8 +194,8 @@ void Shape::loadQuadGeom() {
 
 void Shape::draw(const shared_ptr<Program> prog) const
 {
-	int h_pos, h_nor, h_tex;
-	h_pos = h_nor = h_tex = -1;
+	int h_pos, h_nor, h_tex, h_tri;
+	h_pos = h_nor = h_tex = h_tri = -1;
 
 	glBindVertexArray(vaoID);
 	// Bind position buffer
@@ -222,6 +224,7 @@ void Shape::draw(const shared_ptr<Program> prog) const
 			glVertexAttribPointer(h_tex, 2, GL_FLOAT, GL_FALSE, 0, (const void *)0);
 		}
 	}
+
 
 	// Bind element buffer
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eleBufID);

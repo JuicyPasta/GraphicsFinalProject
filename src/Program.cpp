@@ -34,6 +34,14 @@ void Program::setShaderNames(const std::string &v, const std::string &f)
 	fShaderName = f;
 }
 
+void Program::setShaderNames(const std::string &v, const std::string &f, const std::string &g)
+{
+	vShaderName = v;
+	fShaderName = f;
+	gShaderName = g;
+	gShaderActive = true;
+}
+
 bool Program::init()
 {
 	GLint rc;
@@ -41,6 +49,7 @@ bool Program::init()
 	// Create shader handles
 	GLuint VS = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FS = glCreateShader(GL_FRAGMENT_SHADER);
+	GLuint GS = glCreateShader(GL_GEOMETRY_SHADER);
 
 	// Read shader sources
 	std::string vShaderString = readFileAsString(vShaderName);
@@ -49,6 +58,11 @@ bool Program::init()
 	const char *fshader = fShaderString.c_str();
 	CHECKED_GL_CALL(glShaderSource(VS, 1, &vshader, NULL));
 	CHECKED_GL_CALL(glShaderSource(FS, 1, &fshader, NULL));
+	if (gShaderActive) {
+		std::string gShaderString = readFileAsString(gShaderName);
+		const char *gshader = gShaderString.c_str();
+		CHECKED_GL_CALL(glShaderSource(GS, 1, &gshader, NULL));
+	}
 
 	// Compile vertex shader
 	CHECKED_GL_CALL(glCompileShader(VS));
@@ -76,10 +90,26 @@ bool Program::init()
 		return false;
 	}
 
+	if (gShaderActive) {
+		CHECKED_GL_CALL(glCompileShader(GS));
+		CHECKED_GL_CALL(glGetShaderiv(GS, GL_COMPILE_STATUS, &rc));
+		if (!rc)
+		{
+			if (isVerbose())
+			{
+				GLSL::printShaderInfoLog(GS);
+				std::cout << "Error compiling geometry shader " << gShaderName << std::endl;
+			}
+			return false;
+		}
+	}
+
 	// Create the program and link
 	pid = glCreateProgram();
 	CHECKED_GL_CALL(glAttachShader(pid, VS));
 	CHECKED_GL_CALL(glAttachShader(pid, FS));
+	if (gShaderActive)
+		CHECKED_GL_CALL(glAttachShader(pid, GS));
 	CHECKED_GL_CALL(glLinkProgram(pid));
 	CHECKED_GL_CALL(glGetProgramiv(pid, GL_LINK_STATUS, &rc));
 	if (!rc)

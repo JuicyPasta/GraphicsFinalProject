@@ -18,6 +18,7 @@ class UserData {
 public:
     int ballNum;
     map<PxGeometryType::Enum, shared_ptr<Material>> materialMap;
+    float time = -2.f;
 };
 
 #endif //INC_3DBILLIARDS_USERDATA_H
