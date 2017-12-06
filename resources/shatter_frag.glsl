@@ -137,5 +137,5 @@ void main() {
   specL = clamp(specL, 0.0, 1.0);
 
   Outcolor = vec4(diffL + specL + ambient*texColor0.xyz, 1);
-  Outcolor.a = 1 - time*time;
+//  Outcolor.a = 1 - time*time;
 }

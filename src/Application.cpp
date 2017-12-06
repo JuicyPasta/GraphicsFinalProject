@@ -139,6 +139,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
     prog->addAttribute("vertPos");
     prog->addAttribute("vertNor");
     prog->addAttribute("vertTex");
+    prog->addUniform("time");
+
 
     texProg = make_shared<Program>();
     texProg->setVerbose(true);
@@ -181,6 +183,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     fboTexProg->addAttribute("vertPos");
     fboTexProg->addAttribute("vertNor");
     fboTexProg->addAttribute("texCoord");
+    fboTexProg->addUniform("time");
 
     skyProg = make_shared<Program>();
     skyProg->setVerbose(true);
@@ -194,36 +197,32 @@ void Application::initShaders(const std::string &resourceDirectory) {
     skyProg->addAttribute("vertNor");
     skyProg->addAttribute("vertTex");
     skyProg->addAttribute("vTexCubeCoord");
+    skyProg->addUniform("time");
 
     depthProg = make_shared<Program>();
     depthProg->setVerbose(true);
     depthProg->setShaderNames( resourceDirectory + "/shadowmap_vert.glsl", resourceDirectory + "/shadowmap_frag.glsl");
     depthProg->init();
+    depthProg->addUniform("depthMVP");
     depthProg->addUniform("P");
     depthProg->addUniform("V");
     depthProg->addUniform("M");
-    depthProg->addUniform("specularTexture");
-    depthProg->addUniform("diffuseTexture");
-    depthProg->addUniform("eyePos");
-    depthProg->addUniform("width");
-    depthProg->addUniform("height");
-    depthProg->addUniform("texBuf");
-    depthProg->addUniform("time");
-    depthProg->addUniform("eyePos");
     depthProg->addUniform("depthMVP");
     depthProg->addAttribute("vertPos");
     depthProg->addAttribute("vertNor");
     depthProg->addAttribute("vertTex");
+    depthProg->addAttribute("vertexPosition_modelspace");
+    depthProg->addUniform("time");
 }
 
 void Application::initGeometry(const std::string &resourceDirectory) {
-    cube = make_shared<Shape>();
-    cube->loadMesh(resourceDirectory + "/sphere.obj");
-    cube->resize(1);
-    cube->init();
+    sphere = make_shared<Shape>();
+    sphere->loadMesh(resourceDirectory + "/sphere.obj");
+    sphere->resize(1);
+    sphere->init();
 
     box = make_shared<Shape>();
-    box->loadMesh(resourceDirectory + "/cube.obj");
+    box->loadMesh(resourceDirectory + "/sphere.obj");
     box->resize(1);
     box->init();
 
@@ -320,10 +319,16 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
 
     // Send our transformation to the currently bound shader,
     // in the "MVP" uniform
-    renderPxActors(actors, numActors, M, V, P, player, depthProg);
+    shadowProg->bind();
+    {
+        shadowMap->bind(shadowProg->getUniform("shadowMap"));
+        glUniformMatrix4fv(shadowProg->getUniform("depthMVP"), 1, GL_FALSE, &depthMVP[0][0]);
+        renderPxActors(actors, numActors, M, V, P, player, shadowProg);
+    }
 }
 
 void Application::render(PxActor **actors, int numActors) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int seconds = 0;
     p1->update(seconds);
     p2->update(seconds);
@@ -337,6 +342,7 @@ void Application::render(PxActor **actors, int numActors) {
     int numPlayers = 2;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
+    glViewport(0, 0, width, height);
     float aspect = width / (float) (height / 2.0f);
     P->pushMatrix();
     P->perspective(45.0f, aspect/numPlayers, 0.01f, 300.0f);
@@ -349,7 +355,7 @@ void Application::render(PxActor **actors, int numActors) {
         O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
     }
 
-    renderDepthBuffer(actors, numActors, M, V, P, p1);
+//    renderDepthBuffer(actors, numActors, M, V, P, p1);
 
     int downsampleScale = 2;
     if (true) {
@@ -359,14 +365,14 @@ void Application::render(PxActor **actors, int numActors) {
         V->popMatrix();
 
     } else {
-//        glViewport(0, height/2, width, height/2);
+        glViewport(0, height/2, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P, p1);
         V->popMatrix();
 
-//        glViewport(0, 0, width, height/2);
+        glViewport(0, 0, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p2->getViewMatrix());
@@ -461,14 +467,7 @@ void Application::renderSquare(shared_ptr<Program> prog,
 void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
-
-    int width, height;
-    glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
-
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glViewport(0, 0, width, height);
-    glDisable(GL_CULL_FACE);
 
     skyProg->bind(); {
         glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
@@ -519,8 +518,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
     for (int i = 0; i < numActors; i++) {
         auto *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
-        auto *userData = (UserData*) actor->userData;
-
+        auto userData = (UserData *) actor->userData;
         if (i == 0) userData->time += .007;
 
         actor->getShapes(shapes, nbShapes);
@@ -538,8 +536,9 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
 
             shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
             program->bind(); {
-
-//                glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
+                if (userData) {
+                    glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
+                }
 
                 mat4 M = make_mat4(shapePose.front()) * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
                 PxVec3 dims;
@@ -559,7 +558,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                     case PxGeometryType::eSPHERE:
                         bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
-                        cube->draw(program);
+                        sphere->draw(program);
                         break;
 
                     case PxGeometryType::ePLANE:

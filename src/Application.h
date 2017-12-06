@@ -53,7 +53,7 @@ public:
     shared_ptr<Texture> shadowMap;
 
     // shapes
-    shared_ptr<Shape> cube; // TODO: rename this to sphere
+    shared_ptr<Shape> sphere; // TODO: rename this to sphere
     shared_ptr<Shape> ship;
     shared_ptr<Shape> box;
     shared_ptr<Shape> floor;
