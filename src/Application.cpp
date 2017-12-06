@@ -215,7 +215,7 @@ void Application::initGeometry(const std::string &resourceDirectory) {
 
     box = make_shared<Shape>();
     box->loadMesh(resourceDirectory + "/cube.obj");
-    box->resize(10);
+    box->resize(1);
     box->init();
 
     ship = make_shared<Shape>();
@@ -545,7 +545,7 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         M->scale(vec3(4, 1, 4));
         glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
         setMaterial(4);
-        floor->draw(prog);
+//        floor->draw(prog);
         M->popMatrix();
 
 //        M->pushMatrix();
@@ -619,18 +619,41 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
             program->bind();
             glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
             {
-                bindUniforms(program, shapePose.front(), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
-                             material->diffuseTex, material->specularTex, material->material, player);
 
+                mat4 M;
+                PxVec3 dims;
+                PxBoxGeometry boxGeom;
                 switch (h.getType()) {
                     case PxGeometryType::eBOX:
-                        cube->draw(program);
+                        shapes[j]->getBoxGeometry(boxGeom);
+                        dims = boxGeom.halfExtents;
+
+                        M = make_mat4(shapePose.front());
+                        M = M * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
+                        M = M * glm::scale(glm::mat4(1), vec3(dims.z,dims.y, dims.x));
+
+                        bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                     material->diffuseTex, material->specularTex, material->material, player);
+                        box->draw(program);
                         break;
+
                     case PxGeometryType::eSPHERE:
+                        bindUniforms(program, shapePose.front(), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                     material->diffuseTex, material->specularTex, material->material, player);
                         cube->draw(program);
                         break;
+
                     case PxGeometryType::ePLANE:
+                        M = make_mat4(shapePose.front());
+                        M = M * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
+                        M = M * glm::scale(glm::mat4(1), vec3(100, 100, 100));
+
+                        bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                     material->diffuseTex, material->specularTex, material->material, player);
                         quad->draw(program);
+                        break;
+                    default:
+
                         break;
                 }
             } program->unbind();
