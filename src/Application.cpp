@@ -3,7 +3,6 @@
 //
 
 #include "Application.h"
-#include "stb_image.h"
 
 void Application::scrollCallback(GLFWwindow *window, double deltaX, double deltaY) {
 
@@ -151,6 +150,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addUniform("M");
     texProg->addUniform("specularTexture");
     texProg->addUniform("diffuseTexture");
+    texProg->addUniform("eyePos");
     texProg->addUniform("width");
     texProg->addUniform("height");
     texProg->addUniform("texBuf");
@@ -327,6 +327,33 @@ void Application::createFBO(GLuint &fb, GLuint &tex) {
     }
 }
 
+void Application::renderDepthBuffer() {
+    glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
+    glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+
+    // We don't use bias in the shader, but instead we draw back faces,
+    // which are already separated from the front faces by a small distance
+    // (if your geometry is made this way)
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
+
+    // Clear the screen
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+    glm::vec3 lightInvDir = glm::vec3(0.5f,2,2);
+
+    // Compute the MVP matrix from the light's point of view
+    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-10,10,-10,10,-10,20);
+    glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
+    glm::mat4 depthModelMatrix = glm::mat4(1.0);
+    glm::mat4 depthMVP = depthProjectionMatrix * depthViewMatrix * depthModelMatrix;
+
+    // Send our transformation to the currently bound shader,
+    // in the "MVP" uniform
+//    glUniformMatrix4fv(depthMatrixID, 1, GL_FALSE, &depthMVP[0][0]);
+}
+
 // draw2dBuff
 void Application::drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -382,7 +409,7 @@ void Application::render(PxActor **actors, int numActors) {
     if (true) {
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-        renderScene(actors, numActors, 0, M, V, P);
+        renderScene(actors, numActors, 0, M, V, P, p1);
         V->popMatrix();
 
     } else {
@@ -390,14 +417,14 @@ void Application::render(PxActor **actors, int numActors) {
 
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
-        renderScene(actors, numActors, 0, M, V, P);
+        renderScene(actors, numActors, 0, M, V, P, p1);
         V->popMatrix();
 
         glViewport(0, 0, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p2->getViewMatrix());
-        renderScene(actors, numActors, 0, M, V, P);
+        renderScene(actors, numActors, 0, M, V, P, p2);
         V->popMatrix();
     }
 
@@ -487,9 +514,8 @@ void Application::renderSquare(shared_ptr<Program> prog,
 
 void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
-                              shared_ptr<MatrixStack> P) {
+                              shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     skyProg->bind();
     {
@@ -499,11 +525,8 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         V->multMatrix(p1->getSkyBoxViewMatrix());
         glUniformMatrix4fv(skyProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
         V->popMatrix();
-
         skyboxTex->bind(skyProg->getUniform("skyTexture"));
-
         glDepthMask(GL_FALSE);
-
         box->draw(skyProg);
         glDepthMask(GL_TRUE);
     }
@@ -531,7 +554,6 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
 //        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
 //        ship->draw(prog);
 //        M->popMatrix();
-////
 //        M->pushMatrix();
 //        M->loadIdentity();
 //        M->translate(p2->getPosition());
@@ -540,40 +562,77 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
 //        M->rotate(radians(90.f), vec3(1, 0, 0));
 //        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
 //        ship->draw(prog);
-//       M->popMatrix();
+//        M->popMatrix();
     }
+
     prog->unbind();
 
-    renderActors(actors, numActors, V, P);
+    renderPxActors(actors, numActors, M, V, P, player, NULL);
 }
 
-void Application::renderActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
+inline void Application::bindUniforms(shared_ptr<Program> program, const float *M, const float *V, const float *P,
+                                      shared_ptr<Texture> diffTex, shared_ptr<Texture> specTex,
+                                      int material, shared_ptr<Player> player) {
+
+    glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, M);
+    glUniformMatrix4fv(program->getUniform("V"), 1, GL_FALSE, V);
+    glUniformMatrix4fv(program->getUniform("P"), 1, GL_FALSE, P);
+    if (diffTex != NULL)
+        diffTex->bind(program->getUniform("diffuseTexture"));
+    if (specTex != NULL)
+        specTex->bind(program->getUniform("specularTexture"));
+    if (player != NULL)
+        glUniform3f(program->getUniform("eyePos"), player->getPosition().x, player->getPosition().y, player->getPosition().z);
+    if (material > 0)
+        SetMaterial(program, material);
+}
+
+void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V,
+                                 shared_ptr<MatrixStack> P, shared_ptr<Player> player, shared_ptr<Program> geomProg) {
     static const int MAX_SHAPES = 100;
     PxShape *shapes[10];
     for (int i = 0; i < numActors; i++) {
-        PxRigidActor *actor = actors[i]->is<PxRigidActor>();
+        auto *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
-        UserData *data = (UserData*) actor->userData;
+        auto *userData = (UserData*) actor->userData;
 
         actor->getShapes(shapes, nbShapes);
         bool sleeping = actors[i]->is<PxRigidDynamic>() ? actors[i]->is<PxRigidDynamic>()->isSleeping() : false;
 
         for (int j = 0; j < nbShapes; j++) {
-            const PxMat44 shapePose(PxShapeExt::getGlobalPose(*shapes[j], *actor));
-            shared_ptr<Texture> texture = ballTexture[data->ballNum];
+            PxGeometryHolder h = shapes[j]->getGeometry();
 
-            texProg->bind();
+            PxMat44 shapePose(PxShapeExt::getGlobalPose(*shapes[j], *actor));
+//            shared_ptr<Material> material = userData->materialMap.at(h.getType());
+            shared_ptr<Material> material = make_shared<Material>();
+
+            material->shader = texProg;
+            material->diffuseTex = ballTexture[i];
+
+            shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
+            program->bind();
             {
-                glUniformMatrix4fv(texProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
-                glUniformMatrix4fv(texProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
-                glUniformMatrix4fv(texProg->getUniform("M"), 1, GL_FALSE, shapePose.front());
+                bindUniforms(program, shapePose.front(), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                             material->diffuseTex, material->specularTex, material->material, player);
 
-                texture->bind(texProg->getUniform("diffuseTexture"));
-                specularTexture->bind(texProg->getUniform("specularTexture"));
+                switch (h.getType()) {
+                    case PxGeometryType::eBOX:
+                        cube->draw(program);
+                        break;
+                    case PxGeometryType::eSPHERE:
+                        cube->draw(program);
+                        break;
+                    case PxGeometryType::ePLANE:
+                        quad->draw(program);
+                        break;
+                }
+            } program->unbind();
 
-                cube->draw(texProg);
-            }
-            texProg->unbind();
+//            shared_ptr<Texture> texture = ballTexture[data->ballNum];
+//            texture->bind(texProg->getUniform("diffuseTexture"));
+            glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, shapePose.front());
+
+            cube->draw(program);
         }
     }
 }

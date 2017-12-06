@@ -6,6 +6,7 @@ layout(location = 2) in vec2 vertTex;
 uniform mat4 P;
 uniform mat4 M;
 uniform mat4 V;
+uniform vec3 eyePos;
 
 out vec2 vTexCoord;
 out vec3 L;
@@ -20,7 +21,7 @@ void main() {
 
   L = normalize(source - worldCord.xyz);
   N = (M * vec4(vertNor, 0.0)).xyz;
-  E = -worldCord.xyz;
+  E = eyePos-worldCord.xyz;
 
   vTexCoord = vertTex;
 }

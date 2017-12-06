@@ -104,10 +104,18 @@ public:
 
     void SetMaterial(shared_ptr<Program> prog,int mode);
 
+
+    inline void bindUniforms(shared_ptr<Program> program, const float *M, const float *V, const float *P,
+                                          shared_ptr<Texture> diffTex, shared_ptr<Texture> specTex,
+                                          int material, shared_ptr<Player> player);
+
+    void renderDepthBuffer();
     void render(PxActor** actors, int numActors);
-    void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
-    void renderActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
+    void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P, shared_ptr<Player> player);
     void drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);
+
+    void renderPxActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V,
+                                     shared_ptr<MatrixStack> P, shared_ptr<Player> player, shared_ptr<Program> geomProg);
 };
 
 

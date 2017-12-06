@@ -118,10 +118,9 @@ vec4 BiCubic( sampler2D textureSampler, vec2 TexCoord )
 void main() {
 //  vec4 texColor0 = textureX(diffuseTexture, vTexCoord, vec2(1,1));
   vec4 texColor0 = BiCubic(diffuseTexture, vTexCoord);
-  vec4 specularTextureColor = texture(specularTexture, vTexCoord);
+//  vec4 specularTextureColor = texture(specularTexture, vTexCoord);
+    vec4 specularTextureColor = vec4(1, 1, 1, 1);
 
-mix(1.0, 2.0, 3.0);
-    fract(2.0);
   float shiny = 10;
   float ambient = .3;
 

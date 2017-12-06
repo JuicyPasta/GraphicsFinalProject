@@ -36,7 +36,7 @@ private:
     int input;
 
     vec3 position = vec3(0, 0, 0);
-    vec3 lookAtPoint = vec3(0, 0, 1);
+    vec3 lookAtPoint = vec3(0, 0, -1);
     vec3 upVector = vec3(0, 1, 0);
 
     // x, y, z

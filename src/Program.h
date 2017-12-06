@@ -12,8 +12,7 @@
 
 std::string readFileAsString(const std::string &fileName);
 
-class Program
-{
+class Program {
 
 public:
 
