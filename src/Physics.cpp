@@ -130,7 +130,7 @@ bool Physics::fetchResults() {
 }
 
 int Physics::getActors(PxActor **actors) {
-    return mScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC, actors, 400);
+    return mScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC | PxActorTypeFlag::eRIGID_STATIC, actors, 400);
 }
 
 
