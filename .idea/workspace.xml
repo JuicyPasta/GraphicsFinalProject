@@ -12,20 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/shatter_frag.glsl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/shatter_geo.glsl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/shatter_vert.glsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Material.h" afterPath="$PROJECT_DIR$/src/Material.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.cpp" afterPath="$PROJECT_DIR$/src/Program.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.h" afterPath="$PROJECT_DIR$/src/Program.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shape.cpp" afterPath="$PROJECT_DIR$/src/Shape.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shape.h" afterPath="$PROJECT_DIR$/src/Shape.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextureCube.cpp" afterPath="$PROJECT_DIR$/src/TextureCube.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextureCube.h" afterPath="$PROJECT_DIR$/src/TextureCube.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserData.h" afterPath="$PROJECT_DIR$/src/UserData.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +32,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="602" column="8" lean-forward="false" selection-start-line="602" selection-start-column="8" selection-end-line="602" selection-end-column="8" />
-              <folding />
+              <folding>
+                <marker date="1512596382989" expanded="true" signature="7933:8164" ph="{...}" />
+                <marker date="1512596382989" expanded="true" signature="24749:25114" ph="{...}" />
+                <marker date="1512596382989" expanded="true" signature="25181:28444" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -293,15 +284,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/tex_frag.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/tex_vert.glsl</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Player.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Program.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/UserData.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main.cpp</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Physics.cpp</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -309,8 +293,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Material.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Material.h</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -659,10 +641,18 @@
       <workItem from="1512076044979" duration="17587000" />
       <workItem from="1512245644863" duration="12285000" />
     </task>
+    <task id="LOCAL-00001" summary="shatter shader effect">
+      <created>1512596367460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512596367462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178850000" />
+    <option name="totallyTimeSpent" value="178982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-23" width="1366" height="791" extended-state="0" />
@@ -740,6 +730,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="shatter shader effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="shatter shader effect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1096,7 +1090,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="602" column="8" lean-forward="false" selection-start-line="602" selection-start-column="8" selection-end-line="602" selection-end-column="8" />
-          <folding />
+          <folding>
+            <marker date="1512596382989" expanded="true" signature="7933:8164" ph="{...}" />
+            <marker date="1512596382989" expanded="true" signature="24749:25114" ph="{...}" />
+            <marker date="1512596382989" expanded="true" signature="25181:28444" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
