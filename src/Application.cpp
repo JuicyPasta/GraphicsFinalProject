@@ -199,15 +199,21 @@ void Application::initShaders(const std::string &resourceDirectory) {
     depthProg->setVerbose(true);
     depthProg->setShaderNames( resourceDirectory + "/shadowmap_vert.glsl", resourceDirectory + "/shadowmap_frag.glsl");
     depthProg->init();
-    depthProg->addUniform("depthMVP");
     depthProg->addUniform("P");
     depthProg->addUniform("V");
     depthProg->addUniform("M");
+    depthProg->addUniform("specularTexture");
+    depthProg->addUniform("diffuseTexture");
+    depthProg->addUniform("eyePos");
+    depthProg->addUniform("width");
+    depthProg->addUniform("height");
+    depthProg->addUniform("texBuf");
+    depthProg->addUniform("time");
+    depthProg->addUniform("eyePos");
     depthProg->addUniform("depthMVP");
     depthProg->addAttribute("vertPos");
     depthProg->addAttribute("vertNor");
     depthProg->addAttribute("vertTex");
-    depthProg->addAttribute("vertexPosition_modelspace");
 }
 
 void Application::initGeometry(const std::string &resourceDirectory) {
@@ -314,16 +320,10 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
 
     // Send our transformation to the currently bound shader,
     // in the "MVP" uniform
-    shadowProg->bind();
-    {
-        shadowMap->bind(shadowProg->getUniform("shadowMap"));
-        glUniformMatrix4fv(shadowProg->getUniform("depthMVP"), 1, GL_FALSE, &depthMVP[0][0]);
-        renderPxActors(actors, numActors, M, V, P, player, shadowProg);
-    }
+    renderPxActors(actors, numActors, M, V, P, player, depthProg);
 }
 
 void Application::render(PxActor **actors, int numActors) {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int seconds = 0;
     p1->update(seconds);
     p2->update(seconds);
@@ -337,7 +337,6 @@ void Application::render(PxActor **actors, int numActors) {
     int numPlayers = 2;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
-    glViewport(0, 0, width, height);
     float aspect = width / (float) (height / 2.0f);
     P->pushMatrix();
     P->perspective(45.0f, aspect/numPlayers, 0.01f, 300.0f);
@@ -350,7 +349,7 @@ void Application::render(PxActor **actors, int numActors) {
         O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
     }
 
-//    renderDepthBuffer(actors, numActors, M, V, P, p1);
+    renderDepthBuffer(actors, numActors, M, V, P, p1);
 
     int downsampleScale = 2;
     if (true) {
@@ -360,14 +359,14 @@ void Application::render(PxActor **actors, int numActors) {
         V->popMatrix();
 
     } else {
-        glViewport(0, height/2, width, height/2);
+//        glViewport(0, height/2, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P, p1);
         V->popMatrix();
 
-        glViewport(0, 0, width, height/2);
+//        glViewport(0, 0, width, height/2);
 
         V->pushMatrix();
         V->multMatrix(p2->getViewMatrix());
@@ -462,7 +461,14 @@ void Application::renderSquare(shared_ptr<Program> prog,
 void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
+
+    int width, height;
+    glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
+
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glViewport(0, 0, width, height);
+    glDisable(GL_CULL_FACE);
 
     skyProg->bind(); {
         glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
