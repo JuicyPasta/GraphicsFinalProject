@@ -83,15 +83,12 @@ public:
     void resizeCallback(GLFWwindow *window, int width, int height);
     void setMaterial(int i);
 
-    void create_cube_map(string front, string back, string top, string bottom, string left, string right, GLuint* tex_cube);
-    bool load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name);
-
     void init();
     void initQuad();
     void initShaders(const std::string &resourceDirectory);
     void initGeometry(const std::string &resourceDirectory);
     void initTextures(const std::string &resourceDirectory);
-    void createFBO(GLuint &fb, GLuint &tex);
+//    void createFBO(GLuint &fb, GLuint &tex);
 
     void renderSquare(shared_ptr<Program> prog,
                       shared_ptr<MatrixStack> P, shared_ptr<MatrixStack> V,
@@ -111,7 +108,13 @@ public:
                                           shared_ptr<Texture> diffTex, shared_ptr<Texture> specTex,
                                           int material, shared_ptr<Player> player);
 
-    void renderDepthBuffer();
+    void renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<MatrixStack> M,
+                                        shared_ptr<MatrixStack> V,
+                                        shared_ptr<MatrixStack> P, shared_ptr<Player> player);
+
+
+    mat4 getDepthMVP();
+
     void render(PxActor** actors, int numActors);
     void renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P, shared_ptr<Player> player);
     void drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P);

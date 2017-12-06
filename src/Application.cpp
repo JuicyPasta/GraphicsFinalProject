@@ -105,7 +105,6 @@ void Application::init() {
     glGenFramebuffers(2, frameBuf);
     glGenTextures(2, texBuf);
     glGenRenderbuffers(1, &depthBuf);
-    createFBO(frameBuf[0], texBuf[0]);
 
     //set up depth necessary as rendering a mesh that needs depth test
     glBindRenderbuffer(GL_RENDERBUFFER, depthBuf);
@@ -133,6 +132,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     prog->addUniform("shiny");
     prog->addUniform("ambient");
     prog->addUniform("source");
+    prog->addUniform("depthMVP");
     prog->addAttribute("L");
     prog->addAttribute("E");
     prog->addAttribute("N");
@@ -155,6 +155,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addUniform("height");
     texProg->addUniform("texBuf");
     texProg->addUniform("time");
+    texProg->addUniform("depthMVP");
     texProg->addAttribute("vertPos");
     texProg->addAttribute("vertNor");
     texProg->addAttribute("vertTex");
@@ -175,6 +176,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     fboTexProg->addUniform("width");
     fboTexProg->addUniform("height");
     fboTexProg->addUniform("texBuf");
+    fboTexProg->addUniform("depthMVP");
     fboTexProg->addAttribute("vertTex");
     fboTexProg->addAttribute("vertPos");
     fboTexProg->addAttribute("vertNor");
@@ -201,6 +203,7 @@ void Application::initShaders(const std::string &resourceDirectory) {
     depthProg->addUniform("P");
     depthProg->addUniform("V");
     depthProg->addUniform("M");
+    depthProg->addUniform("depthMVP");
     depthProg->addAttribute("vertPos");
     depthProg->addAttribute("vertNor");
     depthProg->addAttribute("vertTex");
@@ -260,8 +263,6 @@ void Application::initTextures(const std::string &resourceDirectory) {
         ballTexture[i] = make_shared<Texture>();
         string filename = i == 0 ? resourceDirectory + "/balls/BallCue.jpg" :
                           resourceDirectory + "/balls/Ball"+std::to_string(i)+".jpg";
-//        string filename = resourceDirectory + "/balls/BallCue.jpg";
-//        cout << filename << "\n";
         ballTexture[i]->setFilename(filename);
         ballTexture[i]->init();
         ballTexture[i]->setUnit(1);
@@ -281,56 +282,22 @@ void Application::initTextures(const std::string &resourceDirectory) {
     shadowMap = make_shared<Texture>();
     resizeCallback(windowManager->getHandle(), width, height);
 }
-//bool Application::load_cube_map_side(GLuint texture, GLenum side_target, const char* file_name) {
-//    glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
-//
-//    int x, y, n;
-//    int force_channels = 4;
-//    unsigned char*  image_data = stbi_load(
-//            file_name, &x, &y, &n, force_channels);
-//    if (!image_data) {
-//        fprintf(stderr, "ERROR: could not load %s\n", file_name);
-//        return false;
-//    }
-//    // non-power-of-2 dimensions check
-//    if ((x & (x - 1)) != 0 || (y & (y - 1)) != 0) {
-//        fprintf(stderr,
-//                "WARNING: image %s is not power-of-2 dimensions\n",
-//                file_name);
-//    }
-//
-//    // copy image data into 'target' side of cube map
-//    glTexImage2D(side_target, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
-//    free(image_data);
-//    return true;
-//}
 
-// delete this
-void Application::createFBO(GLuint &fb, GLuint &tex) {
-    //initialize FBO
-    int width, height;
-    glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
+mat4 Application::getDepthMVP() {
+    glm::vec3 lightInvDir = glm::vec3(0.5f,2,2);
 
-    //set up framebuffer
-    glBindFramebuffer(GL_FRAMEBUFFER, fb);
-    //set up texture
-    glBindTexture(GL_TEXTURE_2D, tex);
+    // Compute the MVP matrix from the light's point of view
+    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-10,10,-10,10,-10,20);
+    glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
+    glm::mat4 depthModelMatrix = glm::mat4(1.0);
+    glm::mat4 depthMVP = depthProjectionMatrix * depthViewMatrix * depthModelMatrix;
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
-
-    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-        cout << "Error setting up frame buffer - exiting" << endl;
-        exit(0);
-    }
+    return depthMVP;
 }
 
-void Application::renderDepthBuffer() {
+void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<MatrixStack> M,
+                              shared_ptr<MatrixStack> V,
+                              shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
     glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
 
@@ -343,40 +310,16 @@ void Application::renderDepthBuffer() {
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-    glm::vec3 lightInvDir = glm::vec3(0.5f,2,2);
-
-    // Compute the MVP matrix from the light's point of view
-    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-10,10,-10,10,-10,20);
-    glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
-    glm::mat4 depthModelMatrix = glm::mat4(1.0);
-    glm::mat4 depthMVP = depthProjectionMatrix * depthViewMatrix * depthModelMatrix;
+    mat4 depthMVP = getDepthMVP();
 
     // Send our transformation to the currently bound shader,
     // in the "MVP" uniform
-//    glUniformMatrix4fv(depthMatrixID, 1, GL_FALSE, &depthMVP[0][0]);
-}
-
-// draw2dBuff
-void Application::drawFBO(shared_ptr<Texture> fboTex, shared_ptr<Shape> geom, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V, shared_ptr<MatrixStack> P) {
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    fboTexProg->bind();
-
-    fboTex->bind(fboTexProg->getUniform("texBuf"));
-    glUniformMatrix4fv(fboTexProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
-    glUniformMatrix4fv(fboTexProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
-    glUniformMatrix4fv(fboTexProg->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-
-    int width, height;
-    glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
-    glUniform1i(fboTexProg->getUniform("width"), width);
-    glUniform1i(fboTexProg->getUniform("height"), height);
-
-    geom->draw(fboTexProg);
-
-    fboTexProg->unbind();
+    shadowProg->bind();
+    {
+        shadowMap->bind(shadowProg->getUniform("shadowMap"));
+        glUniformMatrix4fv(shadowProg->getUniform("depthMVP"), 1, GL_FALSE, &depthMVP[0][0]);
+        renderPxActors(actors, numActors, M, V, P, player, shadowProg);
+    }
 }
 
 void Application::render(PxActor **actors, int numActors) {
@@ -407,8 +350,9 @@ void Application::render(PxActor **actors, int numActors) {
         O->ortho(-1, 1, -1 * 1 / aspect, 1 * 1 / aspect, -2, 100.0f);
     }
 
-    int downsampleScale = 2;
+//    renderDepthBuffer(actors, numActors, M, V, P, p1);
 
+    int downsampleScale = 2;
     if (true) {
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
@@ -520,55 +464,25 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, buffer);
 
-    skyProg->bind();
-    {
+    skyProg->bind(); {
         glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
         V->pushMatrix();
         V->loadIdentity();
-        V->multMatrix(p1->getSkyBoxViewMatrix());
+        V->multMatrix(player->getSkyBoxViewMatrix());
         glUniformMatrix4fv(skyProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
-        V->popMatrix();
         skyboxTex->bind(skyProg->getUniform("skyTexture"));
         glDepthMask(GL_FALSE);
         box->draw(skyProg);
         glDepthMask(GL_TRUE);
+        V->popMatrix();
     }
     skyProg->unbind();
 
-    prog->bind();
-    {
+    prog->bind(); {
         glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
         glUniformMatrix4fv(prog->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
-
-        M->pushMatrix();
         renderBuildingScene(prog,P,V);
-        M->scale(vec3(4, 1, 4));
-        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-        setMaterial(4);
-//        floor->draw(prog);
-        M->popMatrix();
-
-//        M->pushMatrix();
-//        M->loadIdentity();
-//        M->translate(p1->getPosition());
-//        M->scale(.3);
-//        M->rotate(p1->getTheta() - M_PI_2, vec3(0, 1, 0));
-//        M->rotate(radians(90.f), vec3(1, 0, 0));
-//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-//        ship->draw(prog);
-//        M->popMatrix();
-//        M->pushMatrix();
-//        M->loadIdentity();
-//        M->translate(p2->getPosition());
-//        M->scale(.3);
-//        M->rotate(p2->getTheta() - M_PI_2, vec3(0, 1, 0));
-//        M->rotate(radians(90.f), vec3(1, 0, 0));
-//        glUniformMatrix4fv(prog->getUniform("M"), 1, GL_FALSE, value_ptr(M->topMatrix()));
-//        ship->draw(prog);
-//        M->popMatrix();
-    }
-
-    prog->unbind();
+    } prog->unbind();
 
     renderPxActors(actors, numActors, M, V, P, player, NULL);
 }
@@ -580,7 +494,8 @@ inline void Application::bindUniforms(shared_ptr<Program> program, const float *
     glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, M);
     glUniformMatrix4fv(program->getUniform("V"), 1, GL_FALSE, V);
     glUniformMatrix4fv(program->getUniform("P"), 1, GL_FALSE, P);
-
+    glUniformMatrix4fv(program->getUniform("depthMVP"), 1, GL_FALSE, value_ptr(getDepthMVP()));
+    
     if (diffTex != NULL)
         diffTex->bind(program->getUniform("diffuseTexture"));
     if (specTex != NULL)
@@ -616,53 +531,42 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
             material->diffuseTex = ballTexture[i];
 
             shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
-            program->bind();
-            glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
-            {
+            program->bind(); {
 
-                mat4 M;
+//                glUniform1f(program->getUniform("time"), (userData->time > 0 ? userData->time : 0.f));
+
+                mat4 M = make_mat4(shapePose.front()) * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
                 PxVec3 dims;
                 PxBoxGeometry boxGeom;
+
                 switch (h.getType()) {
                     case PxGeometryType::eBOX:
                         shapes[j]->getBoxGeometry(boxGeom);
                         dims = boxGeom.halfExtents;
 
-                        M = make_mat4(shapePose.front());
-                        M = M * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
-                        M = M * glm::scale(glm::mat4(1), vec3(dims.z,dims.y, dims.x));
-
+                        M *= glm::scale(glm::mat4(1), vec3(dims.z,dims.y, dims.x));
                         bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
                         box->draw(program);
                         break;
 
                     case PxGeometryType::eSPHERE:
-                        bindUniforms(program, shapePose.front(), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                        bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
                         cube->draw(program);
                         break;
 
                     case PxGeometryType::ePLANE:
-                        M = make_mat4(shapePose.front());
-                        M = M * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
-                        M = M * glm::scale(glm::mat4(1), vec3(100, 100, 100));
-
+                        M *= glm::scale(glm::mat4(1), vec3(100, 100, 100));
                         bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
                         quad->draw(program);
                         break;
-                    default:
 
+                    default:
                         break;
                 }
             } program->unbind();
-
-//            shared_ptr<Texture> texture = ballTexture[data->ballNum];
-//            texture->bind(texProg->getUniform("diffuseTexture"));
-            glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, shapePose.front());
-
-            cube->draw(program);
         }
     }
 }

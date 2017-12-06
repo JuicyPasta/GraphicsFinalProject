@@ -13,6 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Texture.cpp" afterPath="$PROJECT_DIR$/src/Texture.cpp" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +33,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application.cpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,13 +43,52 @@
                 <marker date="1512596382989" expanded="true" signature="7933:8164" ph="{...}" />
                 <marker date="1512596382989" expanded="true" signature="24749:25114" ph="{...}" />
                 <marker date="1512596382989" expanded="true" signature="25181:28444" ph="{...}" />
+=======
+      <file leaf-file-name="Application.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <folding>
+                <element signature="e#128#147#0" expanded="true" />
+                <element signature="e#399#430#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Application.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="823">
+              <caret line="512" column="3" lean-forward="false" selection-start-line="512" selection-start-column="3" selection-end-line="512" selection-end-column="3" />
+              <folding>
+                <element signature="e#76#163#0" expanded="false" />
+                <element signature="e#164#421#0" expanded="false" />
+                <element signature="e#422#850#0" expanded="false" />
+                <element signature="e#851#971#0" expanded="false" />
+                <element signature="e#972#1877#0" expanded="false" />
+                <element signature="e#1879#3583#0" expanded="false" />
+                <element signature="e#11778#12678#0" expanded="false" />
+                <element signature="e#14253#14339#0" expanded="false" />
+                <element signature="e#14341#14636#0" expanded="false" />
+                <element signature="e#14638#15208#0" expanded="false" />
+                <element signature="e#15210#16938#0" expanded="false" />
+                <element signature="e#21952#25280#0" expanded="false" />
+                <element signature="e#25281#26714#0" expanded="false" />
+>>>>>>> Stashed changes
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="UserData.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UserData.h">
+=======
+      <file leaf-file-name="Material.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Material.cpp">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
@@ -51,41 +97,70 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="shatter_vert.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/shatter_vert.glsl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+=======
+      <file leaf-file-name="Material.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Material.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="shatter_geo.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/shatter_geo.glsl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+=======
+      <file leaf-file-name="Texture.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Texture.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="shatter_frag.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/shatter_frag.glsl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
               <caret line="139" column="28" lean-forward="false" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
+=======
+      <file leaf-file-name="Program.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Program.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Program.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Program.h">
+      <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="306">
               <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+=======
+            <state relative-caret-position="215">
+              <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -164,10 +239,17 @@
         <option value="$PROJECT_DIR$/src/Graphics.h" />
         <option value="$PROJECT_DIR$/resources/fbo_tex_frag.glsl" />
         <option value="$PROJECT_DIR$/resources/fbo_tex_vert.glsl" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/Texture.cpp" />
+=======
+        <option value="$PROJECT_DIR$/src/Shape.cpp" />
+        <option value="$PROJECT_DIR$/src/TextureCube.h" />
+        <option value="$PROJECT_DIR$/src/TextureCube.cpp" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/Texture.h" />
         <option value="$PROJECT_DIR$/src/Physics.h" />
         <option value="$PROJECT_DIR$/resources/tex_frag.glsl" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/Player.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/Physics.cpp" />
@@ -182,6 +264,19 @@
         <option value="$PROJECT_DIR$/resources/shatter_vert.glsl" />
         <option value="$PROJECT_DIR$/resources/shatter_geo.glsl" />
         <option value="$PROJECT_DIR$/resources/shatter_frag.glsl" />
+=======
+        <option value="$PROJECT_DIR$/resources/tex_vert.glsl" />
+        <option value="$PROJECT_DIR$/src/Player.h" />
+        <option value="$PROJECT_DIR$/src/GLUniforms.h" />
+        <option value="$PROJECT_DIR$/src/ShaderUniforms.h" />
+        <option value="$PROJECT_DIR$/src/Program.h" />
+        <option value="$PROJECT_DIR$/src/Material.h" />
+        <option value="$PROJECT_DIR$/src/UserData.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/Physics.cpp" />
+        <option value="$PROJECT_DIR$/src/Texture.cpp" />
+        <option value="$PROJECT_DIR$/src/Application.h" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/Application.cpp" />
         <option value="$PROJECT_DIR$/src/UserData.h" />
       </list>
@@ -639,6 +734,7 @@
       <workItem from="1511626548838" duration="9871000" />
       <workItem from="1511748386864" duration="1582000" />
       <workItem from="1512076044979" duration="17587000" />
+<<<<<<< Updated upstream
       <workItem from="1512245644863" duration="12285000" />
     </task>
     <task id="LOCAL-00001" summary="shatter shader effect">
@@ -647,12 +743,20 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1512596367462</updated>
+=======
+      <workItem from="1512245644863" duration="19941000" />
+      <workItem from="1512426068698" duration="15616000" />
+>>>>>>> Stashed changes
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="178982000" />
+=======
+    <option name="totallyTimeSpent" value="186542000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-23" width="1366" height="791" extended-state="0" />
@@ -662,8 +766,13 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32383808" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51124436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26666668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -824,6 +933,7 @@
         <state />
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/resources/sky_vert.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -833,6 +943,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/shadowmap_vert.glsl">
+=======
+    <entry file="file://$PROJECT_DIR$/resources/verySpherey.obj">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
@@ -897,6 +1010,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-219">
@@ -906,6 +1020,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Physics.h">
+=======
+    <entry file="file://$PROJECT_DIR$/resources/shadowmap_frag.glsl">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
@@ -998,6 +1115,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/Shape.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1017,6 +1135,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TextureCube.h">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Physics.h">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
@@ -1038,11 +1159,21 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/Program.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/UserData.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <element signature="e#120#140#0" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1054,10 +1185,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/resources/shatter_vert.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -1091,18 +1229,95 @@
         <state relative-caret-position="90">
           <caret line="602" column="8" lean-forward="false" selection-start-line="602" selection-start-column="8" selection-end-line="602" selection-end-column="8" />
           <folding>
+<<<<<<< Updated upstream
             <marker date="1512596382989" expanded="true" signature="7933:8164" ph="{...}" />
             <marker date="1512596382989" expanded="true" signature="24749:25114" ph="{...}" />
             <marker date="1512596382989" expanded="true" signature="25181:28444" ph="{...}" />
+=======
+            <element signature="e#3500#3509#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Texture.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Program.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="e#128#147#0" expanded="true" />
+            <element signature="e#399#430#0" expanded="true" />
+>>>>>>> Stashed changes
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/UserData.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Material.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Material.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="512" column="3" lean-forward="false" selection-start-line="512" selection-start-column="3" selection-end-line="512" selection-end-column="3" />
+          <folding>
+            <element signature="e#76#163#0" expanded="false" />
+            <element signature="e#164#421#0" expanded="false" />
+            <element signature="e#422#850#0" expanded="false" />
+            <element signature="e#851#971#0" expanded="false" />
+            <element signature="e#972#1877#0" expanded="false" />
+            <element signature="e#1879#3583#0" expanded="false" />
+            <element signature="e#11778#12678#0" expanded="false" />
+            <element signature="e#14253#14339#0" expanded="false" />
+            <element signature="e#14341#14636#0" expanded="false" />
+            <element signature="e#14638#15208#0" expanded="false" />
+            <element signature="e#15210#16938#0" expanded="false" />
+            <element signature="e#21952#25280#0" expanded="false" />
+            <element signature="e#25281#26714#0" expanded="false" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
