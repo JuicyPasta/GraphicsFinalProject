@@ -95,7 +95,7 @@ void Application::init() {
     glDrawBuffers(1, DrawBuffers);
 
     p1 = make_shared<Player>(0);
-    p2 = make_shared<Player>(0);
+    p2 = make_shared<Player>(1);
 }
 
 void Application::initShaders(const std::string &resourceDirectory) {
@@ -348,7 +348,7 @@ void Application::render(PxActor **actors, int numActors) {
     auto V = make_shared<MatrixStack>();
     V->loadIdentity();
 
-    int numPlayers = 1;
+    int numPlayers = 2;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
@@ -580,9 +580,9 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                     userData->time += .007;
                 } else {
                     if (i < 10) {
-                        corner = vec3(47.5,-1,47.5);
+                        corner = vec3(47.5,-1,-47.5);
                     } else if (i > 10) {
-                        corner = vec3(-47.5,-1,-47.5);
+                        corner = vec3(-47.5,-1,47.5);
                     }
                     PxTransform temp = actor->getGlobalPose();
                     vec3 pos = vec3(temp.p.x,temp.p.y,temp.p.z);
