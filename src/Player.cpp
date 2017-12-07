@@ -34,22 +34,34 @@ Player::Player(int input) {
 }
 
 void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int action, int mods) {
+    physX->setAngularDamping(1.f);
+//    physX->setLinearDamping(2.f);
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
         strafeInput.y = 1;
+        physX->addTorque(PxVec3(0,0,-500));
     } else if (key == GLFW_KEY_W && action == GLFW_RELEASE) {
         strafeInput.y = 0;
+        physX->clearTorque();
     } else if (key == GLFW_KEY_S && action == GLFW_PRESS) {
         strafeInput.y = -1;
+        physX->addTorque(PxVec3(0,0,500));
     } else if (key == GLFW_KEY_S && action == GLFW_RELEASE) {
         strafeInput.y = 0;
+        physX->clearTorque();
     } else if (key == GLFW_KEY_A && action == GLFW_PRESS) {
         strafeInput.x = -1;
+        physX->addTorque(PxVec3(-500,0,0));
     } else if (key == GLFW_KEY_A && action == GLFW_RELEASE) {
         strafeInput.x = 0;
+        physX->clearTorque();
     } else if (key == GLFW_KEY_D && action == GLFW_PRESS) {
         strafeInput.x = 1;
+        physX->addTorque(PxVec3(500,0,0));
+
     } else if (key == GLFW_KEY_D && action == GLFW_RELEASE) {
         strafeInput.x = 0;
+        physX->clearTorque();
+
     }
 }
 
@@ -138,8 +150,9 @@ void Player::update(float deltaTime) {
         orientationInput.y = -.9f;
 
     std::cout << orientationInput.x << std::endl;
-
-    lookAtPoint = position + glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
+    PxTransform temp = physX->getGlobalPose();
+    position = vec3(temp.p.x,temp.p.y,temp.p.z);
+    lookAtPoint = position + 8.f*glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
                                        sin(orientationInput.y),
                                        -cos(orientationInput.y) * sin(orientationInput.x));
 
@@ -160,8 +173,8 @@ void Player::update(float deltaTime) {
 }
 
 mat4 Player::getViewMatrix() {
-//	return glm::lookAt(lookAtPoint, position, upVector);
-    return glm::lookAt(position, lookAtPoint, upVector);
+	return glm::lookAt(lookAtPoint, position, upVector);
+//    return glm::lookAt(position, lookAtPoint, upVector);
 }
 
 mat4 Player::getSkyBoxViewMatrix() {

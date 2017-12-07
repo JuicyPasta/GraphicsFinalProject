@@ -18,7 +18,7 @@ out vec4 vShadowCoord;
 
 
 void main() {
-  vec3 source = vec3(1, 1, 1);
+  vec3 source = vec3(10, 30, 10);
 
   gl_Position = M * vec4(vertPos.xyz, 1.0);
 

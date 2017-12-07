@@ -90,6 +90,7 @@ public:
     void initShaders(const std::string &resourceDirectory);
     void initGeometry(const std::string &resourceDirectory);
     void initTextures(const std::string &resourceDirectory);
+    void initPlayers(PxActor **actors, int actor1, int actor2);
 //    void createFBO(GLuint &fb, GLuint &tex);
 
     void renderSquare(shared_ptr<Program> prog,

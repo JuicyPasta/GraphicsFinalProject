@@ -69,6 +69,8 @@ int main(int argc, char **argv) {
             physics->fetchResults();
             int numActors = physics->getActors(actors);
 
+            application->initPlayers(actors, 0, 0);
+
             application->render(actors, numActors);
 
             glfwSwapBuffers(windowManager->getHandle());

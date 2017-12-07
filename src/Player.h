@@ -9,7 +9,12 @@
 #include <glm/vec3.hpp>
 #include <glm/detail/type_mat.hpp>
 #include <glm/vec2.hpp>
+#include <PxPhysicsAPI.h>
+#include <foundation/PxVec2.h>
+#include <foundation/PxVec3.h>
 
+
+using namespace physx;
 using namespace glm;
 
 class Player {
@@ -32,8 +37,12 @@ public:
         return orientationInput.x;
     }
 
+    PxRigidDynamic *physX;
+
 private:
     int input;
+
+
 
     vec3 position = vec3(0, 0, 0);
     vec3 lookAtPoint = vec3(0, 0, -1);

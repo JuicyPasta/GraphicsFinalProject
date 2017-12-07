@@ -141,9 +141,9 @@ void main() {
     float bias = 0.005;
     float visability = 1.0f;
   if (texture(depthMap,shadowCoord.xy).r  <  shadowCoord.z-bias){
-    visability = .5f;
+    visability = 1 - (shadowCoord.z-bias - texture(depthMap,shadowCoord.xy).r);
   }
 
-  Outcolor = vec4(diffL + specL + ambient*texColor0.xyz * visability, 1);
+  Outcolor = vec4( specL + (diffL +ambient)*texColor0.xyz * visability, 1);
 
 }

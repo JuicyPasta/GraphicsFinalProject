@@ -292,6 +292,11 @@ void Application::initTextures(const std::string &resourceDirectory) {
     shadowMap->setUnit(3);
 }
 
+void Application::initPlayers(PxActor **actors, int actor1, int actor2) {
+    p1->physX = (PxRigidDynamic *) actors[actor1];
+    p2->physX = (PxRigidDynamic *) actors[actor2];
+}
+
 mat4 Application::getDepthMVP() {
     glm::vec3 lightInvDir = glm::vec3(10,30,10);
 
@@ -311,7 +316,7 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
-    glViewport(0,0,1024*8,1024*8); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+    glViewport(0,0,1024*2,1024*2); // Render on the whole framebuffer, complete from the lower left corner to the upper right
 
     // We don't use bias in the shader, but instead we draw back faces,
     // which are already separated from the front faces by a small distance
@@ -565,7 +570,15 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
         auto *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
         auto userData = (UserData *) actor->userData;
-        if (i == 0) userData->time += .007;
+        if (i == 0 && time == -2.0f ) {
+            if (actor->is<PxRigidBody>()){
+                //((PxRigidBody *) actor)->setMass(10.f);
+                //((PxRigidBody *) actor)->setLinearVelocity(PxVec3(5,0,0));
+                //((PxRigidBody *) actor)->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, false);
+                //((PxRigidDynamic *) actor)->setLinearDamping(50.f);
+            }
+        }
+        //if (i == 0) userData->time += .007;
 
         actor->getShapes(shapes, nbShapes);
         bool sleeping = actors[i]->is<PxRigidDynamic>() ? actors[i]->is<PxRigidDynamic>()->isSleeping() : false;
