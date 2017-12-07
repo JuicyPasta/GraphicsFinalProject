@@ -610,7 +610,7 @@ void Application::renderPxActors(PxActor **actors, int &numActors, shared_ptr<Ma
             shared_ptr<Material> material = make_shared<Material>();
 
             material->shader = texProg;
-            material->diffuseTex = ballTexture[(i > 17 ? 17 : i)];
+            material->diffuseTex = ballTexture[(i + (20 - numActors) > 17 ? 17 : i)];
             if (userData) {
                 material->diffuseTex = ballTexture[userData->ballNum];
             }
