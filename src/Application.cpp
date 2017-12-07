@@ -94,7 +94,7 @@ void Application::init() {
     GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
     glDrawBuffers(1, DrawBuffers);
 
-    p1 = make_shared<Player>(0);
+    p1 = make_shared<Player>();
     p2 = make_shared<Player>(0);
 }
 
@@ -271,10 +271,10 @@ void Application::initTextures(const std::string &resourceDirectory) {
     texture0->setUnit(1);
     texture0->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
-    for (int i = 0; i <= 15; i++) {
+    for (int i = 0; i <= 16; i++) {
         ballTexture[i] = make_shared<Texture>();
-        string filename = i == 0 ? resourceDirectory + "/balls/BallCue.jpg" :
-                          resourceDirectory + "/balls/Ball"+std::to_string(i)+".jpg";
+        string filename = (i == 0 || i == 1) ? resourceDirectory + "/balls/BallCue.jpg" :
+                          resourceDirectory + "/balls/Ball"+std::to_string(i-1)+".jpg";
         ballTexture[i]->setFilename(filename);
         ballTexture[i]->init();
         ballTexture[i]->setUnit(1);
@@ -616,7 +616,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                         break;
 
                     case PxGeometryType::eSPHERE:
-                        if (i == 0) {
+                        if (i == 0 || i == 1) {
                             oM = M;
                             oM[0][0] = oM[1][1] = oM[2][2] = .5f;
                             oM[0][1] = oM[1][0] = oM[0][2] = oM[2][0] = oM[1][2] = oM[2][1] = 0;
@@ -624,10 +624,15 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                         bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
 
-                        if (i == 0) {
+                        if (i == 0 || i == 1) {
                             ship->draw(program);
-                            bindUniforms(program, value_ptr(oM), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
-                                         material->diffuseTex, material->specularTex, material->material, player);
+                            if (i == 0) {
+                                bindUniforms(program, value_ptr(oM), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                             ballTexture[4], material->specularTex, material->material, player);
+                            } else {
+                                bindUniforms(program, value_ptr(oM), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                             ballTexture[3], material->specularTex, material->material, player);
+                            }
                             shipInner->draw(program);
                         }
                         else

@@ -43,7 +43,7 @@ public:
 
     // textures
     shared_ptr<Texture> texture0; // TODO: move to ballTexture
-    shared_ptr<Texture> ballTexture[16];
+    shared_ptr<Texture> ballTexture[17];
     shared_ptr<Texture> specularTexture;
     shared_ptr<TextureCube> skyboxTex;
 

@@ -26,22 +26,26 @@ int main(int argc, char **argv) {
     shared_ptr<Material> materials[100];
 
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 17; i++) {
         materials[i] = make_shared<Material>();
         materials[i]->shader = application->texProg;
-        materials[i]->diffuseTex = application->ballTexture[i];
+        materials[i]->diffuseTex = application->ballTexture[i + 1];
     }
 
     Physics *physics = new Physics();
     int numSpheres = 16;
     UserData spheres[numSpheres+1];
 
+
+
     spheres[0].materialMap.insert({PxGeometryType::eBOX, materials[0]});
+    spheres[1].materialMap.insert({PxGeometryType::eBOX, materials[1]});
 
-    physics->addSphere(PxVec3(10, 3, 10), &spheres[0]);
+    physics->addSphere(PxVec3(40, 3, 0), &spheres[0]);
+    physics->addSphere(PxVec3(-40, 3, 0), &spheres[1]);
 
-    double xCenter = 40;
-    double zCenter = 5;
+    double xCenter = 0;
+    double zCenter = -5;
     double xOffset = 1;
     double zOffset = sqrt(3.0f);
     double ballDiameter = 2;
@@ -53,7 +57,7 @@ int main(int argc, char **argv) {
             spheres[ballNum].ballNum = ballNum;
             double xPos = xCenter + (5-i)*xOffset + (j-1)*ballDiameter;
             double zPos = zCenter + (5-i)*zOffset;
-            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum]);
+            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum + 1]);
             ballNum++;
         }
     }
@@ -69,7 +73,7 @@ int main(int argc, char **argv) {
             physics->fetchResults();
             int numActors = physics->getActors(actors);
 
-            application->initPlayers(actors, 0, 0);
+            application->initPlayers(actors, 0, 1);
 
             application->render(actors, numActors);
 
