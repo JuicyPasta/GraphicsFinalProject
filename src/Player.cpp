@@ -125,6 +125,8 @@ void Player::update(float deltaTime) {
     delta -= strafeSpeed * strafeInput.y * direction;
 
 **/
+
+    /**
     //delta += strafeSpeed * -strafeInput.x * glm::cross(upVector, direction);
     vec3 direction = vec3(0, 0, 0);
     direction += strafeSpeed * strafeInput.y * (lookAtPoint - position);
@@ -135,7 +137,7 @@ void Player::update(float deltaTime) {
     position += direction;
     position.y = posy;
 //    lookAtPoint = position + direction;
-
+**/
     if (orientationInput.y > .9)
         orientationInput.y = .9f;
     if (orientationInput.y < -.1f)
@@ -145,7 +147,7 @@ void Player::update(float deltaTime) {
                             -200*strafeInput.x*cos(orientationInput.x),
                             0,
                             +200*strafeInput.y*cos(orientationInput.x)
-                            -200*strafeInput.x*sin(orientationInput.x)), PxForceMode::eACCELERATION);
+                            +200*strafeInput.x*sin(orientationInput.x)), PxForceMode::eACCELERATION);
 
 //    physX->addForce(PxVec3(-15*strafeInput.y*cos(orientationInput.x)
 //                            -15*strafeInput.x*sin(orientationInput.x),

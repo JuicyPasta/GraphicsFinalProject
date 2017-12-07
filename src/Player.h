@@ -31,6 +31,7 @@ public:
     mat4 getViewMatrix();
     mat4 getSkyBoxViewMatrix();
     vec3 getPosition() {
+        if (physX) return vec3(physX->getGlobalPose().p.x,physX->getGlobalPose().p.y,physX->getGlobalPose().p.z);
         return position;
     }
     float getTheta() {
