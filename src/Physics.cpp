@@ -59,8 +59,8 @@ Physics::~Physics() {
 }
 
 
-void Physics::addSphere(PxVec3 position, UserData *userData) {
-    PxMaterial *material = mPhysics->createMaterial(.5, .5, .5);
+void Physics::addSphere(PxVec3 position, UserData *userData, double staticFriction, double dynamicFriction, double restitution) {
+    PxMaterial *material = mPhysics->createMaterial(staticFriction, dynamicFriction, restitution);
 
     PxRigidDynamic *aSphereActor = mPhysics->createRigidDynamic(PxTransform(position));
     PxTransform relativePose(PxQuat(PxHalfPi, PxVec3(0, 0, 1)));

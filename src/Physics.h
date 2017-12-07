@@ -28,7 +28,7 @@ public:
     Physics();
     ~Physics();
 
-    void addSphere(PxVec3 position, UserData *userData);
+    void addSphere(PxVec3 position, UserData *userData, double staticFriction, double dynamicFriction, double restitution);
     void addGround();
     bool advance(PxReal dt);
     bool fetchResults();

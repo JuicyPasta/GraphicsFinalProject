@@ -348,7 +348,7 @@ void Application::render(PxActor **actors, int numActors) {
     auto V = make_shared<MatrixStack>();
     V->loadIdentity();
 
-    int numPlayers = 2;
+    int numPlayers = 1;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
