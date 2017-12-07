@@ -518,7 +518,7 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         shadowMap->bind(debugProg->getUniform("diffuseTexture"));
 //        ballTexture[2]->bind(debugProg->getUniform("diffuseTexture"));
 
-        quad->draw(debugProg);
+//        quad->draw(debugProg);
 
     } debugProg->unbind();
 
@@ -586,7 +586,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                     }
                     PxTransform temp = actor->getGlobalPose();
                     vec3 pos = vec3(temp.p.x,temp.p.y,temp.p.z);
-                    if (pow(pos.x - corner.x,2.) + pow(pos.y - corner.y,2.) + pow(pos.y - corner.y,2.) < 4.f) {
+                    if (pow(pos.x - corner.x,2.) + pow(pos.y - corner.y,2.) + pow(pos.z - corner.z,2.) < 6.f) {
                         userData->time = .0;
                     }
                 }
