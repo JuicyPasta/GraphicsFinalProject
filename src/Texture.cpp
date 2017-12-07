@@ -92,7 +92,7 @@ bool Texture::initDepth() {
     // Depth texture. Slower than a depth buffer, but you can sample it later in your shader
     glGenTextures(1, &tid);
     glBindTexture(GL_TEXTURE_2D, tid);
-    glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT16, 1024*2, 1024*2, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT16, 1024*4, 1024*4, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);

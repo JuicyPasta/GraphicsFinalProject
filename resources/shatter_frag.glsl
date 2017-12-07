@@ -119,10 +119,8 @@ vec4 BiCubic( sampler2D textureSampler, vec2 TexCoord )
 }
 
 void main() {
-//  vec4 texColor0 = textureX(diffuseTexture, vTexCoord, vec2(1,1));
   vec4 texColor0 = BiCubic(diffuseTexture, vTexCoord);
-//  vec4 specularTextureColor = texture(specularTexture, vTexCoord);
-    vec4 specularTextureColor = vec4(1, 1, 1, 1);
+  vec4 specularTextureColor = vec4(1, 1, 1, 1);
 
   float shiny = 10;
   float ambient = .3;
@@ -138,10 +136,13 @@ void main() {
   vec3 specL = specularTextureColor.xyz * pow(max(dot(R_norm, E_norm), 0.0), shiny);
   specL = clamp(specL, 0.0, 1.0);
 
-    float bias = 0.005;
-    float visability = 1.0f;
-  if (texture(depthMap,shadowCoord.xy).r  <  shadowCoord.z-bias){
-    visability = 0.7; //1 - (shadowCoord.z-bias - texture(depthMap,shadowCoord.xy).r);
+  float bias = 0.005;
+  float visability = 1.0f;
+  if (   (texture(depthMap,shadowCoord.xy).r  <  shadowCoord.z-bias)){
+    visability = 0.7;
+  }
+  if (dot(N_norm, L_norm) <= 0) {
+    visability = 1.0f;
   }
 
   Outcolor = vec4( specL + (diffL +ambient)*texColor0.xyz * visability, 1);

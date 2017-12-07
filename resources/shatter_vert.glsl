@@ -23,7 +23,6 @@ void main() {
 
   gl_Position = M * vec4(vertPos.xyz, 1.0);
 
-// MIGHT NEED TO ADD M
   vShadowCoord = depthBiasMVP * M * vec4(vertPos,1);
 
   vec4 worldCord = M * vec4(vertPos, 1);
