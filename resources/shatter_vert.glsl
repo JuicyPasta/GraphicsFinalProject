@@ -8,6 +8,7 @@ uniform mat4 V;
 uniform mat4 P;
 uniform mat4 M;
 uniform mat4 depthBiasMVP;
+uniform vec3 eyePos;
 
 out vec2 vvTexCoord;
 out vec3 vL;
@@ -27,9 +28,9 @@ void main() {
 
   vec4 worldCord = M * vec4(vertPos, 1);
 
-  vL = normalize(source - worldCord.xyz);
+  vL = normalize(source);
   vN = (M * vec4(vertNor, 0.0)).xyz;
-  vE = -worldCord.xyz;
+  vE = eyePos-worldCord.xyz;
 
   vvTexCoord = vertTex;
   vertRaw = vertPos.xyz;
