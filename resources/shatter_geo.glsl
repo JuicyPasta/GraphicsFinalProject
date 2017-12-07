@@ -11,7 +11,9 @@ in vec3 vL[3];
 in vec3 vE[3];
 in vec3 vN[3];
 in vec2 vvTexCoord[3];
+in vec4 vShadowCoord[3];
 
+out vec4 shadowCoord;
 out vec2 vTexCoord;
 out vec3 L;
 out vec3 E;
@@ -83,6 +85,8 @@ void main()
     L = vL[i];
     E = vE[i];
     N = vN[i];
+    shadowCoord = vShadowCoord[i];
+
     gl_Position = P * V * shatterTranslate(seed) * shatterRotate(seed) * gl_in[i].gl_Position;
     EmitVertex();
   }

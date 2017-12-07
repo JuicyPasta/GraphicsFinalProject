@@ -31,27 +31,6 @@ void Application::cursorPositionCallback(GLFWwindow *window, double x, double y)
 }
 void Application::resizeCallback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height/2);
-
-    int downsampleScale = 2;
-    largeRender->setDimensions(width*downsampleScale, height*downsampleScale);
-    largeRender->initFBO();
-    largeRender->setUnit(20);
-    largeRender->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
-
-    leftSplitScreen->setDimensions(width/2, height);
-    leftSplitScreen->initFBO();
-    leftSplitScreen->setUnit(0);
-    leftSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
-
-    rightSplitScreen->setDimensions(width/2, height);
-    rightSplitScreen->initFBO();
-    rightSplitScreen->setUnit(1);
-    rightSplitScreen->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
-
-    shadowMap->setDimensions(width/4, height/4);
-    shadowMap->initFBO();
-    shadowMap->setUnit(23);
-    shadowMap->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 }
 void Application::setMaterial(int i) {
     switch (i) {
@@ -133,12 +112,27 @@ void Application::initShaders(const std::string &resourceDirectory) {
     prog->addUniform("ambient");
     prog->addUniform("source");
     prog->addUniform("depthMVP");
+    prog->addUniform("depthBiasMVP");
+    prog->addUniform("depthMap");
     prog->addAttribute("L");
     prog->addAttribute("E");
     prog->addAttribute("N");
     prog->addAttribute("vertPos");
     prog->addAttribute("vertNor");
     prog->addAttribute("vertTex");
+
+    debugProg = make_shared<Program>();
+    debugProg->setVerbose(true);
+    debugProg->setShaderNames( resourceDirectory + "/debug_vert.glsl", resourceDirectory + "/debug_frag.glsl");
+    debugProg->init();
+    debugProg->addUniform("P");
+    debugProg->addUniform("V");
+    debugProg->addUniform("M");
+    debugProg->addUniform("diffuseTexture");
+    debugProg->addAttribute("vertPos");
+    debugProg->addAttribute("vertNor");
+    debugProg->addAttribute("vertTex");
+    debugProg->addAttribute("vTexCoord");
 
     texProg = make_shared<Program>();
     texProg->setVerbose(true);
@@ -156,6 +150,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addUniform("texBuf");
     texProg->addUniform("time");
     texProg->addUniform("depthMVP");
+    texProg->addUniform("depthBiasMVP");
+    texProg->addUniform("depthMap");
     texProg->addAttribute("vertPos");
     texProg->addAttribute("vertNor");
     texProg->addAttribute("vertTex");
@@ -164,7 +160,6 @@ void Application::initShaders(const std::string &resourceDirectory) {
     texProg->addAttribute("E");
     texProg->addAttribute("N");
     texProg->addAttribute("triNum");
-
 
     fboTexProg = make_shared<Program>();
     fboTexProg->setVerbose(true);
@@ -177,6 +172,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
     fboTexProg->addUniform("height");
     fboTexProg->addUniform("texBuf");
     fboTexProg->addUniform("depthMVP");
+    fboTexProg->addUniform("depthBiasMVP");
+    fboTexProg->addUniform("depthMap");
     fboTexProg->addAttribute("vertTex");
     fboTexProg->addAttribute("vertPos");
     fboTexProg->addAttribute("vertNor");
@@ -211,6 +208,8 @@ void Application::initShaders(const std::string &resourceDirectory) {
     depthProg->addUniform("time");
     depthProg->addUniform("eyePos");
     depthProg->addUniform("depthMVP");
+    depthProg->addUniform("depthBiasMVP");
+    depthProg->addUniform("depthMap");
     depthProg->addAttribute("vertPos");
     depthProg->addAttribute("vertNor");
     depthProg->addAttribute("vertTex");
@@ -281,19 +280,19 @@ void Application::initTextures(const std::string &resourceDirectory) {
     specularTexture->setUnit(2);
     specularTexture->setWrapModes(GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE);
 
-    // init FBOs
-    largeRender = make_shared<Texture>();
-    leftSplitScreen = make_shared<Texture>();
-    rightSplitScreen = make_shared<Texture>();
     shadowMap = make_shared<Texture>();
-    resizeCallback(windowManager->getHandle(), width, height);
+    shadowMap->initDepth();
+    shadowMap->setUnit(3);
 }
 
 mat4 Application::getDepthMVP() {
-    glm::vec3 lightInvDir = glm::vec3(0.5f,2,2);
+    glm::vec3 lightInvDir = glm::vec3(10,30,10);
 
     // Compute the MVP matrix from the light's point of view
-    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-10,10,-10,10,-10,20);
+//    glm::mat4 depthProjectionMatrix = glm::perspective(45.0f, 1.0f, .01f, 300.0f);
+    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-60,60,-60,60,-60, 60);
+
+
     glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
     glm::mat4 depthModelMatrix = glm::mat4(1.0);
     glm::mat4 depthMVP = depthProjectionMatrix * depthViewMatrix * depthModelMatrix;
@@ -305,13 +304,13 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
-    glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+    glViewport(0,0,1024*8,1024*8); // Render on the whole framebuffer, complete from the lower left corner to the upper right
 
     // We don't use bias in the shader, but instead we draw back faces,
     // which are already separated from the front faces by a small distance
     // (if your geometry is made this way)
     glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
+    glCullFace(GL_BACK);
 
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -469,6 +468,7 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glViewport(0, 0, width, height);
     glDisable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
 
     skyProg->bind(); {
         glUniformMatrix4fv(skyProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
@@ -483,6 +483,27 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         V->popMatrix();
     }
     skyProg->unbind();
+
+
+
+
+    debugProg->bind(); {
+
+        glUniformMatrix4fv(debugProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
+        glUniformMatrix4fv(debugProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
+
+        mat4 emm = glm::scale(mat4(1), vec3(4, 4, 4)) * glm::translate(mat4(1), vec3(0, 1, 0));
+        glUniformMatrix4fv(debugProg->getUniform("M"), 1, GL_FALSE, value_ptr(emm));
+
+        shadowMap->bind(debugProg->getUniform("diffuseTexture"));
+//        ballTexture[2]->bind(debugProg->getUniform("diffuseTexture"));
+
+        quad->draw(debugProg);
+
+    } debugProg->unbind();
+
+
+
 
     prog->bind(); {
         glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
@@ -500,8 +521,20 @@ inline void Application::bindUniforms(shared_ptr<Program> program, const float *
     glUniformMatrix4fv(program->getUniform("M"), 1, GL_FALSE, M);
     glUniformMatrix4fv(program->getUniform("V"), 1, GL_FALSE, V);
     glUniformMatrix4fv(program->getUniform("P"), 1, GL_FALSE, P);
+
+    glm::mat4 biasMatrix(
+            0.5, 0.0, 0.0, 0.0,
+            0.0, 0.5, 0.0, 0.0,
+            0.0, 0.0, 0.5, 0.0,
+            0.5, 0.5, 0.5, 1.0
+    );
+    glm::mat4 depthBiasMVP = biasMatrix*getDepthMVP();
+
     glUniformMatrix4fv(program->getUniform("depthMVP"), 1, GL_FALSE, value_ptr(getDepthMVP()));
-    
+    glUniformMatrix4fv(program->getUniform("depthBiasMVP"), 1, GL_FALSE, value_ptr(depthBiasMVP));
+
+    shadowMap->bind(program->getUniform("depthMap"));
+
     if (diffTex != NULL)
         diffTex->bind(program->getUniform("diffuseTexture"));
     if (specTex != NULL)

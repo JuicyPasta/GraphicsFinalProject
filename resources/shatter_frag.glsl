@@ -1,6 +1,7 @@
 #version 330 core
 uniform sampler2D diffuseTexture;
 uniform sampler2D specularTexture;
+uniform sampler2D depthMap;
 uniform float time;
 
 out vec4 Outcolor;
@@ -9,6 +10,7 @@ in vec2 vTexCoord;
 in vec3 L;
 in vec3 E;
 in vec3 N;
+in vec4 shadowCoord;
 
 
 float fWidth = 648;
@@ -136,6 +138,13 @@ void main() {
   vec3 specL = specularTextureColor.xyz * pow(max(dot(R_norm, E_norm), 0.0), shiny);
   specL = clamp(specL, 0.0, 1.0);
 
-  Outcolor = vec4(diffL + specL + ambient*texColor0.xyz, 1);
+    float bias = 0.005;
+    float visability = 1.0f;
+  if (texture(depthMap,shadowCoord.xy).r  <  shadowCoord.z-bias){
+    visability = .5f;
+  }
+
+  Outcolor = visability * vec4(diffL + specL + ambient*texColor0.xyz, 1);
   Outcolor.a = 1 - time*time;
+
 }

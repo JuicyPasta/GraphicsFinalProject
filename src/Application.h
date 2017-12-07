@@ -39,6 +39,7 @@ public:
     shared_ptr<Program> depthProg;
     shared_ptr<Program> shadowProg;
     shared_ptr<Program> fboTexProg;
+    shared_ptr<Program> debugProg;
 
     // textures
     shared_ptr<Texture> texture0; // TODO: move to ballTexture

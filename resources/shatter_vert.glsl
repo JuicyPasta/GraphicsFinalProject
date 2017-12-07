@@ -7,20 +7,24 @@ layout(location = 2) in vec2 vertTex;
 uniform mat4 V;
 uniform mat4 P;
 uniform mat4 M;
-
+uniform mat4 depthBiasMVP;
 
 out vec2 vvTexCoord;
 out vec3 vL;
 out vec3 vE;
 out vec3 vN;
 out vec3 vertRaw;
-
+out vec4 vShadowCoord;
 
 
 void main() {
   vec3 source = vec3(1, 1, 1);
 
   gl_Position = M * vec4(vertPos.xyz, 1.0);
+
+// MIGHT NEED TO ADD M
+  vShadowCoord = depthBiasMVP * M * vec4(vertPos,1);
+
   vec4 worldCord = M * vec4(vertPos, 1);
 
   vL = normalize(source - worldCord.xyz);
