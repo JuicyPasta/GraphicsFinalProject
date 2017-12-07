@@ -103,7 +103,6 @@ void Player::update(float deltaTime) {
     physX->setMaxAngularVelocity(100.f);
     physX->setMass(10.f);
     if (input > 0) {
-
         this->getControllerInput();
     }
 
