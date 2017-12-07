@@ -94,7 +94,7 @@ void Application::init() {
     GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
     glDrawBuffers(1, DrawBuffers);
 
-    p1 = make_shared<Player>();
+    p1 = make_shared<Player>(0);
     p2 = make_shared<Player>(0);
 }
 
