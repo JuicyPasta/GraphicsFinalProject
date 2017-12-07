@@ -3,4 +3,5 @@ x64/
 cmake-build-debug/
 Texture_output.png
 .DS_Store
-.idea
+.idea/
+

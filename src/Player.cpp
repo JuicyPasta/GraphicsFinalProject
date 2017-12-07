@@ -111,7 +111,6 @@ void Player::getControllerInput() {
 
 void Player::update(float deltaTime) {
     if (input > 0) {
-
         this->getControllerInput();
     }
 
@@ -149,7 +148,6 @@ void Player::update(float deltaTime) {
     if (orientationInput.y < -.9)
         orientationInput.y = -.9f;
 
-    std::cout << orientationInput.x << std::endl;
     PxTransform temp = physX->getGlobalPose();
     position = vec3(temp.p.x,temp.p.y,temp.p.z);
     lookAtPoint = position + 8.f*glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),

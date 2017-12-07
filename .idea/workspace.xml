@@ -1,1140 +1,1141 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Application.cpp" line="597" />
-  </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
-    <generated>
-      <config projectName="3dbilliards" targetName="3dbilliards" />
-    </generated>
-  </component>
-  <component name="CMakeSettings" AUTO_RELOAD="true">
-    <configurations>
-      <configuration CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
-  <component name="ChangeListManager">
-    <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/shatter_frag.glsl" afterPath="$PROJECT_DIR$/resources/shatter_frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/shatter_vert.glsl" afterPath="$PROJECT_DIR$/resources/shatter_vert.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.cpp" afterPath="$PROJECT_DIR$/src/Player.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.h" afterPath="$PROJECT_DIR$/src/Player.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Texture.cpp" afterPath="$PROJECT_DIR$/src/Texture.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
-    </list>
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
+    <component name="BookmarkManager">
+        <bookmark url="file://$PROJECT_DIR$/src/Application.cpp" line="597" />
+    </component>
+    <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+        <generated>
+            <config projectName="3dbilliards" targetName="3dbilliards" />
+        </generated>
+    </component>
+    <component name="CMakeSettings" AUTO_RELOAD="true">
+        <configurations>
+            <configuration CONFIG_NAME="Debug" />
+        </configurations>
+    </component>
+    <component name="ChangeListManager">
+        <list default="true" id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="">
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/shatter_frag.glsl" afterPath="$PROJECT_DIR$/resources/shatter_frag.glsl" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/shatter_vert.glsl" afterPath="$PROJECT_DIR$/resources/shatter_vert.glsl" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.cpp" afterPath="$PROJECT_DIR$/src/Application.cpp" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.h" afterPath="$PROJECT_DIR$/src/Application.h" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.cpp" afterPath="$PROJECT_DIR$/src/Player.cpp" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.h" afterPath="$PROJECT_DIR$/src/Player.h" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Texture.cpp" afterPath="$PROJECT_DIR$/src/Texture.cpp" />
+            <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
+        </list>
+        <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+        <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+        <option name="TRACKING_ENABLED" value="true" />
+        <option name="SHOW_DIALOG" value="false" />
+        <option name="HIGHLIGHT_CONFLICTS" value="true" />
+        <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+        <option name="LAST_RESOLUTION" value="IGNORE" />
+    </component>
+    <component name="CreatePatchCommitExecutor">
+        <option name="PATCH_PATH" value="" />
+    </component>
+    <component name="FileEditorManager">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Application.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="87">
+                            <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="265">
+                            <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="180">
+                            <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Player.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Player.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="212">
+                            <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+                            <folding>
+                                <element signature="e#117#140#0" expanded="true" />
+                            </folding>
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Physics.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="93">
+                            <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="22" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="-450">
+                            <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="17" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Player.cpp" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Player.cpp">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="54">
+                            <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+                            <folding />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="Application.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Application.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="47">
+                            <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+                            <folding>
+                                <element signature="e#128#147#0" expanded="true" />
+                                <marker date="1512613122842" expanded="true" signature="4352:4356" ph="{...}" />
+                            </folding>
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file leaf-file-name="glad.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ext/glad/include/glad/glad.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="129">
+                            <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                            <folding>
+                                <element signature="e#599#683#0" expanded="true" />
+                            </folding>
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+        </leaf>
+    </component>
+    <component name="FileTemplateManagerImpl">
+        <option name="RECENT_TEMPLATES">
+            <list>
+                <option value="GLSL Shader" />
+            </list>
+        </option>
+    </component>
+    <component name="FindInProjectRecents">
+        <findStrings>
+            <find>viewVec</find>
+            <find>DEBUG</find>
+            <find>win32</find>
+            <find>HEAD</find>
+            <find>render</find>
+            <find>bindUn</find>
+            <find>shat</find>
+            <find>tr</find>
+            <find>shatt</find>
+            <find>init(</find>
+            <find>triNum</find>
+            <find>GL_BLEND</find>
+            <find>renderpx</find>
+            <find>userData</find>
+            <find>UserData</find>
+            <find>actors</find>
+            <find>renderPxActors</find>
+            <find>BLEND</find>
+            <find>tex</find>
+            <find>render(</find>
+            <find>renderPx</find>
+            <find>sphere.</find>
+            <find>gra</find>
+            <find>setLin</find>
+            <find>setL</find>
+            <find>Player</find>
+            <find>time</find>
+            <find>renderP</find>
+            <find>init</find>
+            <find>initPla</find>
+        </findStrings>
+        <replaceStrings>
+            <replace>shiny</replace>
+        </replaceStrings>
+    </component>
+    <component name="Git.Settings">
+        <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    </component>
+    <component name="IdeDocumentHistory">
+        <option name="CHANGED_PATHS">
+            <list>
+                <option value="$PROJECT_DIR$/resources/simple_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/snowman_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/tex_fragH.glsl" />
+                <option value="$PROJECT_DIR$/src/WindowManager.h" />
+                <option value="$PROJECT_DIR$/src/WindowManager.cpp" />
+                <option value="$PROJECT_DIR$/src/memoryAllocator.h" />
+                <option value="$PROJECT_DIR$/src/MemoryAllocator.h" />
+                <option value="$PROJECT_DIR$/src/ErrorCallback.h" />
+                <option value="$PROJECT_DIR$/CMakeLists.txt" />
+                <option value="$PROJECT_DIR$/resources/frag_phong.glsl" />
+                <option value="$PROJECT_DIR$/resources/tex_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/vert_phong.glsl" />
+                <option value="$PROJECT_DIR$/.gitignore" />
+                <option value="$PROJECT_DIR$/resources/sky_frag.glsl" />
+                <option value="$PROJECT_DIR$/resources/shadowmap_frag.glsl" />
+                <option value="$PROJECT_DIR$/resources/shadowmap_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/sky_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/frosty_glass_vert.glsl" />
+                <option value="$PROJECT_DIR$/src/Graphics.h" />
+                <option value="$PROJECT_DIR$/resources/fbo_tex_frag.glsl" />
+                <option value="$PROJECT_DIR$/resources/fbo_tex_vert.glsl" />
+                <option value="$PROJECT_DIR$/src/Texture.h" />
+                <option value="$PROJECT_DIR$/src/Physics.h" />
+                <option value="$PROJECT_DIR$/resources/tex_frag.glsl" />
+                <option value="$PROJECT_DIR$/src/Physics.cpp" />
+                <option value="$PROJECT_DIR$/src/TextureCube.h" />
+                <option value="$PROJECT_DIR$/src/TextureCube.cpp" />
+                <option value="$PROJECT_DIR$/src/Material.h" />
+                <option value="$PROJECT_DIR$/src/Program.h" />
+                <option value="$PROJECT_DIR$/src/Program.cpp" />
+                <option value="$PROJECT_DIR$/src/Shape.cpp" />
+                <option value="$PROJECT_DIR$/src/Shape.h" />
+                <option value="$PROJECT_DIR$/src/UserData.h" />
+                <option value="$PROJECT_DIR$/resources/shatter_geo.glsl" />
+                <option value="$PROJECT_DIR$/resources/shatter_vert.glsl" />
+                <option value="$PROJECT_DIR$/resources/shatter_frag.glsl" />
+                <option value="$PROJECT_DIR$/src/Texture.cpp" />
+                <option value="$PROJECT_DIR$/ext/glad/include/glad/glad.h" />
+                <option value="$PROJECT_DIR$/src/Player.h" />
+                <option value="$PROJECT_DIR$/src/Application.h" />
+                <option value="$PROJECT_DIR$/src/Application.cpp" />
+                <option value="$PROJECT_DIR$/src/main.cpp" />
+                <option value="$PROJECT_DIR$/src/Player.cpp" />
+            </list>
+        </option>
+    </component>
+    <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+    <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+    <component name="JsGulpfileManager">
+        <detection-done>true</detection-done>
+        <sorting>DEFINITION_ORDER</sorting>
+    </component>
+    <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+    <component name="ProjectFrameBounds" extendedState="6">
+        <option name="y" value="27" />
+        <option name="width" value="683" />
+        <option name="height" value="741" />
+    </component>
+    <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+    <component name="ProjectView">
+        <navigator currentView="ProjectPane" proportions="" version="1">
+            <flattenPackages />
+            <showMembers />
+            <showModules />
+            <showLibraryContents />
+            <hideEmptyPackages />
+            <abbreviatePackageNames />
+            <autoscrollToSource />
+            <autoscrollFromSource />
+            <sortByType />
+            <manualOrder />
+            <foldersAlwaysOnTop value="true" />
+        </navigator>
+        <panes>
+            <pane id="ProjectPane">
+                <subPane>
+                    <expand>
+                        <path>
+                            <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+                            <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+                            <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="ext" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+                            <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="ext" type="462c0819:PsiDirectoryNode" />
+                            <item name="PxShared" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+                            <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="resources" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                        <path>
+                            <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+                            <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
+                            <item name="src" type="462c0819:PsiDirectoryNode" />
+                        </path>
+                    </expand>
+                    <select />
+                </subPane>
+            </pane>
+        </panes>
+    </component>
+    <component name="PropertiesComponent">
+        <property name="WebServerToolWindowFactoryState" value="false" />
+        <property name="last_opened_file_path" value="$PROJECT_DIR$/../RosenthalKyleProject3" />
+        <property name="SearchEverywhereHistoryKey" value="lastpos&#9;null&#9;null&#10;oldpos&#9;null&#9;null" />
+        <property name="js.eslint.eslintPackage" value="" />
+        <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+        <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    </component>
+    <component name="RecentsManager">
+        <key name="MoveFile.RECENT_KEYS">
+            <recent name="$PROJECT_DIR$/resources" />
+            <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib" />
+        </key>
+        <key name="CopyFile.RECENT_KEYS">
+            <recent name="$PROJECT_DIR$/resources" />
+            <recent name="$PROJECT_DIR$/resources/balls" />
+            <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64" />
+            <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib" />
+            <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx32" />
+        </key>
+    </component>
+    <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+        <UpdatedFiles>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Updated from server" />
+                <option name="myStatusName" value="Changed on server" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="CHANGED_ON_SERVER" />
+                <FILE-GROUP>
+                    <option name="myUpdateName" value="Updated" />
+                    <option name="myStatusName" value="Changed" />
+                    <option name="mySupportsDeletion" value="false" />
+                    <option name="myCanBeAbsent" value="false" />
+                    <option name="myId" value="UPDATED" />
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shadowmap_vert.glsl</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_frag.glsl</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_geo.glsl</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_vert.glsl</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.cpp</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.h</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Texture.cpp</PATH>
+                </FILE-GROUP>
+                <FILE-GROUP>
+                    <option name="myUpdateName" value="Created" />
+                    <option name="myStatusName" value="Created" />
+                    <option name="mySupportsDeletion" value="false" />
+                    <option name="myCanBeAbsent" value="false" />
+                    <option name="myId" value="CREATED" />
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/debug_frag.glsl</PATH>
+                    <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/debug_vert.glsl</PATH>
+                </FILE-GROUP>
+                <FILE-GROUP>
+                    <option name="myUpdateName" value="Deleted" />
+                    <option name="myStatusName" value="Deleted" />
+                    <option name="mySupportsDeletion" value="false" />
+                    <option name="myCanBeAbsent" value="true" />
+                    <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+                </FILE-GROUP>
+                <FILE-GROUP>
+                    <option name="myUpdateName" value="Restored" />
+                    <option name="myStatusName" value="Will be restored" />
+                    <option name="mySupportsDeletion" value="false" />
+                    <option name="myCanBeAbsent" value="false" />
+                    <option name="myId" value="RESTORED" />
+                </FILE-GROUP>
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Modified" />
+                <option name="myStatusName" value="Modified" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="MODIFIED" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Skipped" />
+                <option name="myStatusName" value="Skipped" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="SKIPPED" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Merged with conflicts" />
+                <option name="myStatusName" value="Will be merged with conflicts" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="MERGED_WITH_CONFLICTS" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Merged with tree conflicts" />
+                <option name="myStatusName" value="Merged with tree conflicts" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Merged with property conflicts" />
+                <option name="myStatusName" value="Will be merged with property conflicts" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Merged" />
+                <option name="myStatusName" value="Will be merged" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="MERGED" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Not in repository" />
+                <option name="myStatusName" value="Not in repository" />
+                <option name="mySupportsDeletion" value="true" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="UNKNOWN" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Locally added" />
+                <option name="myStatusName" value="Locally added" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="LOCALLY_ADDED" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Locally removed" />
+                <option name="myStatusName" value="Locally removed" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="LOCALLY_REMOVED" />
+            </FILE-GROUP>
+            <FILE-GROUP>
+                <option name="myUpdateName" value="Switched" />
+                <option name="myStatusName" value="Switched" />
+                <option name="mySupportsDeletion" value="false" />
+                <option name="myCanBeAbsent" value="false" />
+                <option name="myId" value="SWITCHED" />
+            </FILE-GROUP>
+        </UpdatedFiles>
+    </component>
+    <component name="RunDashboard">
+        <option name="ruleStates">
+            <list>
+                <RuleState>
+                    <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+                </RuleState>
+                <RuleState>
+                    <option name="name" value="StatusDashboardGroupingRule" />
+                </RuleState>
+            </list>
+        </option>
+    </component>
+    <component name="RunManager" selected="Application.3dbilliards">
+        <configuration name="3dbilliards" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="3dbilliards" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3dbilliards" RUN_TARGET_NAME="3dbilliards">
+            <envs />
+        </configuration>
+        <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="3dbilliards" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3dbilliards" RUN_TARGET_NAME="3dbilliards">
+            <envs />
+        </configuration>
+        <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="lab8" CONFIG_NAME="Debug">
+            <envs />
+        </configuration>
+        <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="lab8" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+            <envs />
+        </configuration>
+        <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+            <node-interpreter>project</node-interpreter>
+            <node-options />
+            <gulpfile />
+            <tasks />
+            <arguments />
+            <envs />
+        </configuration>
+        <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+            <module name="" />
+            <working_directory value="$PROJECT_DIR$" />
+            <filePath value="$PROJECT_DIR$" />
+            <kind value="FILE" />
+            <method />
+        </configuration>
+        <configuration default="true" type="GoRunFileConfiguration" factoryName="Go Single File">
+            <module name="" />
+            <working_directory value="$PROJECT_DIR$" />
+            <filePath value="$PROJECT_DIR$" />
+            <method />
+        </configuration>
+        <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+            <module name="" />
+            <working_directory value="$PROJECT_DIR$" />
+            <framework value="gotest" />
+            <kind value="DIRECTORY" />
+            <method />
+        </configuration>
+        <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+            <config-file value="" />
+            <node-interpreter value="project" />
+            <envs />
+            <method />
+        </configuration>
+        <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+            <method />
+        </configuration>
+        <configuration default="true" type="OdpsPythonConfigurationType" factoryName="MaxCompute Python">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs>
+                <env name="PYTHONUNBUFFERED" value="1" />
+            </envs>
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="PARAMETERS" value="" />
+            <option name="SHOW_COMMAND_LINE" value="false" />
+            <option name="PROJECT_NAME" value="" />
+            <option name="TABLE_NAME" value="" />
+            <option name="TABLE_COLUMNS" value="" />
+            <option name="TABLE_PARTITION" value="" />
+            <option name="MAIN_CLASS" value="" />
+            <method />
+        </configuration>
+        <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs>
+                <env name="PYTHONUNBUFFERED" value="1" />
+            </envs>
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="PARAMETERS" value="" />
+            <option name="SHOW_COMMAND_LINE" value="false" />
+            <option name="EMULATE_TERMINAL" value="false" />
+        </configuration>
+        <configuration default="true" type="Tox" factoryName="Tox">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+        </configuration>
+        <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+            <command value="run" />
+            <scripts />
+            <node-interpreter value="project" />
+            <envs />
+            <method />
+        </configuration>
+        <configuration default="true" type="tests" factoryName="Attests">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="CLASS_NAME" value="" />
+            <option name="METHOD_NAME" value="" />
+            <option name="FOLDER_NAME" value="" />
+            <option name="TEST_TYPE" value="TEST_SCRIPT" />
+            <option name="PATTERN" value="" />
+            <option name="USE_PATTERN" value="false" />
+            <method />
+        </configuration>
+        <configuration default="true" type="tests" factoryName="Doctests">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="CLASS_NAME" value="" />
+            <option name="METHOD_NAME" value="" />
+            <option name="FOLDER_NAME" value="" />
+            <option name="TEST_TYPE" value="TEST_SCRIPT" />
+            <option name="PATTERN" value="" />
+            <option name="USE_PATTERN" value="false" />
+            <method />
+        </configuration>
+        <configuration default="true" type="tests" factoryName="Nosetests">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="CLASS_NAME" value="" />
+            <option name="METHOD_NAME" value="" />
+            <option name="FOLDER_NAME" value="" />
+            <option name="TEST_TYPE" value="TEST_SCRIPT" />
+            <option name="PATTERN" value="" />
+            <option name="USE_PATTERN" value="false" />
+            <option name="PARAMS" value="" />
+            <option name="USE_PARAM" value="false" />
+            <method />
+        </configuration>
+        <configuration default="true" type="tests" factoryName="Unittests">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="CLASS_NAME" value="" />
+            <option name="METHOD_NAME" value="" />
+            <option name="FOLDER_NAME" value="" />
+            <option name="TEST_TYPE" value="TEST_SCRIPT" />
+            <option name="PATTERN" value="" />
+            <option name="USE_PATTERN" value="false" />
+            <option name="PUREUNITTEST" value="true" />
+            <option name="PARAMS" value="" />
+            <option name="USE_PARAM" value="false" />
+            <method />
+        </configuration>
+        <configuration default="true" type="tests" factoryName="py.test">
+            <option name="INTERPRETER_OPTIONS" value="" />
+            <option name="PARENT_ENVS" value="true" />
+            <envs />
+            <option name="SDK_HOME" value="" />
+            <option name="WORKING_DIRECTORY" value="" />
+            <option name="IS_MODULE_SDK" value="false" />
+            <option name="ADD_CONTENT_ROOTS" value="true" />
+            <option name="ADD_SOURCE_ROOTS" value="true" />
+            <module name="csc471Lab8base" />
+            <option name="SCRIPT_NAME" value="" />
+            <option name="CLASS_NAME" value="" />
+            <option name="METHOD_NAME" value="" />
+            <option name="FOLDER_NAME" value="" />
+            <option name="TEST_TYPE" value="TEST_SCRIPT" />
+            <option name="PATTERN" value="" />
+            <option name="USE_PATTERN" value="false" />
+            <option name="testToRun" value="" />
+            <option name="keywords" value="" />
+            <option name="params" value="" />
+            <option name="USE_PARAM" value="false" />
+            <option name="USE_KEYWORD" value="false" />
+            <method />
+        </configuration>
+        <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+            <item index="1" class="java.lang.String" itemvalue="Application.3dbilliards" />
+        </list>
+    </component>
+    <component name="ShelveChangesManager" show_recycled="false">
+        <option name="remove_strategy" value="false" />
+    </component>
+    <component name="SvnConfiguration">
+        <configuration />
+    </component>
+    <component name="TaskManager">
+        <task active="true" id="Default" summary="Default task">
+            <changelist id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="" />
+            <created>1509646100791</created>
+            <option name="number" value="Default" />
+            <option name="presentableId" value="Default" />
+            <updated>1509646100791</updated>
+            <workItem from="1509646103279" duration="8132000" />
+            <workItem from="1509660448607" duration="13860000" />
+            <workItem from="1510254691200" duration="265000" />
+            <workItem from="1510255032474" duration="20325000" />
+            <workItem from="1510389868790" duration="7481000" />
+            <workItem from="1510469440829" duration="2151000" />
+            <workItem from="1510471730736" duration="9653000" />
+            <workItem from="1510521350140" duration="3569000" />
+            <workItem from="1510525078171" duration="1144000" />
+            <workItem from="1510526237688" duration="21648000" />
+            <workItem from="1510688349609" duration="29000" />
+            <workItem from="1510941476644" duration="5823000" />
+            <workItem from="1510950262608" duration="27203000" />
+            <workItem from="1511626548838" duration="9871000" />
+            <workItem from="1511748386864" duration="1582000" />
+            <workItem from="1512076044979" duration="17587000" />
+            <workItem from="1512245644863" duration="12285000" />
+            <workItem from="1512597748036" duration="13754000" />
+        </task>
+        <task id="LOCAL-00001" summary="shatter shader effect">
+            <created>1512596367460</created>
+            <option name="number" value="00001" />
+            <option name="presentableId" value="LOCAL-00001" />
+            <option name="project" value="LOCAL" />
+            <updated>1512596367462</updated>
+        </task>
+        <task id="LOCAL-00002" summary="shatter shader effect">
+            <created>1512596397802</created>
+            <option name="number" value="00002" />
+            <option name="presentableId" value="LOCAL-00002" />
+            <option name="project" value="LOCAL" />
+            <updated>1512596397802</updated>
+        </task>
+        <task id="LOCAL-00003" summary="shatter shader effect shrink">
+            <created>1512600546775</created>
+            <option name="number" value="00003" />
+            <option name="presentableId" value="LOCAL-00003" />
+            <option name="project" value="LOCAL" />
+            <updated>1512600546775</updated>
+        </task>
+        <task id="LOCAL-00004" summary="inner stationary ship">
+            <created>1512606286916</created>
+            <option name="number" value="00004" />
+            <option name="presentableId" value="LOCAL-00004" />
+            <option name="project" value="LOCAL" />
+            <updated>1512606286916</updated>
+        </task>
+        <option name="localTasksCounter" value="5" />
+        <servers />
+    </component>
+    <component name="TimeTrackingManager">
+        <option name="totallyTimeSpent" value="193778000" />
+    </component>
+    <component name="ToolWindowManager">
+        <frame x="0" y="28" width="1366" height="740" extended-state="6" />
+        <editor active="true" />
+        <layout>
+            <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+            <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+            <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853025" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+            <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
+            <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+            <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38961038" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+            <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
+            <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2030303" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+            <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+            <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+            <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+            <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39866668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+            <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+            <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+            <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+            <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+            <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+            <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+            <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+            <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+            <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+            <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+            <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+            <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+            <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+            <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
+        </layout>
+    </component>
+    <component name="TypeScriptGeneratedFilesManager">
+        <option name="version" value="1" />
+    </component>
+    <component name="VcsContentAnnotationSettings">
+        <option name="myLimit" value="2678400000" />
+    </component>
+    <component name="VcsManagerConfiguration">
+        <MESSAGE value="shatter shader effect" />
+        <MESSAGE value="shatter shader effect shrink" />
+        <MESSAGE value="inner stationary ship" />
+        <option name="LAST_COMMIT_MESSAGE" value="inner stationary ship" />
+    </component>
+    <component name="XDebuggerManager">
+        <breakpoint-manager>
+            <breakpoints>
+                <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+                    <url>file://$PROJECT_DIR$/src/Shape.cpp</url>
+                    <line>100</line>
+                    <option name="timeStamp" value="11" />
+                </line-breakpoint>
+                <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+                    <url>file://$PROJECT_DIR$/src/Material.h</url>
+                    <line>15</line>
+                    <option name="timeStamp" value="12" />
+                </line-breakpoint>
+            </breakpoints>
+            <option name="time" value="13" />
+        </breakpoint-manager>
+        <watches-manager>
+            <configuration name="CMakeRunConfiguration">
+                <watch expression="Exception" />
+                <watch expression="Exception" />
+                <watch expression="Exception" />
+            </configuration>
+        </watches-manager>
+    </component>
+    <component name="editorHistoryManager">
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball7.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball15.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball12.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Player.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-              <folding>
-                <element signature="e#117#140#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball14.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Physics.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Physics.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/frosty_glass_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Physics.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sky_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                    <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball3.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball11.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/balls/Ball10.jpg">
+            <provider selected="true" editor-type-id="images">
+                <state />
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/sky_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                    <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/shadowmap_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                    <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/shadowmap_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                    <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/frosty_glass_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                    <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Graphics.cpp" />
+        <entry file="file://$PROJECT_DIR$/src/Graphics.h" />
+        <entry file="file:///usr/local/PhysX-3.4/PxShared/src/foundation/src/unix/PsUnixSync.cpp" />
+        <entry file="file:///usr/local/PhysX-3.4/PxShared/src/pvd/src/PxPvd.cpp" />
+        <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                    <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="108">
+                    <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/fbo_tex_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                    <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/fbo_tex_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                    <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file:///usr/include/tkDecls.h" />
+        <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/memory" />
+        <entry file="file://$PROJECT_DIR$/src/Texture.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="149">
+                    <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/verySpherey.obj" />
+        <entry file="file://$PROJECT_DIR$/src/TextureCube.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                    <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18">
+                    <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/MatrixStack.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Shape.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="108">
+                    <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Shape.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="229">
+                    <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/TextureCube.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                    <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+                    <folding>
+                        <element signature="e#156#173#0" expanded="false" />
+                    </folding>
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Program.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                    <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Program.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="89">
+                    <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="263">
+                    <caret line="38" column="2" lean-forward="true" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Material.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                    <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                    <folding>
+                        <element signature="e#120#137#0" expanded="true" />
+                    </folding>
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Material.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                    <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/ext/phyx34/Include/geometry/PxGeometry.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="178">
+                    <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/ext/PxShared/include/foundation/PxSimpleTypes.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="178">
+                    <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
         <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-450">
+                    <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="17" />
+                    <folding />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Player.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Player.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/shatter_frag.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="373">
+                    <caret line="143" column="77" lean-forward="false" selection-start-line="143" selection-start-column="77" selection-end-line="143" selection-end-column="77" />
+                    <folding />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="Application.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-              <folding>
-                <element signature="e#128#147#0" expanded="true" />
-                <marker date="1512613122842" expanded="true" signature="4352:4356" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/shatter_geo.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="427">
+                    <caret line="94" column="17" lean-forward="true" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+                    <folding />
+                </state>
+            </provider>
         </entry>
-      </file>
-      <file leaf-file-name="glad.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/shatter_vert.glsl">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="355">
+                    <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="52" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/UserData.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                    <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
         <entry file="file://$PROJECT_DIR$/ext/glad/include/glad/glad.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#599#683#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="129">
+                    <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                    <folding>
+                        <element signature="e#599#683#0" expanded="true" />
+                    </folding>
+                </state>
+            </provider>
         </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="GLSL Shader" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>viewVec</find>
-      <find>DEBUG</find>
-      <find>win32</find>
-      <find>HEAD</find>
-      <find>render</find>
-      <find>bindUn</find>
-      <find>shat</find>
-      <find>tr</find>
-      <find>shatt</find>
-      <find>init(</find>
-      <find>triNum</find>
-      <find>GL_BLEND</find>
-      <find>renderpx</find>
-      <find>userData</find>
-      <find>UserData</find>
-      <find>actors</find>
-      <find>renderPxActors</find>
-      <find>BLEND</find>
-      <find>tex</find>
-      <find>render(</find>
-      <find>renderPx</find>
-      <find>sphere.</find>
-      <find>gra</find>
-      <find>setLin</find>
-      <find>setL</find>
-      <find>Player</find>
-      <find>time</find>
-      <find>renderP</find>
-      <find>init</find>
-      <find>initPla</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>shiny</replace>
-    </replaceStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/resources/simple_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/snowman_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/tex_fragH.glsl" />
-        <option value="$PROJECT_DIR$/src/WindowManager.h" />
-        <option value="$PROJECT_DIR$/src/WindowManager.cpp" />
-        <option value="$PROJECT_DIR$/src/memoryAllocator.h" />
-        <option value="$PROJECT_DIR$/src/MemoryAllocator.h" />
-        <option value="$PROJECT_DIR$/src/ErrorCallback.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/resources/frag_phong.glsl" />
-        <option value="$PROJECT_DIR$/resources/tex_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/vert_phong.glsl" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/resources/sky_frag.glsl" />
-        <option value="$PROJECT_DIR$/resources/shadowmap_frag.glsl" />
-        <option value="$PROJECT_DIR$/resources/shadowmap_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/sky_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/frosty_glass_vert.glsl" />
-        <option value="$PROJECT_DIR$/src/Graphics.h" />
-        <option value="$PROJECT_DIR$/resources/fbo_tex_frag.glsl" />
-        <option value="$PROJECT_DIR$/resources/fbo_tex_vert.glsl" />
-        <option value="$PROJECT_DIR$/src/Texture.h" />
-        <option value="$PROJECT_DIR$/src/Physics.h" />
-        <option value="$PROJECT_DIR$/resources/tex_frag.glsl" />
-        <option value="$PROJECT_DIR$/src/Physics.cpp" />
-        <option value="$PROJECT_DIR$/src/TextureCube.h" />
-        <option value="$PROJECT_DIR$/src/TextureCube.cpp" />
-        <option value="$PROJECT_DIR$/src/Material.h" />
-        <option value="$PROJECT_DIR$/src/Program.h" />
-        <option value="$PROJECT_DIR$/src/Program.cpp" />
-        <option value="$PROJECT_DIR$/src/Shape.cpp" />
-        <option value="$PROJECT_DIR$/src/Shape.h" />
-        <option value="$PROJECT_DIR$/src/UserData.h" />
-        <option value="$PROJECT_DIR$/resources/shatter_geo.glsl" />
-        <option value="$PROJECT_DIR$/resources/shatter_vert.glsl" />
-        <option value="$PROJECT_DIR$/resources/shatter_frag.glsl" />
-        <option value="$PROJECT_DIR$/src/Texture.cpp" />
-        <option value="$PROJECT_DIR$/ext/glad/include/glad/glad.h" />
-        <option value="$PROJECT_DIR$/src/Player.h" />
-        <option value="$PROJECT_DIR$/src/Application.h" />
-        <option value="$PROJECT_DIR$/src/Application.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Player.cpp" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="683" />
-    <option name="height" value="741" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="PxShared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3dbilliards" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="GraphicsFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RosenthalKyleProject3" />
-    <property name="SearchEverywhereHistoryKey" value="lastpos&#9;null&#9;null&#10;oldpos&#9;null&#9;null" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/resources/balls" />
-      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx64" />
-      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib" />
-      <recent name="$PROJECT_DIR$/ext/PhysX-3.4/Lib/osx32" />
-    </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shadowmap_vert.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_frag.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_geo.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/shatter_vert.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.cpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Application.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Texture.cpp</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/debug_frag.glsl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/debug_vert.glsl</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.3dbilliards">
-    <configuration name="3dbilliards" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="3dbilliards" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3dbilliards" RUN_TARGET_NAME="3dbilliards">
-      <envs />
-    </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="3dbilliards" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3dbilliards" RUN_TARGET_NAME="3dbilliards">
-      <envs />
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="lab8" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
-    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3dbilliards" TARGET_NAME="lab8" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
-      <envs />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="" />
-      <working_directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GoRunFileConfiguration" factoryName="Go Single File">
-      <module name="" />
-      <working_directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="DIRECTORY" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="OdpsPythonConfigurationType" factoryName="MaxCompute Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="PROJECT_NAME" value="" />
-      <option name="TABLE_NAME" value="" />
-      <option name="TABLE_COLUMNS" value="" />
-      <option name="TABLE_PARTITION" value="" />
-      <option name="MAIN_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc471Lab8base" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.3dbilliards" />
-    </list>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="889043a3-acab-4668-aebd-8c8c81e8baf1" name="Default" comment="" />
-      <created>1509646100791</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1509646100791</updated>
-      <workItem from="1509646103279" duration="8132000" />
-      <workItem from="1509660448607" duration="13860000" />
-      <workItem from="1510254691200" duration="265000" />
-      <workItem from="1510255032474" duration="20325000" />
-      <workItem from="1510389868790" duration="7481000" />
-      <workItem from="1510469440829" duration="2151000" />
-      <workItem from="1510471730736" duration="9653000" />
-      <workItem from="1510521350140" duration="3569000" />
-      <workItem from="1510525078171" duration="1144000" />
-      <workItem from="1510526237688" duration="21648000" />
-      <workItem from="1510688349609" duration="29000" />
-      <workItem from="1510941476644" duration="5823000" />
-      <workItem from="1510950262608" duration="27203000" />
-      <workItem from="1511626548838" duration="9871000" />
-      <workItem from="1511748386864" duration="1582000" />
-      <workItem from="1512076044979" duration="17587000" />
-      <workItem from="1512245644863" duration="12285000" />
-      <workItem from="1512597748036" duration="13754000" />
-    </task>
-    <task id="LOCAL-00001" summary="shatter shader effect">
-      <created>1512596367460</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1512596367462</updated>
-    </task>
-    <task id="LOCAL-00002" summary="shatter shader effect">
-      <created>1512596397802</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1512596397802</updated>
-    </task>
-    <task id="LOCAL-00003" summary="shatter shader effect shrink">
-      <created>1512600546775</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1512600546775</updated>
-    </task>
-    <task id="LOCAL-00004" summary="inner stationary ship">
-      <created>1512606286916</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1512606286916</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193778000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1366" height="740" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853025" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38961038" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2030303" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39866668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
-    </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="shatter shader effect" />
-    <MESSAGE value="shatter shader effect shrink" />
-    <MESSAGE value="inner stationary ship" />
-    <option name="LAST_COMMIT_MESSAGE" value="inner stationary ship" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Shape.cpp</url>
-          <line>100</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Material.h</url>
-          <line>15</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="13" />
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="Exception" />
-        <watch expression="Exception" />
-        <watch expression="Exception" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball7.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball15.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball12.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball14.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/frosty_glass_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sky_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball11.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/balls/Ball10.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sky_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/shadowmap_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/shadowmap_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/frosty_glass_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/Graphics.h" />
-    <entry file="file:///usr/local/PhysX-3.4/PxShared/src/foundation/src/unix/PsUnixSync.cpp" />
-    <entry file="file:///usr/local/PhysX-3.4/PxShared/src/pvd/src/PxPvd.cpp" />
-    <entry file="file://$PROJECT_DIR$/resources/vert_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/frag_phong.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fbo_tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fbo_tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/tkDecls.h" />
-    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/memory" />
-    <entry file="file://$PROJECT_DIR$/src/Texture.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/verySpherey.obj" />
-    <entry file="file://$PROJECT_DIR$/src/TextureCube.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatrixStack.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shape.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shape.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextureCube.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding>
-            <element signature="e#156#173#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Program.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Program.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tex_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="38" column="2" lean-forward="true" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Material.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#120#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Material.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/phyx34/Include/geometry/PxGeometry.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/PxShared/include/foundation/PxSimpleTypes.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/shatter_frag.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="143" column="77" lean-forward="false" selection-start-line="143" selection-start-column="77" selection-end-line="143" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/shatter_geo.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="94" column="17" lean-forward="true" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/shatter_vert.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserData.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ext/glad/include/glad/glad.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#599#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Physics.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-          <folding>
-            <element signature="e#128#147#0" expanded="true" />
-            <marker date="1512613122842" expanded="true" signature="4352:4356" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding>
-            <element signature="e#117#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
+        <entry file="file://$PROJECT_DIR$/src/Physics.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="93">
+                    <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="22" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Application.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="47">
+                    <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+                    <folding>
+                        <element signature="e#128#147#0" expanded="true" />
+                        <marker date="1512613122842" expanded="true" signature="4352:4356" ph="{...}" />
+                    </folding>
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Application.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="87">
+                    <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="265">
+                    <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Texture.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                    <caret line="94" column="70" lean-forward="false" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Player.h">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="212">
+                    <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+                    <folding>
+                        <element signature="e#117#140#0" expanded="true" />
+                    </folding>
+                </state>
+            </provider>
+        </entry>
+        <entry file="file://$PROJECT_DIR$/src/Player.cpp">
+            <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="54">
+                    <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+                    <folding />
+                </state>
+            </provider>
+        </entry>
+    </component>
 </project>
