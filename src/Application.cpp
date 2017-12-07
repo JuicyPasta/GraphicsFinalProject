@@ -514,7 +514,7 @@ void Application::renderScene(PxActor **actors, int &numActors, GLuint buffer, s
 
         shadowMap->bind(debugProg->getUniform("diffuseTexture"));
         ballTexture[2]->bind(debugProg->getUniform("diffuseTexture"));
-        quad->draw(debugProg);
+        //quad->draw(debugProg);
 
     } debugProg->unbind();
 
