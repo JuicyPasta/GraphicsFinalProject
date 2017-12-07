@@ -33,11 +33,14 @@ int main(int argc, char **argv) {
     }
 
     Physics *physics = new Physics();
-    int numSpheres = 16;
+    int numSpheres = 17;
     UserData spheres[numSpheres+1];
 
     spheres[0].materialMap.insert({PxGeometryType::eBOX, materials[0]});
     spheres[1].materialMap.insert({PxGeometryType::eBOX, materials[1]});
+
+
+    spheres[0].ballNum = spheres[1].ballNum = 0;
 
     physics->addSphere(PxVec3(40, 3, 0), &spheres[0], 100, 100, .5);
     physics->addSphere(PxVec3(-40, 3, 0), &spheres[1], 100, 100, .5);
@@ -49,13 +52,13 @@ int main(int argc, char **argv) {
     double ballDiameter = 2;
 
 
-    int ballNum = 1;
+    int ballNum = 2;
     for (int i = 5; i >= 1; i--) {
         for (int j = 1; j <= i; j++) {
             spheres[ballNum].ballNum = ballNum;
             double xPos = xCenter + (5-i)*xOffset + (j-1)*ballDiameter;
             double zPos = zCenter + (5-i)*zOffset;
-            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum + 1], .5, .5, .5);
+            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum], .5, .5, .5);
             ballNum++;
         }
     }

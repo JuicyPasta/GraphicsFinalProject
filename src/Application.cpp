@@ -312,7 +312,7 @@ mat4 Application::getDepthMVP() {
     return depthMVP;
 }
 
-void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<MatrixStack> M,
+void Application::renderDepthBuffer(PxActor **actors, int& numActors, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
@@ -337,7 +337,7 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
     renderPxActors(actors, numActors, M, V, P, player, depthProg);
 }
 
-void Application::render(PxActor **actors, int numActors) {
+void Application::render(PxActor **actors, int& numActors) {
     int seconds = 0;
     p1->update(seconds);
     p2->update(seconds);
@@ -480,7 +480,7 @@ void Application::renderSquare(shared_ptr<Program> prog,
 }
 
 
-void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, shared_ptr<MatrixStack> M,
+void Application::renderScene(PxActor **actors, int &numActors, GLuint buffer, shared_ptr<MatrixStack> M,
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
 
@@ -565,24 +565,31 @@ inline void Application::bindUniforms(shared_ptr<Program> program, const float *
         SetMaterial(program, material);
 }
 
-void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V,
+void Application::renderPxActors(PxActor **actors, int &numActors, shared_ptr<MatrixStack> M, shared_ptr<MatrixStack> V,
                                  shared_ptr<MatrixStack> P, shared_ptr<Player> player, shared_ptr<Program> geomProg) {
     static const int MAX_SHAPES = 100;
     PxShape *shapes[10];
     for (int i = 0; i < numActors; i++) {
+        if (!actors[i]) continue;
         auto *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
         auto userData = (UserData *) actor->userData;
-        if (userData && i > 1) {
+        if (userData && userData->ballNum > 0) {
             if (actor->is<PxRigidBody>()){
                 vec3 corner = vec3(0,100,0);
+                if (userData->time > 1.0f) {
+                    actor->release();
+                    //numActors--;
+                    actors[i] = NULL;
+                    continue;
+                }
                 if (userData->time > -2.0f) {
                     userData->time += .007;
                 } else {
-                    if (i < 10) {
-                        corner = vec3(47.5,-1,-47.5);
-                    } else if (i > 10) {
-                        corner = vec3(-47.5,-1,47.5);
+                    if (userData->ballNum < 8) {
+                        corner = vec3(47.5,-.5,47.5);
+                    } else if (userData->ballNum > 8) {
+                        corner = vec3(-47.5,-.5,-47.5);
                     }
                     PxTransform temp = actor->getGlobalPose();
                     vec3 pos = vec3(temp.p.x,temp.p.y,temp.p.z);
@@ -606,6 +613,9 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
 
             material->shader = texProg;
             material->diffuseTex = ballTexture[(i > 17 ? 17 : i)];
+            if (userData) {
+                material->diffuseTex = ballTexture[userData->ballNum];
+            }
 
             shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
             program->bind(); {

@@ -16,7 +16,7 @@ using namespace std;
 
 class UserData {
 public:
-    int ballNum;
+    int ballNum = 0;
     map<PxGeometryType::Enum, shared_ptr<Material>> materialMap;
     float time = -2.f;
 };
