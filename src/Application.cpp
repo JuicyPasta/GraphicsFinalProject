@@ -300,10 +300,7 @@ void Application::initPlayers(PxActor **actors, int actor1, int actor2) {
 mat4 Application::getDepthMVP() {
     glm::vec3 lightInvDir = glm::vec3(10,30,10);
 
-    // Compute the MVP matrix from the light's point of view
-//    glm::mat4 depthProjectionMatrix = glm::perspective(45.0f, 1.0f, .01f, 300.0f);
-    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-60,60,-60,60,-60, 60);
-
+    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-70,70,-70,70,-35,70);
 
     glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
     glm::mat4 depthModelMatrix = glm::mat4(1.0);
@@ -316,7 +313,7 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
                               shared_ptr<MatrixStack> V,
                               shared_ptr<MatrixStack> P, shared_ptr<Player> player) {
     glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->getFBO());
-    glViewport(0,0,1024*2,1024*2); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+    glViewport(0,0,1024*4,1024*4); // Render on the whole framebuffer, complete from the lower left corner to the upper right
 
     // We don't use bias in the shader, but instead we draw back faces,
     // which are already separated from the front faces by a small distance
@@ -348,7 +345,7 @@ void Application::render(PxActor **actors, int numActors) {
     auto V = make_shared<MatrixStack>();
     V->loadIdentity();
 
-    int numPlayers = 2;
+    int numPlayers = 1;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
@@ -512,13 +509,12 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
         glUniformMatrix4fv(debugProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
         glUniformMatrix4fv(debugProg->getUniform("V"), 1, GL_FALSE, value_ptr(V->topMatrix()));
 
-        mat4 emm = glm::scale(mat4(1), vec3(4, 4, 4)) * glm::translate(mat4(1), vec3(0, 1, 0));
+        mat4 emm = glm::scale(mat4(1), vec3(1, 1, 1)) * glm::translate(mat4(1), vec3(0, 1, 0));
         glUniformMatrix4fv(debugProg->getUniform("M"), 1, GL_FALSE, value_ptr(emm));
 
         shadowMap->bind(debugProg->getUniform("diffuseTexture"));
-//        ballTexture[2]->bind(debugProg->getUniform("diffuseTexture"));
-
-//        quad->draw(debugProg);
+        ballTexture[2]->bind(debugProg->getUniform("diffuseTexture"));
+        quad->draw(debugProg);
 
     } debugProg->unbind();
 

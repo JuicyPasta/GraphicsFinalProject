@@ -48,7 +48,6 @@ int main(int argc, char **argv) {
     double zOffset = sqrt(3.0f);
     double ballDiameter = 2;
 
-
     int ballNum = 1;
     for (int i = 5; i >= 1; i--) {
         for (int j = 1; j <= i; j++) {
