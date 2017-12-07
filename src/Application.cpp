@@ -338,7 +338,6 @@ void Application::renderDepthBuffer(PxActor **actors, int numActors, shared_ptr<
 }
 
 void Application::render(PxActor **actors, int numActors) {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     int seconds = 0;
     p1->update(seconds);
     p2->update(seconds);
@@ -353,9 +352,9 @@ void Application::render(PxActor **actors, int numActors) {
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
-    float aspect = width / (float) (height / 2.0f);
+    float aspect = width / (float) (height);
     P->pushMatrix();
-    P->perspective(45.0f, aspect/numPlayers, 0.01f, 300.0f);
+    P->perspective(45.0f, aspect*numPlayers, 0.01f, 300.0f);
 
     O->pushMatrix();
     aspect /= 2;
@@ -367,8 +366,7 @@ void Application::render(PxActor **actors, int numActors) {
 
     renderDepthBuffer(actors, numActors, M, V, P, p1);
 
-    int downsampleScale = 2;
-    if (false) {
+    if (numPlayers == 1) {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
