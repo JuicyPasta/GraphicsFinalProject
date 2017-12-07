@@ -61,7 +61,7 @@ void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
     double dy = lastMouseY - y;
 
     orientationInput.x += dx / 1000;
-    orientationInput.y += dy / 1000;
+    orientationInput.y -= dy / 1000;
 
     lastMouseX = x;
     lastMouseY = y;
@@ -185,5 +185,5 @@ mat4 Player::getViewMatrix() {
 
 mat4 Player::getSkyBoxViewMatrix() {
 //    return glm::lookAt(lookAtPoint-position, vec3(0, 0, 0), upVector);
-    return glm::lookAt(vec3(0, 0, 0), lookAtPoint - position, upVector);
+    return glm::lookAt(vec3(0, 0, 0), position - lookAtPoint, upVector);
 }
