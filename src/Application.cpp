@@ -573,12 +573,23 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
         auto *actor = actors[i]->is<PxRigidActor>();
         int nbShapes = actor->getNbShapes();
         auto userData = (UserData *) actor->userData;
-        if (i == 0 && time == -2.0f ) {
+        if (userData && i > 1) {
             if (actor->is<PxRigidBody>()){
-                //((PxRigidBody *) actor)->setMass(10.f);
-                //((PxRigidBody *) actor)->setLinearVelocity(PxVec3(5,0,0));
-                //((PxRigidBody *) actor)->setActorFlag(PxActorFlag::eDISABLE_GRAVITY, false);
-                //((PxRigidDynamic *) actor)->setLinearDamping(50.f);
+                vec3 corner = vec3(0,100,0);
+                if (userData->time > -2.0f) {
+                    userData->time += .007;
+                } else {
+                    if (i < 10) {
+                        corner = vec3(47.5,-1,47.5);
+                    } else if (i > 10) {
+                        corner = vec3(-47.5,-1,-47.5);
+                    }
+                    PxTransform temp = actor->getGlobalPose();
+                    vec3 pos = vec3(temp.p.x,temp.p.y,temp.p.z);
+                    if (pow(pos.x - corner.x,2.) + pow(pos.y - corner.y,2.) + pow(pos.y - corner.y,2.) < 4.f) {
+                        userData->time = .0;
+                    }
+                }
             }
         }
         //if (i == 0) userData->time += .007;
@@ -594,7 +605,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
             shared_ptr<Material> material = make_shared<Material>();
 
             material->shader = texProg;
-            material->diffuseTex = ballTexture[i];
+            material->diffuseTex = ballTexture[(i > 17 ? 17 : i)];
 
             shared_ptr<Program> program = geomProg == NULL ? material->shader : geomProg;
             program->bind(); {
