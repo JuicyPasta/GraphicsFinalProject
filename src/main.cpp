@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
             spheres[ballNum].ballNum = ballNum;
             double xPos = xCenter + (5-i)*xOffset + (j-1)*ballDiameter;
             double zPos = zCenter + (5-i)*zOffset;
-            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum], .5, .5, .5);
+            physics->addSphere(PxVec3(xPos, 50, zPos), &spheres[ballNum], .1, .1, .1);
             ballNum++;
         }
     }

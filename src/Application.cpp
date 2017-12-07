@@ -94,8 +94,8 @@ void Application::init() {
     GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
     glDrawBuffers(1, DrawBuffers);
 
-    p1 = make_shared<Player>(2);
-    p2 = make_shared<Player>(1);
+    p1 = make_shared<Player>(0);
+    p2 = make_shared<Player>(0);
 }
 
 void Application::initShaders(const std::string &resourceDirectory) {
@@ -345,7 +345,7 @@ void Application::render(PxActor **actors, int& numActors) {
     auto V = make_shared<MatrixStack>();
     V->loadIdentity();
 
-    int numPlayers = 2;
+    int numPlayers = 1;
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
     glViewport(0, 0, width, height);
@@ -504,6 +504,7 @@ void Application::renderScene(PxActor **actors, int &numActors, GLuint buffer, s
 
 
 
+    /*
     debugProg->bind(); {
 
         glUniformMatrix4fv(debugProg->getUniform("P"), 1, GL_FALSE, value_ptr(P->topMatrix()));
@@ -517,6 +518,7 @@ void Application::renderScene(PxActor **actors, int &numActors, GLuint buffer, s
         //quad->draw(debugProg);
 
     } debugProg->unbind();
+     */
 
 
 
@@ -556,7 +558,7 @@ inline void Application::bindUniforms(shared_ptr<Program> program, const float *
     if (specTex != NULL)
         specTex->bind(program->getUniform("specularTexture"));
     if (player != NULL)
-        glUniform3f(program->getUniform("eyePos"), player->getPosition().x, player->getPosition().y, player->getPosition().z);
+        glUniform3f(program->getUniform("eyePos"), player->getCameraPosition().x, player->getCameraPosition().y, player->getCameraPosition().z);
     if (material > 0)
         SetMaterial(program, material);
 }

@@ -34,6 +34,9 @@ public:
         if (physX) return vec3(physX->getGlobalPose().p.x,physX->getGlobalPose().p.y,physX->getGlobalPose().p.z);
         return position;
     }
+    vec3 getCameraPosition() {
+        return lookAtPoint;
+    }
     float getTheta() {
         return orientationInput.x;
     }
