@@ -110,13 +110,20 @@ void Physics::addGround() {
     position = PxVec3(corner, -1, corner);
     PxRigidStatic *goal1 = mPhysics->createRigidStatic(PxTransform(position));
     PxRigidActorExt::createExclusiveShape(*goal1, PxSphereGeometry(1), *material);
+    data[0].ballNum = 1;
+    goal1->userData = &data[0];
     mScene->addActor(*goal1);
 
 
     position = PxVec3(-corner, -1, -corner);
     PxRigidStatic *goal2 = mPhysics->createRigidStatic(PxTransform(position));
     PxRigidActorExt::createExclusiveShape(*goal2, PxSphereGeometry(1), *material);
+    data[1].ballNum = 1;
+    goal1->userData = &data[1];
     mScene->addActor(*goal2);
+
+
+
 }
 
 // rigid body docs http://docs.nvidia.com/gameworks/content/gameworkslibrary/physx/guide/Manual/RigidBodyOverview.html

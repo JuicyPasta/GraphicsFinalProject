@@ -41,6 +41,7 @@ private:
 
     double mAccumulator = 0.0f;
     double mStepSize;
+    UserData data[2];
 
     PxFoundation *mFoundation;
     PxPhysics *mPhysics;
