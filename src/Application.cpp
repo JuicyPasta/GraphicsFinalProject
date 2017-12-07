@@ -368,13 +368,21 @@ void Application::render(PxActor **actors, int numActors) {
     renderDepthBuffer(actors, numActors, M, V, P, p1);
 
     int downsampleScale = 2;
-    if (true) {
+    if (false) {
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glViewport(0, 0, width, height);
+
         V->pushMatrix();
         V->multMatrix(p1->getViewMatrix());
         renderScene(actors, numActors, 0, M, V, P, p1);
         V->popMatrix();
 
     } else {
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         glViewport(0, height/2, width, height/2);
 
         V->pushMatrix();
@@ -481,9 +489,6 @@ void Application::renderScene(PxActor **actors, int numActors, GLuint buffer, sh
     int width, height;
     glfwGetFramebufferSize(windowManager->getHandle(), &width, &height);
 
-    glBindFramebuffer(GL_FRAMEBUFFER, buffer);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glViewport(0, 0, width, height);
     glDisable(GL_CULL_FACE);
     glCullFace(GL_BACK);
 
