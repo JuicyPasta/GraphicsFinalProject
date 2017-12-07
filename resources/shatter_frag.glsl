@@ -144,7 +144,6 @@ void main() {
     visability = .5f;
   }
 
-  Outcolor = visability * vec4(diffL + specL + ambient*texColor0.xyz, 1);
-  Outcolor.a = 1 - time*time;
+  Outcolor = vec4(diffL + specL + ambient*texColor0.xyz * visability, 1);
 
 }

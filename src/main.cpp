@@ -61,6 +61,7 @@ int main(int argc, char **argv) {
     physics->addGround();
     PxActor *actors[400];
 
+
     while (!glfwWindowShouldClose(windowManager->getHandle())) {
 
         if (physics->advance((PxReal) glfwGetTime())) {
