@@ -222,14 +222,19 @@ void Application::initGeometry(const std::string &resourceDirectory) {
     sphere->init();
 
     box = make_shared<Shape>();
-    box->loadMesh(resourceDirectory + "/sphere.obj");
+    box->loadMesh(resourceDirectory + "/cube.obj");
     box->resize(1);
     box->init();
 
     ship = make_shared<Shape>();
-    ship->loadMesh(resourceDirectory + "/ship.obj");
+    ship->loadMesh(resourceDirectory + "/grid_ball.obj");
     ship->resize(1);
     ship->init();
+
+    shipInner = make_shared<Shape>();
+    shipInner->loadMesh(resourceDirectory + "/ship.obj");
+    shipInner->resize(1);
+    shipInner->init();
 
     floor = make_shared<Shape>();
     floor->loadFloorGeom();
@@ -543,6 +548,7 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                 mat4 M = make_mat4(shapePose.front()) * glm::rotate(glm::mat4(1), (float)M_PI_2, vec3(0, 1, 0));
                 PxVec3 dims;
                 PxBoxGeometry boxGeom;
+                mat4 oM;
 
                 switch (h.getType()) {
                     case PxGeometryType::eBOX:
@@ -556,9 +562,22 @@ void Application::renderPxActors(PxActor **actors, int numActors, shared_ptr<Mat
                         break;
 
                     case PxGeometryType::eSPHERE:
+                        if (i == 0) {
+                            oM = M;
+                            oM[0][0] = oM[1][1] = oM[2][2] = .5f;
+                            oM[0][1] = oM[1][0] = oM[0][2] = oM[2][0] = oM[1][2] = oM[2][1] = 0;
+                        }
                         bindUniforms(program, value_ptr(M), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
                                      material->diffuseTex, material->specularTex, material->material, player);
-                        sphere->draw(program);
+
+                        if (i == 0) {
+                            ship->draw(program);
+                            bindUniforms(program, value_ptr(oM), value_ptr(V->topMatrix()), value_ptr(P->topMatrix()),
+                                         material->diffuseTex, material->specularTex, material->material, player);
+                            shipInner->draw(program);
+                        }
+                        else
+                            sphere->draw(program);
                         break;
 
                     case PxGeometryType::ePLANE:
