@@ -70,7 +70,7 @@ void Player::mouseInputCB(GLFWwindow *window, double x, double y) {
 void Player::getControllerInput() {
     using namespace std;
     int count;
-    const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &count);
+    const float *axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1 + input - 1, &count);
     float deadzone = .2;
 
     strafeInput.x = abs(axes[LEFT_STICK_X]) > deadzone ? axes[LEFT_STICK_X] : 0;
