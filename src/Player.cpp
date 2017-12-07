@@ -38,30 +38,20 @@ void Player::keyboardInputCB(GLFWwindow *window, int key, int scancode, int acti
 //    physX->setLinearDamping(2.f);
     if (key == GLFW_KEY_W && action == GLFW_PRESS) {
         strafeInput.y = 1;
-        physX->addTorque(PxVec3(0,0,-500));
     } else if (key == GLFW_KEY_W && action == GLFW_RELEASE) {
         strafeInput.y = 0;
-        physX->clearTorque();
     } else if (key == GLFW_KEY_S && action == GLFW_PRESS) {
         strafeInput.y = -1;
-        physX->addTorque(PxVec3(0,0,500));
     } else if (key == GLFW_KEY_S && action == GLFW_RELEASE) {
         strafeInput.y = 0;
-        physX->clearTorque();
     } else if (key == GLFW_KEY_A && action == GLFW_PRESS) {
         strafeInput.x = -1;
-        physX->addTorque(PxVec3(-500,0,0));
     } else if (key == GLFW_KEY_A && action == GLFW_RELEASE) {
         strafeInput.x = 0;
-        physX->clearTorque();
     } else if (key == GLFW_KEY_D && action == GLFW_PRESS) {
         strafeInput.x = 1;
-        physX->addTorque(PxVec3(500,0,0));
-
     } else if (key == GLFW_KEY_D && action == GLFW_RELEASE) {
         strafeInput.x = 0;
-        physX->clearTorque();
-
     }
 }
 
@@ -110,6 +100,8 @@ void Player::getControllerInput() {
 }
 
 void Player::update(float deltaTime) {
+    physX->setMaxAngularVelocity(100.f);
+    physX->setMass(10.f);
     if (input > 0) {
 
         this->getControllerInput();
@@ -139,6 +131,7 @@ void Player::update(float deltaTime) {
     direction += strafeSpeed * strafeInput.y * (lookAtPoint - position);
     direction += strafeSpeed * -strafeInput.x * glm::cross(upVector, lookAtPoint - position);
 
+
     float posy = position.y;
     position += direction;
     position.y = posy;
@@ -146,10 +139,22 @@ void Player::update(float deltaTime) {
 
     if (orientationInput.y > .9)
         orientationInput.y = .9f;
-    if (orientationInput.y < -.9)
-        orientationInput.y = -.9f;
+    if (orientationInput.y < -.1f)
+        orientationInput.y = -.1f;
 
-    std::cout << orientationInput.x << std::endl;
+    physX->addTorque(PxVec3(+200*strafeInput.y*sin(orientationInput.x)
+                            -200*strafeInput.x*cos(orientationInput.x),
+                            0,
+                            +200*strafeInput.y*cos(orientationInput.x)
+                            -200*strafeInput.x*sin(orientationInput.x)), PxForceMode::eACCELERATION);
+
+//    physX->addForce(PxVec3(-15*strafeInput.y*cos(orientationInput.x)
+//                            -15*strafeInput.x*sin(orientationInput.x),
+//                            0,
+//                            -15*strafeInput.y*sin(orientationInput.x)
+//                            -15*strafeInput.x*cos(orientationInput.x)), PxForceMode::eACCELERATION);
+
+
     PxTransform temp = physX->getGlobalPose();
     position = vec3(temp.p.x,temp.p.y,temp.p.z);
     lookAtPoint = position + 8.f*glm::vec3(cos(orientationInput.x) * cos(orientationInput.y),
